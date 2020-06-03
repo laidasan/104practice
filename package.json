@@ -1,0 +1,26 @@
+{
+  "name": "104-layout-practive",
+  "version": "1.0.0",
+  "description": "Hi I am Samura chiu",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:css": "node-sass layoutpractice/0603/scss/main.scss layoutpractice/0603/style/style.css -w",
+    "comple" : "node-sass layoutpractice/test/scss/main.scss layoutpractice/test/style/style.css",
+    "concat" : "concat -o layoutpractice/test/style/style.concat.css layoutpractice/test/scss/vender/reset.css layoutpractice/test/style/style.compile.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laidasan/104mac-layout-practice.git"
+  },
+  "author": "samura",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laidasan/104mac-layout-practice/issues"
+  },
+  "homepage": "https://github.com/laidasan/104mac-layout-practice#readme",
+  "devDependencies": {
+    "concat": "^1.0.3",
+    "node-sass": "^4.14.1"
+  }
+}

@@ -1,0 +1,57 @@
+.profile {
+    max-width: 66rem;
+    margin: auto;
+    box-shadow: 0 0 0 1px #cd0000;
+}
+
+.profile::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.profile__avatar {
+    float: left;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    background: #a97b50;
+    line-height: 6rem;
+    text-align: center;
+}
+.profile__avatar > span {
+    font-size: 2.4rem;
+    color: #fff;
+}
+
+.profile__classInfo {
+    overflow: hidden;
+    margin-left: 1.8rem;
+    box-shadow: 0 0 0 1px #00cd00;
+}
+
+.profile__name {
+    font-size: 1.6rem;
+    margin-bottom: 2.4rem;
+}
+
+.profile__classInfo__des {
+}
+
+.profile__classInfo__des > li {
+    float: left;
+    font-size: 1.4rem;
+}
+
+.profile__classInfo__desItem {
+    
+}
+.profile__classInfo__desItem > .icon{
+
+}
+.profile__classInfo__desItem > .type{
+
+}
+.profile__classInfo__desItem > .count {
+
+}

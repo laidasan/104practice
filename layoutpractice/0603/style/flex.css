@@ -1,0 +1,141 @@
+.profile {
+    position: relative;
+    max-width: 111rem;
+    margin: auto;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,.1);
+}
+.profile > .bk {
+    padding: 12rem 0;
+    background: url("../img/board-bg.jpg") no-repeat;
+}
+
+/* avatar */
+.nameWrap {
+    display: flex;
+    position: absolute; left: 1.5rem; top: 50%;
+}
+
+.nameAvatar {
+    text-align: center;
+    width: 9rem;
+    height: 9rem;
+    color: #fff;
+    background: #5587a2;
+    border-radius: 50%;
+    font-size: 3.6rem;
+    line-height: 9rem;
+    box-shadow: 0 0 0 2.1px #fff;
+    margin-right: 3rem;
+}
+.name {
+    font-size: 3rem;
+    margin-top: 1.5rem;
+    color: #fff;
+}
+
+/* class infomation */
+.classInfo {
+    position: relative;
+    display: flex;
+    padding: 2.1rem 0;
+}
+
+.classInfoList {
+    display: flex;
+    justify-content: center;
+    flex-grow: 5;
+    align-items: center;
+}
+
+.classInfoList > li {
+    display: flex;
+}
+
+.classInfoListItem {
+    margin: 0 1.8rem;
+}
+
+.classInfoListItem > .icon {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    background: #00cd00;
+}
+
+.classInfoListItem:nth-child(1) {
+    color: #4daea5;
+}
+.classInfoListItem:nth-child(1) .icon{
+    background: #4daea5;
+}
+.classInfoListItem:nth-child(2) {
+    color: #319db5;
+}
+.classInfoListItem:nth-child(2) .icon{
+    background: #319db5;
+}
+.classInfoListItem:nth-child(3) {
+    color: #856da9;
+}
+.classInfoListItem:nth-child(3) .icon{
+    background: #856da9;
+}
+.classInfoListItem:nth-child(4) {
+    color: #f08917;
+}
+.classInfoListItem:nth-child(4) .icon{
+    background: #f08917;
+}
+
+.classDes {
+    /* text-align: center; */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.classDes > .count {
+    font-size: 3.6rem;
+}
+
+.classDes > .type {
+    font-size: 1.5rem;
+}
+
+/* class total time and average */
+.classInfoTotal {
+    flex-grow: 1;
+    max-width: 33%;
+}
+
+.classInfoTotal::after{
+    content: '';
+    position: absolute; top: 2.1rem; bottom: 2.1rem;right: 33%;
+    width: 1px;
+    background: rgba(0,0,0,.3);
+}
+
+.classInfoTotal .wrap {
+    display: flex;
+    margin-bottom: 1.2rem;
+    color: #8bc34a;
+}
+
+.heading-fifth .wrap > span {
+    margin-right: 1.5rem
+}
+
+.classInfoTotal .totalPass {
+    display: block;
+}
+
+
+.classInfoTotal .totalTime > span{
+    margin-left: -6px;
+    font-size: 1.8rem;
+}
+.classInfoTotal .totalAverage {
+    display: block;
+    color: rgba(0,0,0,.81);
+}

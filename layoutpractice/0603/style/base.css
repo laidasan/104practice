@@ -1,0 +1,24 @@
+html {
+    font-size: 62.5%;
+}
+
+.heading-fifth {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.heading-fifth  span {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+body {
+    padding-top: 6rem;
+}
+
+/* color */
+/* #4daea5 */
+/* #310db5 */
+/* #856da9 */
+/* #f08917 */
+/* #8bc34a */
