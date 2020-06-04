@@ -1,0 +1,107 @@
+.table {
+    margin: auto;
+    font-size: 1.4rem;
+    max-width: 110rem;
+    /* max-width: 150rem; */
+}
+.thead {
+    /* background: rgba(49,157,181,.1); */
+    background: rgba(255,152,0,.1);
+    box-shadow: 0 .5px 3px rgba(230,120,0,.3);
+}
+
+th {
+    position: relative;
+    text-align: left;
+    padding: 1rem;
+    cursor: pointer;
+    min-width: 6rem;
+}
+
+th.sort {
+    color: #319DB5;
+}
+
+th.choose {
+    background: rgba(141,192,219,.25);
+}
+
+th.class {
+    width: 18rem
+    /* width: 9rem; */
+}
+
+th.name {
+    width: 12rem;
+}
+
+th.credit {
+    width: 6rem;
+}
+th.status {
+    min-width: 9rem;
+}
+
+th  span {
+    position: relative;
+}
+th  span::after,
+th  span::before {
+    content: '';
+    position: absolute; right: -12px; top: 0;
+    width: 0;
+    height: 0;
+    color: #333;
+    border: .5rem solid;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+th  span::before {
+    border-top: 0;
+    margin-top: 3px;
+    /* top: 33%; */
+}
+th  span::after {
+    border-bottom: 0;
+    margin-top: 12px;
+    /* bottom: 33%; */
+}
+
+td {
+    padding: 2.1rem 3rem 3rem .9rem;
+    /* padding-right: 3rem; */
+}
+td.class {
+}
+td.class > span:first-child {
+    display: inline-block;
+    margin-bottom: 1.8rem;
+    /* margin-bottom: 3rem; */
+}
+.td > span {
+
+}
+td > span.process {
+    position: relative;
+    display: block;
+    height: 3px;
+    background: #ff9800;
+    border-radius: 12px;
+}
+td > span.process::before,
+td > span.process::after {
+    position: absolute;
+    color: #ff9800;
+}
+td > span.process::before {
+    content: '完成';
+    margin-bottom: 6px;
+    
+    bottom: 100%;
+    
+}
+td > span.process::after {
+    content: '3/3';
+    top: 100%;
+    margin-top: 6px;
+}

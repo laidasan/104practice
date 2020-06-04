@@ -1,7 +1,6 @@
 .profile {
     max-width: 66rem;
     margin: auto;
-    box-shadow: 0 0 0 1px #cd0000;
 }
 
 .profile::after {
@@ -25,9 +24,7 @@
 }
 
 .profile__classInfo {
-    overflow: hidden;
-    margin-left: 1.8rem;
-    box-shadow: 0 0 0 1px #00cd00;
+    margin-left: 7.8rem;
 }
 
 .profile__name {
@@ -43,8 +40,24 @@
     font-size: 1.4rem;
 }
 
-.profile__classInfo__desItem {
-    
+.icon.pass,
+.icon.square {
+    color: #4daea5;
+}
+.icon.pass ~ .count,
+.icon.square ~ .count{
+    color: #4daea5;
+}
+.icon.notyet {
+    color: #f44336;
+}
+.icon.notyet ~ .count {
+    color: #f44336;
+}
+
+
+.profile__classInfo__desItem:not(:last-child) {
+    margin-right: 1.8rem;
 }
 .profile__classInfo__desItem > .icon{
 
@@ -53,5 +66,6 @@
 
 }
 .profile__classInfo__desItem > .count {
-
+    font-size: 2.1rem;
+    color: #222;
 }
