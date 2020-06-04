@@ -1,0 +1,92 @@
+// float layout css
+.floatlayout {
+
+    &__banner {
+        overflow: hidden;
+        height: 100vh;
+        background: #000;
+        // &::after {
+        //     content: '';
+        //     display: block;
+        //     clear: both;
+        // }
+
+        > .bk {
+            width: 100%;
+            max-width: 50%;
+            height: 100%;
+            background: url("../../img/subscription.jpg") no-repeat center / cover;
+            float: left;
+        }
+        
+        .subs {
+            overflow: hidden;
+
+            &__text {
+                margin: 0 21%;
+                margin-top: 27vh;
+                color: #fff;
+                > .title {
+                    font-size: 3.6rem;
+                    margin-bottom: 3rem;
+                }
+            }
+
+            &__detail {
+                margin-bottom: 6rem;
+                > li {
+                    font-size: 1.8rem;
+                    padding-top: 2.1rem;
+                    overflow: hidden;
+
+                    &::after {
+                        content: '';
+                        display: block;
+                        height: 0;
+                        padding: .1rem 0;
+                        margin-top: 2.1rem;
+                        background: #fff;
+                    }
+
+                    > span:nth-child(2) {
+                        float: right;
+                    }
+                    // > span:first-child {
+                    //     float: left;
+                    //     width: 100%;
+                    //     margin-right: 3rem;
+                    // }
+                    // > span:nth-child(2) {
+                    //     margin-left: -12rem;
+                    // }
+                }
+            }
+
+            .btn--subs {
+                &:link,
+                &:visited {
+                    display: block;
+                    text-decoration: none;
+                    color: #fff;
+                    font-size: 2.1rem;
+                }
+
+                &::after {
+                    content: '';
+                    display: block;
+                    height: 0;
+                    padding: .1rem 0;
+                    background: #fff;
+                    margin-top: 1.8rem;
+                }
+
+                &::before {
+                    content: '->';
+                    float: right;
+                    
+                }
+            }
+        }
+        
+    }
+}

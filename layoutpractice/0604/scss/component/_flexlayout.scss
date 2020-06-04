@@ -1,0 +1,124 @@
+.flexlayout {
+    a {
+        &:link,
+        &:visited {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.5rem;
+        }
+    }
+
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 4.5rem;
+        background: #243238;
+        max-height: 6rem;
+
+        &__logo {
+            vertical-align: middle;
+        }
+
+        &__logo-box {
+            margin-right: 3rem;
+        }
+
+
+        > .navigation {
+            flex-grow: 1.5;
+            margin-right: 2.4rem;
+            padding: 2.4rem 0;
+            cursor: pointer;
+
+            > button {
+                border: none;
+                outline: none;
+                color: #fff;
+                font-size: 1.5rem;  
+                background: transparent;
+                cursor: pointer;
+
+            }
+
+            &:hover {
+                // background: #182125;
+            }
+
+            &:hover button {
+                color: #3e6bff;
+            }
+        }
+    
+        .searchForm {
+            flex-grow: 1.75;
+
+            &__input {
+                padding: .6rem 0;
+                padding-left: 1.8rem;
+                margin: 0;
+                border: none;
+                width: calc(100% - 2.2rem);
+                background: rgba(255,255,255,.15);
+                border-radius: 6px;
+                color: #fff;
+                font-size: 1.5rem;
+
+                
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+
+        ::placeholder {
+            color: rgba(255,255,255,.3)
+        }
+    
+        .local {
+            &__btn {
+                &:link,
+                &:visited {
+                    display: inline-block;
+                    padding: 2.1rem 3rem;
+                }
+
+                span {
+                    display: inline-block;
+                    margin-left: .6rem;
+                    transform: rotate(90deg);  
+                }
+            }
+        }
+    
+        >.membership {
+            &:link,
+            &:visited {
+                padding: 1.2rem .9rem;
+                margin: 0 1.2rem;
+                background: #fff;
+                color: #000;
+                border-radius: 6px;
+            }
+        }
+    
+        .menu {
+            flex-grow: 2;
+            
+            &__list {
+                display: flex;
+                justify-content: space-between;
+
+                > a {
+                    &:link,
+                    &:visited {
+                        padding: 1.2rem 0;
+                        padding-left: 2.1rem;
+                    }
+                }
+            }
+        }
+    }
+
+}

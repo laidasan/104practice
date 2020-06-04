@@ -1,0 +1,120 @@
+html {
+  font-size: 62.5%; }
+
+.flexlayout a:link, .flexlayout a:visited {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5rem; }
+
+.flexlayout .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4.5rem;
+  background: #243238;
+  max-height: 6rem; }
+  .flexlayout .header__logo {
+    vertical-align: middle; }
+  .flexlayout .header__logo-box {
+    margin-right: 3rem; }
+  .flexlayout .header > .navigation {
+    flex-grow: 1.5;
+    margin-right: 2.4rem;
+    padding: 2.4rem 0;
+    cursor: pointer; }
+    .flexlayout .header > .navigation > button {
+      border: none;
+      outline: none;
+      color: #fff;
+      font-size: 1.5rem;
+      background: transparent;
+      cursor: pointer; }
+    .flexlayout .header > .navigation:hover button {
+      color: #3e6bff; }
+  .flexlayout .header .searchForm {
+    flex-grow: 1.75; }
+    .flexlayout .header .searchForm__input {
+      padding: .6rem 0;
+      padding-left: 1.8rem;
+      margin: 0;
+      border: none;
+      width: calc(100% - 2.2rem);
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 6px;
+      color: #fff;
+      font-size: 1.5rem; }
+      .flexlayout .header .searchForm__input:focus {
+        outline: none; }
+  .flexlayout .header ::placeholder {
+    color: rgba(255, 255, 255, 0.3); }
+  .flexlayout .header .local__btn:link, .flexlayout .header .local__btn:visited {
+    display: inline-block;
+    padding: 2.1rem 3rem; }
+  .flexlayout .header .local__btn span {
+    display: inline-block;
+    margin-left: .6rem;
+    transform: rotate(90deg); }
+  .flexlayout .header > .membership:link, .flexlayout .header > .membership:visited {
+    padding: 1.2rem .9rem;
+    margin: 0 1.2rem;
+    background: #fff;
+    color: #000;
+    border-radius: 6px; }
+  .flexlayout .header .menu {
+    flex-grow: 2; }
+    .flexlayout .header .menu__list {
+      display: flex;
+      justify-content: space-between; }
+      .flexlayout .header .menu__list > a:link, .flexlayout .header .menu__list > a:visited {
+        padding: 1.2rem 0;
+        padding-left: 2.1rem; }
+
+.floatlayout__banner {
+  overflow: hidden;
+  height: 100vh;
+  background: #000; }
+  .floatlayout__banner > .bk {
+    width: 100%;
+    max-width: 50%;
+    height: 100%;
+    background: url("../../img/subscription.jpg") no-repeat center/cover;
+    float: left; }
+  .floatlayout__banner .subs {
+    overflow: hidden; }
+    .floatlayout__banner .subs__text {
+      margin: 0 21%;
+      margin-top: 27vh;
+      color: #fff; }
+      .floatlayout__banner .subs__text > .title {
+        font-size: 3.6rem;
+        margin-bottom: 3rem; }
+    .floatlayout__banner .subs__detail {
+      margin-bottom: 6rem; }
+      .floatlayout__banner .subs__detail > li {
+        font-size: 1.8rem;
+        padding-top: 2.1rem;
+        overflow: hidden; }
+        .floatlayout__banner .subs__detail > li::after {
+          content: '';
+          display: block;
+          height: 0;
+          padding: .1rem 0;
+          margin-top: 2.1rem;
+          background: #fff; }
+        .floatlayout__banner .subs__detail > li > span:nth-child(2) {
+          float: right; }
+    .floatlayout__banner .subs .btn--subs:link, .floatlayout__banner .subs .btn--subs:visited {
+      display: block;
+      text-decoration: none;
+      color: #fff;
+      font-size: 2.1rem; }
+    .floatlayout__banner .subs .btn--subs::after {
+      content: '';
+      display: block;
+      height: 0;
+      padding: .1rem 0;
+      background: #fff;
+      margin-top: 1.8rem; }
+    .floatlayout__banner .subs .btn--subs::before {
+      content: '->';
+      float: right; }
