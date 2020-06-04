@@ -1,6 +1,7 @@
 .tablelayout {
     padding: 6rem 0;
     background: #aaa;
+
     .heading {
         font-weight: 900;
 
@@ -25,19 +26,7 @@
             border-collapse: separate;
             border-spacing: 0 6rem;
         }
-
-        thead {
-
-        }
-
-        tbody {
-
-        }
-
-        tr {
-
-        }
-        
+ 
         th {
             text-align: left;
         }
@@ -66,8 +55,6 @@
 
         &__title {
             color: #b6d5d7;
-        }
-        &__price {
         }
 
         &__button {
