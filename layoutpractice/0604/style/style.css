@@ -154,3 +154,46 @@ html {
     transform: rotateZ(0); }
   100% {
     transform: rotateZ(360deg); } }
+
+.tablelayout {
+  padding: 6rem 0;
+  background: #aaa; }
+  .tablelayout .heading {
+    font-weight: 900; }
+    .tablelayout .heading-secondary {
+      font-size: 3.6rem; }
+    .tablelayout .heading-thread {
+      font-size: 3rem; }
+    .tablelayout .heading-fourth {
+      font-size: 2.1rem; }
+  .tablelayout__product {
+    padding: 0 9%;
+    background: #aaa; }
+    .tablelayout__product table {
+      border-collapse: separate;
+      border-spacing: 0 6rem; }
+    .tablelayout__product th {
+      text-align: left; }
+    .tablelayout__product td {
+      width: 30%;
+      padding: 0 1.8em; }
+      .tablelayout__product td:first-child {
+        margin-right: 3rem; }
+    .tablelayout__product__img-box {
+      margin-bottom: 1.5rem; }
+      .tablelayout__product__img-box > img {
+        vertical-align: middle;
+        width: 100%; }
+    .tablelayout__product__title, .tablelayout__product__price {
+      margin-bottom: 1.5rem; }
+    .tablelayout__product__title {
+      color: #b6d5d7; }
+    .tablelayout__product__button {
+      border: none;
+      background: #b6d5d7;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      padding: 3rem 2.4rem;
+      letter-spacing: 1px;
+      cursor: pointer; }

@@ -1,0 +1,84 @@
+.tablelayout {
+    padding: 6rem 0;
+    background: #aaa;
+    .heading {
+        font-weight: 900;
+
+        &-secondary {
+            font-size: 3.6rem;
+        }
+
+        &-thread {
+            font-size: 3rem;
+        }
+
+        &-fourth {
+            font-size: 2.1rem;
+        }
+    }
+
+    &__product {
+        padding: 0 9%;
+        background: #aaa;
+
+        table {
+            border-collapse: separate;
+            border-spacing: 0 6rem;
+        }
+
+        thead {
+
+        }
+
+        tbody {
+
+        }
+
+        tr {
+
+        }
+        
+        th {
+            text-align: left;
+        }
+
+        td {
+            width: 30%;
+            padding: 0 1.8em;
+
+            &:first-child {
+                margin-right: 3rem;
+            }
+        }
+
+        &__img-box {
+            margin-bottom: 1.5rem;
+            > img {
+                vertical-align: middle;
+                width: 100%;
+            }
+        }
+
+        &__title,
+        &__price {
+            margin-bottom: 1.5rem;
+        }
+
+        &__title {
+            color: #b6d5d7;
+        }
+        &__price {
+        }
+
+        &__button {
+            border: none;
+            background: #b6d5d7;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            padding: 3rem 2.4rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+    }
+}
