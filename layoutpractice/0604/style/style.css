@@ -70,9 +70,39 @@ html {
         padding-left: 2.1rem; }
 
 .floatlayout__banner {
+  position: relative;
   overflow: hidden;
   height: 100vh;
   background: #000; }
+  .floatlayout__banner .circleAnimation {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 21rem;
+    height: 21rem;
+    overflow: hidden; }
+    .floatlayout__banner .circleAnimation__mask {
+      position: absolute;
+      top: 0;
+      bottom: 0; }
+      .floatlayout__banner .circleAnimation__mask.left {
+        left: 0;
+        width: 50%;
+        overflow: hidden; }
+      .floatlayout__banner .circleAnimation__mask.right {
+        right: 0;
+        width: 50%;
+        overflow: hidden; }
+        .floatlayout__banner .circleAnimation__mask.right > img {
+          position: relative;
+          right: 100%; }
+    .floatlayout__banner .circleAnimation img {
+      vertical-align: middle;
+      height: 100%;
+      animation: bannerAnimation 9s infinite linear; }
   .floatlayout__banner > .bk {
     width: 100%;
     max-width: 50%;
@@ -118,3 +148,9 @@ html {
     .floatlayout__banner .subs .btn--subs::before {
       content: '->';
       float: right; }
+
+@keyframes bannerAnimation {
+  0% {
+    transform: rotateZ(0); }
+  100% {
+    transform: rotateZ(360deg); } }

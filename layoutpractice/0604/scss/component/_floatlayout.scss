@@ -2,6 +2,7 @@
 .floatlayout {
 
     &__banner {
+        position: relative;
         overflow: hidden;
         height: 100vh;
         background: #000;
@@ -10,6 +11,38 @@
         //     display: block;
         //     clear: both;
         // }
+
+        .circleAnimation {
+            position: absolute; top: 0; bottom: 0; right: 0; left: 0;
+            margin: auto;
+            width: 21rem;
+            height: 21rem;
+            overflow: hidden;
+
+            &__mask {
+                position: absolute; top: 0; bottom: 0;
+                &.left {
+                    left: 0;
+                    width: 50%;
+                    overflow: hidden;
+                }
+                &.right {
+                    right: 0;
+                    width: 50%;
+                    overflow: hidden;
+                    > img {
+                        position: relative;
+                        right: 100%;
+                    }
+                }
+            }
+
+            img {
+                vertical-align: middle;
+                height: 100%;
+                animation: bannerAnimation 9s infinite linear;
+            }
+        }
 
         > .bk {
             width: 100%;
@@ -83,10 +116,18 @@
                 &::before {
                     content: '->';
                     float: right;
-                    
+
                 }
             }
         }
         
+    }
+}
+@keyframes bannerAnimation {
+    0% {
+        transform: rotateZ(0);
+    }
+    100% {
+        transform:  rotateZ(360deg);
     }
 }
