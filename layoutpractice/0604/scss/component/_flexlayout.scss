@@ -12,7 +12,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 4.5rem;
+        padding: 0 2.1rem;
         background: #243238;
         max-height: 6rem;
 
@@ -26,10 +26,39 @@
 
 
         > .navigation {
+            position: relative;
             flex-grow: 1.5;
-            margin-right: 2.4rem;
+            margin-right: 2.7rem;
             padding: 2.4rem 0;
+            overflow: hidden;
             cursor: pointer;
+
+            > .arrow {
+                position: absolute; right: 1.5rem; top: 2.4rem; bottom: 2.4rem;
+                margin: auto;
+                // width: 1.2rem;
+                // height: 1.2rem;
+
+                &::after,
+                &::before  {
+                    content: '';
+                    position: absolute; right: 0; left: 0; bottom: 0; top: 0;
+                    margin: auto;
+                    width: 0;
+                    height: 0;
+                    padding: .36rem .05rem;
+                    background: #fff;
+                    transform-origin: 50% 100%;
+                }
+                &::after {
+                    transform: rotateZ(45deg);
+                }
+                &::before {
+                    transform: rotateZ(-45deg);
+                }
+
+            }
+
 
             > button {
                 border: none;
@@ -38,7 +67,12 @@
                 font-size: 1.5rem;  
                 background: transparent;
                 cursor: pointer;
+                margin-left: .3rem;
 
+                > i {
+                    font-size: 2.05rem;
+                    margin-right: .9rem;
+                }
             }
 
             &:hover {
@@ -51,18 +85,26 @@
         }
     
         .searchForm {
-            flex-grow: 1.75;
-
+            flex-grow: 1.33;
+            display: flex;
+            padding-left: 2.1rem;
+            background: rgba(255,255,255,.15);
+            border-radius: 3px;
+            > i {
+                font-size: 1.8rem;
+                height: 3rem;
+                line-height: 3rem;
+                margin-right: .9rem;
+                color: #fff;
+            }
             &__input {
                 padding: .6rem 0;
-                padding-left: 1.8rem;
                 margin: 0;
                 border: none;
                 width: calc(100% - 2.2rem);
-                background: rgba(255,255,255,.15);
-                border-radius: 6px;
+                background: transparent;
                 color: #fff;
-                font-size: 1.5rem;
+                font-size: 1.4rem;
 
                 
 
@@ -77,17 +119,52 @@
         }
     
         .local {
+            // margin-left: 2.1rem;
             &__btn {
-                &:link,
-                &:visited {
-                    display: inline-block;
-                    padding: 2.1rem 3rem;
+                > i {
+                    padding-right: .6rem;
                 }
 
-                span {
+
+                &:link,
+                &:visited {
+                    position: relative;
                     display: inline-block;
-                    margin-left: .6rem;
-                    transform: rotate(90deg);  
+                    padding: 2.1rem 3rem;
+                    margin: 0 1.2rem;
+                }
+
+
+                // span {
+                //     display: inline-block;
+                //     margin-left: .6rem;
+                //     transform: rotate(90deg);  
+                // }
+
+                > .arrow {
+                    position: absolute; right: 1.5rem; top: 2.4rem; bottom: 2.4rem;
+                    margin: auto;
+                    // width: 1.2rem;
+                    // height: 1.2rem;
+    
+                    &::after,
+                    &::before  {
+                        content: '';
+                        position: absolute; right: 0; left: 0; bottom: 0; top: 0;
+                        margin: auto;
+                        width: 0;
+                        height: 0;
+                        padding: .36rem .05rem;
+                        background: #fff;
+                        transform-origin: 50% 100%;
+                    }
+                    &::after {
+                        transform: rotateZ(45deg);
+                    }
+                    &::before {
+                        transform: rotateZ(-45deg);
+                    }
+    
                 }
             }
         }
@@ -95,26 +172,37 @@
         >.membership {
             &:link,
             &:visited {
-                padding: 1.2rem .9rem;
-                margin: 0 1.2rem;
+                padding: 1.2rem 1.8rem;
+                font-size: 1.4rem;
                 background: #fff;
                 color: #000;
-                border-radius: 6px;
+                border-radius: 3px;
             }
         }
     
         .menu {
-            flex-grow: 2;
-            
+            flex-grow: 1;
+
             &__list {
                 display: flex;
                 justify-content: space-between;
 
                 > a {
+                    > i {
+                        margin-right: .9rem;
+                    }
+
                     &:link,
                     &:visited {
+                        display: inline-block;
                         padding: 1.2rem 0;
-                        padding-left: 2.1rem;
+                        padding: 0 .6rem;
+                    }
+
+                    &:first-child {
+                        margin-left: 2.4rem;
+                    }
+                    &:not(:last-child) {
                     }
                 }
             }

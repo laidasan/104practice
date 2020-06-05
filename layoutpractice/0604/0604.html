@@ -1,57 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/reset.css">
     <link rel="stylesheet" href="./style/style.css">
+    <script src="https://kit.fontawesome.com/ab4c3d994d.js" crossorigin="anonymous"></script>
     <title>0605</title>
 
     <style>
-        .flexlayout > img,
-        .floatlayout > img,
-        .tablelayout > img {
+        .flexlayout>img,
+        .floatlayout>img,
+        .tablelayout>img {
             vertical-align: middle;
             width: 100%;
         }
+
+        .section {
+            margin: 12rem 0;
+        }
+
+        .section>img {
+            margin-bottom: 6rem;
+        }
+
+        .todayReading {
+            /* content: counter(read); */
+            counter-reset: read 0;
+            min-width: 540px;
+            max-width: 600px;
+            margin: auto;
+            margin-top: 3rem;
+        }
+
+        .todayReading>li {
+            margin-bottom: 1.5rem;
+        }
+
+        .todayReading>.counter::before {
+            content: counters(read, '-') ' ';
+            counter-increment: read;
+            font-size: 1.5rem;
+            margin-right: 1.2rem;
+        }
+
+        ol a:link,
+        ol a:visited {
+            text-decoration: none;
+            color: #333;
+            font-size: 1.8rem;
+        }
+
+        ol a:hover {
+            color: #cd0000;
+        }
+
+        ol h2 {
+            font-size: 4.2rem;
+            margin-bottom: 1.5rem;
+        }
     </style>
 </head>
+
 <body>
-    <ol>
-        <li></li>
+    <ol class="todayReading">
+        <li><h2>today read</h2></li>
+        <li class="counter"><a href="https://medium.com/@jimmyyang_61644/git-push%E5%89%8D%E8%A6%81%E5%81%9A%E7%9A%84%E4%BA%8B-b737a830ec41">GITpush前merge和pull的必要性及流程</a></li>
+        <li class="counter"><a href="https://www.zhangxinxu.com/wordpress/2020/04/css-text-layout-circle/">CSS技术分享: 文字在圆形内沿着弧线边界排版</a></li>
+        <li class="counter"><a href="https://www.zhangxinxu.com/wordpress/2019/02/css-css3-shapes/">写给自己看的CSS shapes布局教程</a></li>
     </ol>
-    
+
 
     <div class="layoutPractice">
-        <div class="flexlayout">
+        <div class="section flexlayout">
             <img src="./img/flex.png" alt="">
             <header class="header">
-                <div class="header__logo-box flexlayout__item"><img src="../img/flexicon.svg" alt="" class="header__logo"></div>
+                <div class="header__logo-box flexlayout__item"><img src="../img/flexicon.svg" alt=""
+                        class="header__logo"></div>
                 <nav class="navigation flexlayout__item">
-                    <button type="button"><i></i>All products</button>
+                    <button type="button"><i class="fas fa-th-large"></i>All products</button>
                     <!-- <ul></ul> -->
+                    <span class="arrow"></span>
                 </nav>
                 <form class="searchForm flexlayout__item">
-                    <i></i>
+                    <i class="fas fa-search"></i>
                     <input type="text" placeholder="Search" class="searchForm__input">
                 </form>
                 <div class="local flexlayout__item">
-                    <a href="#" class="local__btn"><i></i>EN<span>&gt;</span></a>
+                    <a href="#" class="local__btn">
+                        <i class="fas fa-flag-usa"></i>
+                        <span>EN</span>
+                        <span class="arrow"></span>
+                    </a>
                     <!-- <ul></ul> -->
                 </div>
                 <a href="#" class="membership flexlayout__item">MemeberShip</a>
                 <div class="menu flexlayout__item">
                     <nav class="menu__list">
-                        <a href="#">Start Selling</a>
-                        <a href="#">Collection</a>
-                        <a href="#">Account</a>
-                        <a href="#">Cart</a>
+                        <a href="#"><i class="fas fa-money-bill"></i>Start Selling</a>
+                        <a href="#"><i class="far fa-heart"></i>Collection</a>
+                        <a href="#"><i class="far fa-user"></i>Account</a>
+                        <a href="#"><i class="fas fa-shopping-cart"></i>Cart</a>
                     </nav>
                 </div>
             </header>
         </div>
 
-        <div class="floatlayout">
+        <div class="section floatlayout">
             <img src="./img/float.png" alt="">
             <div class="floatlayout__banner">
                 <div class="circleAnimation">
@@ -71,62 +127,75 @@
                             お得にはじめる。</h3>
                         <ul class="subs__detail">
                             <li><span>price</span><span>20%offf</span></li>
-                            <li><span>cucle</span><span>Daily,weekly,monthly</span></li>
+                            <li><span>cucle</span><span>Daily , weekly , monthly</span></li>
                         </ul>
-                        <a href="#" class="btn btn--subs">Online Shop</a>
+                        <a href="#" class="btn btn--subs">Online Shop <span class="arrow"></span></a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="tablelayout">
-            <img src="./img/table.png" alt="">
+        <div class="section tablelayout">
+            <img src="./img/table.png" alt=""
+                style="display:block;max-width: 983px; margin: 0 auto; margin-bottom: 1.5rem">
             <div class="tablelayout__product">
                 <table>
                     <thead>
                         <tr>
-                            <th><h2 class="heading-secondary">PoPular</h2></th>
+                            <th>
+                                <h2 class="heading-secondary">PoPular</h2>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>
-                                <div class="tablelayout__product__img-box"><img src="./img/product/product_1.jpg" alt="" class="img"></div>
+                                <div class="tablelayout__product__img-box"><img src="./img/product/product_1.jpg" alt=""
+                                        class="img"></div>
                                 <h4 class="heading-fourth tablelayout__product__title">BERWICK SPLENDORETTE CRIM...</h3>
-                                <h3 class="heading-thread tablelayout__product__price">$470.00</h2>
-                                <button class="tablelayout__product__button">add to cart</button>
+                                    <h3 class="heading-thread tablelayout__product__price">$470.00</h2>
+                                        <button class="tablelayout__product__button">add to cart</button>
                             </td>
                             <td>
-                                <div class="tablelayout__product__img-box"><img src="./img/product/product_2.jpg" alt="" class="img"></div>
-                                <h4 class="heading-fourth tablelayout__product__title">BEST MINI TRAVEL & HOME SEW...</h3>
-                                <h3 class="heading-thread tablelayout__product__price">$5,190.00</h2>
-                                <button class="tablelayout__product__button">add to cart</button>
+                                <div class="tablelayout__product__img-box"><img src="./img/product/product_2.jpg" alt=""
+                                        class="img"></div>
+                                <h4 class="heading-fourth tablelayout__product__title">BEST MINI TRAVEL & HOME SEW...
+                                    </h3>
+                                    <h3 class="heading-thread tablelayout__product__price">$5,190.00</h2>
+                                        <button class="tablelayout__product__button">add to cart</button>
                             </td>
                             <td>
-                                <div class="tablelayout__product__img-box"><img src="./img/product/product_3.jpg" alt="" class="img"></div>
+                                <div class="tablelayout__product__img-box"><img src="./img/product/product_3.jpg" alt=""
+                                        class="img"></div>
                                 <h4 class="heading-fourth tablelayout__product__title">BROTHER CP-6500 COMPUTERI...</h3>
-                                <h3 class="heading-thread tablelayout__product__price">$953.00</h2>
-                                <button class="tablelayout__product__button">add to cart</button>
+                                    <h3 class="heading-thread tablelayout__product__price">$953.00</h2>
+                                        <button class="tablelayout__product__button">add to cart</button>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <div class="tablelayout__product__img-box"><img src="./img/product/product_1.jpg" alt="" class="img"></div>
-                                <h4 class="heading-fourth tablelayout__product__title">HIP GIRL BOUTIQUE RIBBON VA...</h3>
-                                <h3 class="heading-thread tablelayout__product__price">$387.00</h2>
-                                <button class="tablelayout__product__button">add to cart</button>
+                                <div class="tablelayout__product__img-box"><img src="./img/product/product_4.jpg" alt=""
+                                        class="img"></div>
+                                <h4 class="heading-fourth tablelayout__product__title">HIP GIRL BOUTIQUE RIBBON VA...
+                                    </h3>
+                                    <h3 class="heading-thread tablelayout__product__price">$387.00</h2>
+                                        <button class="tablelayout__product__button">add to cart</button>
                             </td>
                             <td>
-                                <div class="tablelayout__product__img-box"><img src="./img/product/product_1.jpg" alt="" class="img"></div>
-                                <h4 class="heading-fourth tablelayout__product__title">HIPGIRL GROSGRAIN RIBBON CO...</h3>
-                                <h3 class="heading-thread tablelayout__product__price">$3,372.00</h2>
-                                <button class="tablelayout__product__button">add to cart</button>
+                                <div class="tablelayout__product__img-box"><img src="./img/product/product_5.jpg" alt=""
+                                        class="img"></div>
+                                <h4 class="heading-fourth tablelayout__product__title">HIPGIRL GROSGRAIN RIBBON CO...
+                                    </h3>
+                                    <h3 class="heading-thread tablelayout__product__price">$3,372.00</h2>
+                                        <button class="tablelayout__product__button">add to cart</button>
                             </td>
                             <td>
-                                <div class="tablelayout__product__img-box"><img src="./img/product/product_1.jpg" alt="" class="img"></div>
-                                <h4 class="heading-fourth tablelayout__product__title">JANOME 1600P-QC HIGH SPEED...</h3>
-                                <h3 class="heading-thread tablelayout__product__price">$2,828.00</h2>
-                                <button class="tablelayout__product__button">add to cart</button>
+                                <div class="tablelayout__product__img-box"><img src="./img/product/product_6.jpg" alt=""
+                                        class="img"></div>
+                                <h4 class="heading-fourth tablelayout__product__title">JANOME 1600P-QC HIGH SPEED...
+                                    </h3>
+                                    <h3 class="heading-thread tablelayout__product__price">$2,828.00</h2>
+                                        <button class="tablelayout__product__button">add to cart</button>
                             </td>
                         </tr>
                     </tbody>
@@ -135,4 +204,5 @@
         </div>
     </div>
 </body>
+
 </html>

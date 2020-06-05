@@ -81,8 +81,12 @@
                         background: #fff;
                     }
 
+
                     > span:nth-child(2) {
                         float: right;
+                        width: 75%;
+                        margin-left: -4.5rem;
+                        text-align: center;
                     }
                     // > span:first-child {
                     //     float: left;
@@ -108,15 +112,43 @@
                     content: '';
                     display: block;
                     height: 0;
-                    padding: .1rem 0;
+                    padding: .15rem 0;
                     background: #fff;
                     margin-top: 1.8rem;
                 }
 
                 &::before {
-                    content: '->';
+                    // content: '->';
                     float: right;
 
+                }
+
+
+                > .arrow {
+                    position: relative;
+                    float: right;
+                    width: 1.8rem;
+                    height: .3rem;
+                    margin-top: 1rem;
+                    background: #fff;
+
+                    &::after,
+                    &::before {
+                        content: '';
+                        position: absolute; right: 1px; top:0;
+                        height: .33rem;
+                        width: 1.2rem;
+                        background: #fff;
+                        transform-origin: 100% 50%;
+                    }
+                    &::after {
+                        // top: -12px;
+                        transform: rotateZ(45deg);
+                    }
+                    &::before {
+                        // top: 12px;
+                        transform: rotateZ(-45deg);
+                    }
                 }
             }
         }

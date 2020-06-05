@@ -10,7 +10,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 4.5rem;
+  padding: 0 2.1rem;
   background: #243238;
   max-height: 6rem; }
   .flexlayout .header__logo {
@@ -18,56 +18,121 @@ html {
   .flexlayout .header__logo-box {
     margin-right: 3rem; }
   .flexlayout .header > .navigation {
+    position: relative;
     flex-grow: 1.5;
-    margin-right: 2.4rem;
+    margin-right: 2.7rem;
     padding: 2.4rem 0;
+    overflow: hidden;
     cursor: pointer; }
+    .flexlayout .header > .navigation > .arrow {
+      position: absolute;
+      right: 1.5rem;
+      top: 2.4rem;
+      bottom: 2.4rem;
+      margin: auto; }
+      .flexlayout .header > .navigation > .arrow::after, .flexlayout .header > .navigation > .arrow::before {
+        content: '';
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        top: 0;
+        margin: auto;
+        width: 0;
+        height: 0;
+        padding: .36rem .05rem;
+        background: #fff;
+        transform-origin: 50% 100%; }
+      .flexlayout .header > .navigation > .arrow::after {
+        transform: rotateZ(45deg); }
+      .flexlayout .header > .navigation > .arrow::before {
+        transform: rotateZ(-45deg); }
     .flexlayout .header > .navigation > button {
       border: none;
       outline: none;
       color: #fff;
       font-size: 1.5rem;
       background: transparent;
-      cursor: pointer; }
+      cursor: pointer;
+      margin-left: .3rem; }
+      .flexlayout .header > .navigation > button > i {
+        font-size: 2.05rem;
+        margin-right: .9rem; }
     .flexlayout .header > .navigation:hover button {
       color: #3e6bff; }
   .flexlayout .header .searchForm {
-    flex-grow: 1.75; }
+    flex-grow: 1.33;
+    display: flex;
+    padding-left: 2.1rem;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 3px; }
+    .flexlayout .header .searchForm > i {
+      font-size: 1.8rem;
+      height: 3rem;
+      line-height: 3rem;
+      margin-right: .9rem;
+      color: #fff; }
     .flexlayout .header .searchForm__input {
       padding: .6rem 0;
-      padding-left: 1.8rem;
       margin: 0;
       border: none;
       width: calc(100% - 2.2rem);
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 6px;
+      background: transparent;
       color: #fff;
-      font-size: 1.5rem; }
+      font-size: 1.4rem; }
       .flexlayout .header .searchForm__input:focus {
         outline: none; }
   .flexlayout .header ::placeholder {
     color: rgba(255, 255, 255, 0.3); }
+  .flexlayout .header .local__btn > i {
+    padding-right: .6rem; }
   .flexlayout .header .local__btn:link, .flexlayout .header .local__btn:visited {
+    position: relative;
     display: inline-block;
-    padding: 2.1rem 3rem; }
-  .flexlayout .header .local__btn span {
-    display: inline-block;
-    margin-left: .6rem;
-    transform: rotate(90deg); }
+    padding: 2.1rem 3rem;
+    margin: 0 1.2rem; }
+  .flexlayout .header .local__btn > .arrow {
+    position: absolute;
+    right: 1.5rem;
+    top: 2.4rem;
+    bottom: 2.4rem;
+    margin: auto; }
+    .flexlayout .header .local__btn > .arrow::after, .flexlayout .header .local__btn > .arrow::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      top: 0;
+      margin: auto;
+      width: 0;
+      height: 0;
+      padding: .36rem .05rem;
+      background: #fff;
+      transform-origin: 50% 100%; }
+    .flexlayout .header .local__btn > .arrow::after {
+      transform: rotateZ(45deg); }
+    .flexlayout .header .local__btn > .arrow::before {
+      transform: rotateZ(-45deg); }
   .flexlayout .header > .membership:link, .flexlayout .header > .membership:visited {
-    padding: 1.2rem .9rem;
-    margin: 0 1.2rem;
+    padding: 1.2rem 1.8rem;
+    font-size: 1.4rem;
     background: #fff;
     color: #000;
-    border-radius: 6px; }
+    border-radius: 3px; }
   .flexlayout .header .menu {
-    flex-grow: 2; }
+    flex-grow: 1; }
     .flexlayout .header .menu__list {
       display: flex;
       justify-content: space-between; }
+      .flexlayout .header .menu__list > a > i {
+        margin-right: .9rem; }
       .flexlayout .header .menu__list > a:link, .flexlayout .header .menu__list > a:visited {
+        display: inline-block;
         padding: 1.2rem 0;
-        padding-left: 2.1rem; }
+        padding: 0 .6rem; }
+      .flexlayout .header .menu__list > a:first-child {
+        margin-left: 2.4rem; }
 
 .floatlayout__banner {
   position: relative;
@@ -132,7 +197,10 @@ html {
           margin-top: 2.1rem;
           background: #fff; }
         .floatlayout__banner .subs__detail > li > span:nth-child(2) {
-          float: right; }
+          float: right;
+          width: 75%;
+          margin-left: -4.5rem;
+          text-align: center; }
     .floatlayout__banner .subs .btn--subs:link, .floatlayout__banner .subs .btn--subs:visited {
       display: block;
       text-decoration: none;
@@ -142,12 +210,31 @@ html {
       content: '';
       display: block;
       height: 0;
-      padding: .1rem 0;
+      padding: .15rem 0;
       background: #fff;
       margin-top: 1.8rem; }
     .floatlayout__banner .subs .btn--subs::before {
-      content: '->';
       float: right; }
+    .floatlayout__banner .subs .btn--subs > .arrow {
+      position: relative;
+      float: right;
+      width: 1.8rem;
+      height: .3rem;
+      margin-top: 1rem;
+      background: #fff; }
+      .floatlayout__banner .subs .btn--subs > .arrow::after, .floatlayout__banner .subs .btn--subs > .arrow::before {
+        content: '';
+        position: absolute;
+        right: 1px;
+        top: 0;
+        height: .33rem;
+        width: 1.2rem;
+        background: #fff;
+        transform-origin: 100% 50%; }
+      .floatlayout__banner .subs .btn--subs > .arrow::after {
+        transform: rotateZ(45deg); }
+      .floatlayout__banner .subs .btn--subs > .arrow::before {
+        transform: rotateZ(-45deg); }
 
 @keyframes bannerAnimation {
   0% {
@@ -156,8 +243,7 @@ html {
     transform: rotateZ(360deg); } }
 
 .tablelayout {
-  padding: 6rem 0;
-  background: #aaa; }
+  padding: 6rem 0; }
   .tablelayout .heading {
     font-weight: 900; }
     .tablelayout .heading-secondary {
@@ -165,27 +251,27 @@ html {
     .tablelayout .heading-thread {
       font-size: 3rem; }
     .tablelayout .heading-fourth {
-      font-size: 2.1rem; }
+      font-size: 1.8rem; }
   .tablelayout__product {
-    padding: 0 9%;
-    background: #aaa; }
+    max-width: 983px;
+    margin: auto;
+    background: rgba(43, 42, 42, 0.1); }
     .tablelayout__product table {
       border-collapse: separate;
-      border-spacing: 0 6rem; }
+      border-spacing: 1.2rem 6rem; }
     .tablelayout__product th {
-      text-align: left; }
-    .tablelayout__product td {
-      width: 30%;
-      padding: 0 1.8em; }
-      .tablelayout__product td:first-child {
-        margin-right: 3rem; }
+      text-align: left;
+      padding-left: 1.8rem; }
+    .tablelayout__product td:not(:last-child) {
+      padding-right: 1.8rem; }
     .tablelayout__product__img-box {
       margin-bottom: 1.5rem; }
       .tablelayout__product__img-box > img {
         vertical-align: middle;
         width: 100%; }
     .tablelayout__product__title, .tablelayout__product__price {
-      margin-bottom: 1.5rem; }
+      margin-bottom: 1.5rem;
+      margin-right: -1.8rem; }
     .tablelayout__product__title {
       color: #b6d5d7; }
     .tablelayout__product__button {

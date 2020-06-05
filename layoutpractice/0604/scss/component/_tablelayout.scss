@@ -1,6 +1,6 @@
 .tablelayout {
     padding: 6rem 0;
-    background: #aaa;
+    // background: #aaa;
 
     .heading {
         font-weight: 900;
@@ -14,30 +14,33 @@
         }
 
         &-fourth {
-            font-size: 2.1rem;
+            font-size: 1.8rem;
         }
     }
 
     &__product {
-        padding: 0 9%;
-        background: #aaa;
+        // padding: 0 9%;
+        max-width: 983px;
+        margin: auto;
+        background: rgba(43, 42, 42, 0.1);
 
         table {
             border-collapse: separate;
-            border-spacing: 0 6rem;
+            border-spacing: 1.2rem 6rem;
         }
  
         th {
             text-align: left;
+            padding-left: 1.8rem;
         }
 
         td {
-            width: 30%;
-            padding: 0 1.8em;
-
-            &:first-child {
-                margin-right: 3rem;
+            // width: 30%;
+            &:not(:last-child) {
+                padding-right: 1.8rem;
             }
+
+
         }
 
         &__img-box {
@@ -51,6 +54,7 @@
         &__title,
         &__price {
             margin-bottom: 1.5rem;
+            margin-right: -1.8rem;
         }
 
         &__title {
