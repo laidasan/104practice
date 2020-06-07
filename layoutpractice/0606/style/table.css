@@ -1,0 +1,141 @@
+.section-table__container {
+    background: #f0e4d4;
+}
+
+.edm {
+    width: 41.1%;
+    margin: 0 auto;
+    background: #fff;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 2.1rem 0;
+}
+
+/* test 1 */
+
+/* logo */
+
+thead,
+thead tr,
+thead th,
+tfoot,
+tfoot tr
+tfoot td {
+    display: block;
+}
+
+thead {
+    width: calc(200% + 6.4rem);
+    margin-left: -2.1rem;
+    margin-bottom: 4.5rem;
+}
+
+tfoot {
+    width: calc(200% + 10.5rem);
+    margin-left: -4.2rem;
+    text-align: center;
+}
+
+
+.edm__tr--title {
+    display: block;
+    width: calc(200% + 6.3rem);
+    margin-left: -2.1rem;
+    margin-bottom: 3rem;
+}
+.edm__tr--title-sub {
+    margin-bottom: 2.4rem;
+}
+
+.edm__tr--product td {
+    /* padding-bottom: 4.5rem; */
+    border-bottom: 4.5rem solid #fff;
+}
+.edm__tr--product td:nth-child(odd) {
+    /* padding-right: .9rem; */
+    border-right: .9rem solid #fff;
+}
+.edm__tr--product td:nth-child(even) {
+    /* padding-left: .9rem; */
+    border-left: .9rem solid #fff;
+}
+.edm__tr--product {
+    /* box-shadow: 0 0 0 1px #00cd00; */
+}
+
+.edm__product {
+    position: relative;
+    /* box-shadow: 0 0 0 1px #cd0000; */
+}
+.edm__product__tag {
+    position: absolute; top: 0; right: 0;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 1.5px;
+    padding: .6rem 1.5rem;
+    background: #0066ff;
+    word-spacing: -6px;
+
+}
+.edm__product:not(:last-child) .edm__product__tag {
+    /* right: .9rem; */
+}
+
+.edm__product__info {
+    position: absolute; left: 1.5rem; right: 0; bottom: 3rem;
+    font-size: 2.7rem;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.edm__btn--viewall:link,
+.edm__btn--viewall:visited {
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.5rem;
+    background: #0066ff;
+    color: #fff;
+    padding: 1.5rem;
+}
+
+tfoot {
+    margin-top: 4.5rem;
+    /* margin-bottom: 3rem;/ */
+    /* margin: 3rem 0; *
+    /* background: #cd0000; */
+}
+
+.edm__author {
+    font-size: 1.8rem;
+    color: #333;
+}
+.edm__title {
+    font-size: 2.1rem;
+    font-weight: 700;
+}
+
+.edm__title--sub {
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+.edm img {
+    vertical-align: middle;
+}
+
+
+tbody img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.edm__top img {
+    width: 100%;
+}
+
+.edm__bottom  img {
+    width: 100%;
+}
