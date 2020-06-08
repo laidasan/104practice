@@ -1,4 +1,4 @@
-.btn:link, .btn:visited {
+.btn:link, .btn3:link, .btn:visited, .btn3:visited {
   display: inline-block;
   text-decoration: none;
   color: #000;
