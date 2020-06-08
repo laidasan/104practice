@@ -1,0 +1,17 @@
+.btn {
+    &:link,
+    &:visited {
+        display: inline-block;
+        text-decoration: none;
+        color: #000;
+        @include btn(mid);
+    }
+}
+
+.btn2 {
+    @include btn(mid);
+}
+
+.btn3 {
+    @extend .btn2;
+}

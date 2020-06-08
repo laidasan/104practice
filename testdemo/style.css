@@ -1,0 +1,140 @@
+.container {
+    display: flex;
+    margin: 0 21%;
+    box-shadow: 0 0 0 1px #000;
+    
+
+    margin-bottom: 3rem;
+}
+
+
+.item {
+    flex-grow: 1;
+    box-shadow: 0 0 0 1px #cd0000;
+    text-align: center;
+}
+
+/* .wrap {
+    display: flex;
+    flex-grow: 1;
+} */
+
+@media only screen and (max-width: 720px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .item:nth-child(4) {
+        order: -2;
+    }
+    .item:nth-child(3) {
+        order: -1;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+
+    .container {
+        flex-wrap: wrap;
+    }
+
+}
+
+
+
+
+.container-float {
+    margin: 0 21%;
+    padding: 1px;
+    overflow: hidden;
+}
+
+.item-float {
+    float: left;
+    width: 25%;
+
+    box-shadow: 0 0 0 2px #cd0000;
+    text-align: center;
+}
+
+@media only screen and (max-width: 720px) {
+
+    .item-float {
+        float: none;
+    }
+
+}
+
+
+
+.float {
+    margin: 0 15%;
+    margin-top: 3rem;
+    box-shadow: 0 0 0 1px #cd0000;
+    padding: 1px;
+    overflow: hidden;
+}
+
+.float-wrap {
+
+}
+
+.float__item {
+    float: left;
+    width: calc(100% / 3);
+    text-align: center;
+    height: 150px;
+    line-height: 150px;
+    box-shadow: 0 0 0 1px #00cd00;
+}
+
+@media only screen and (max-width: 900px) {
+    .float {
+        overflow: hidden;
+    }
+    .float-wrap {
+        float: left;
+        width: 50%;
+        box-shadow: 0 0 0 1px #cd0000;
+    }
+    
+    .float-wrap > .float__item {
+        float: none;
+        width: auto;
+    }
+    .float > .float__item {
+        width: 50%;
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .float__item {
+        /* display: block; */
+        float: none;
+        width: auto;
+        height: 150px;
+    }
+    .float-wrap {
+        /* display: block; */
+        float: none;
+        width: auto;
+    }
+    .float > .float__item {
+        width: auto;
+        /* height: 300px; */
+    }
+}
+
+
+.demo {
+}
+
+.demo > .item {
+    
+}
+.demo > .item:nth-child(2) {
+    float: left;
+}
+
+

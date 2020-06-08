@@ -1,0 +1,6 @@
+@mixin btn($size) {
+    @if $size == mid {
+        padding: .9rem 1.5rem;
+        font-size: 1.5rem;
+    }
+}

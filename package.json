@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch:css": "node-sass layoutpractice/0604/scss/main.scss layoutpractice/0604/style/style.css -w",
     "comple" : "node-sass layoutpractice/test/scss/main.scss layoutpractice/test/style/style.css",
-    "concat" : "concat -o layoutpractice/test/style/style.concat.css layoutpractice/test/scss/vender/reset.css layoutpractice/test/style/style.compile.css"
+    "concat" : "concat -o layoutpractice/test/style/style.concat.css layoutpractice/test/scss/vender/reset.css layoutpractice/test/style/style.compile.css",
+    "demo:css" : "node-sass testdemo/scss/main.scss testdemo/style/style.css -w"
   },
   "repository": {
     "type": "git",

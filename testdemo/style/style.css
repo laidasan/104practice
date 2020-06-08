@@ -1,0 +1,10 @@
+.btn:link, .btn:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+  padding: .9rem 1.5rem;
+  font-size: 1.5rem; }
+
+.btn2, .btn3 {
+  padding: .9rem 1.5rem;
+  font-size: 1.5rem; }
