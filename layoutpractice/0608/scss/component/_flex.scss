@@ -9,6 +9,17 @@
         margin-bottom: 2.4rem;
         color: #0057dd;
 
+        &::before {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            padding: .15rem 1.5rem;
+            background: #00c1ff;
+            margin: 0 auto;
+            margin-bottom: 3rem;
+        }
+
         + span {
             font-size: 1.66rem;
             color: rgba(0,0,0,.6);
