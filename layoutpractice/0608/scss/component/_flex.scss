@@ -1,0 +1,51 @@
+.footer {
+    max-width: 885px;
+    margin: 0 auto;
+    text-align: center;
+
+    .footer__title {
+        font-size: 3.3rem;
+        font-weight: bold;
+        margin-bottom: 2.4rem;
+        color: #0057dd;
+
+        + span {
+            font-size: 1.66rem;
+            color: rgba(0,0,0,.6);
+        }
+    }
+
+
+    .footer__tag {
+
+        &:link,
+        &:visited {
+            text-decoration: none;
+            color: #fff;
+            padding: .9rem .9rem;
+            border-radius: 3px;
+            font-size: 1.29rem;
+            font-weight: bold;
+            color: #0057dd;
+            box-shadow: 0 0 0 1px rgba(0,0,0,.15);
+            letter-spacing: .6px;
+            margin-bottom: 1.2rem;
+        }
+
+        &.choose,
+        &:hover {
+            background: #0057dd;
+            color: #fff;
+        }
+
+        &:not(:last-child) {
+            margin-right: 1.11rem;
+        }
+        &Wrap {
+            display: flex;
+            flex-wrap: wrap;
+            padding-top: 3rem;
+            // justify-content: space-between;
+        }
+    }
+}

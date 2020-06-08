@@ -1,0 +1,90 @@
+.part {
+    // #00c1ff; dress
+    // #304EfE; primary
+    // #3b3d42;
+
+    padding: 0 15%;
+    &::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    &-txt {
+        float: left;
+
+        // set width
+        width: 42%;
+
+        // use 負的 marin-left 
+    }
+
+    &__img-box {
+        overflow: hidden;
+
+
+        // if float doesn' set width , use padding-left control img-box
+        // padding-left: 3.6rem;
+
+
+        // use background
+        // bk
+        // background: url("../../img/float_img.webp") no-repeat center / 100%;
+        // padding: 21rem 0;
+
+
+        // use img
+        // img
+         > img {
+            width: 100%;
+            vertical-align: middle;
+        }
+
+        // use 負的 margin-left
+
+    }
+
+    &__title {
+        color: #304efe;
+
+        &--primary {
+            font-size: 3.6rem;
+            font-weight: bold;
+            margin-bottom: 2.4rem;
+        }
+
+        &--sub {
+            font-size: 3rem;
+            margin-bottom: .9rem;
+            word-spacing: -.3rem;
+            &::before {
+                content: '';
+                display: block;
+                width: 0;
+                height: 0;
+                padding: .15rem 1.5rem;
+                margin-bottom: 3rem;
+                background: #00c1ff;
+            }
+        }
+    }
+    
+
+    &__candoList {
+
+        > li {
+            margin-bottom: 1.5rem;
+            > i {
+                font-size: 2.1rem;
+                color: #00c1ff;
+                vertical-align: baseline;
+            }
+            > span {
+                color: #3b3d42;
+                font-size: 1.8rem;
+                padding-left: 1.32rem;
+                font-weight: normal;
+            }
+        }
+    }
+}

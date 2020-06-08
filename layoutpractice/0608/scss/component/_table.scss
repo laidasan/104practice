@@ -1,0 +1,69 @@
+.table--eat {
+    width: 100%;
+    max-width: 1368px;
+    table-layout: fixed;
+    margin: 0 auto;
+    border-collapse: collapse;
+    font-size: 1.42rem;
+    line-height: 1.8;
+
+    thead {
+      
+        th {
+            position: relative;
+            text-align: left;
+            color: #fff;
+            background: #cc9966;
+            padding: 8px;
+            padding-right: 30px;
+            font-weight: bold;
+            border: 1px solid rgba(33,33,33,.15);
+            box-shadow: 0 0 0 1px rgba(255,255,255,.75);
+            cursor: pointer;
+
+
+            &::after,
+            &::before {
+                content: '';
+                position: absolute; right: .6rem; top: 0;
+                color: #ddd;
+                border-style: solid;
+                border-left-color: transparent;
+                border-right-color: transparent;
+            }
+            &::before {
+                top: 15px;
+                border-width: 0 .45rem .6rem;
+            }
+
+            &::after {
+                top: 24px;
+                border-width: .6rem .45rem 0;
+            }
+            
+            &:hover {
+                &::after,
+                &::before {
+                    color: #fff;
+                }
+            }
+
+            &.small {
+                padding-right: 30px;
+                padding-right: 0;
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+
+        }
+        
+        td {
+            padding: 8px;
+            border: 1px solid rgba(33,33,33,.15);
+        }
+    }
+}
