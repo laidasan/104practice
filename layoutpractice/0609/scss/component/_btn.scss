@@ -1,0 +1,30 @@
+.btn {
+    &:link,
+    &:visited {
+        display: inline-block;
+        text-decoration: none;
+        font-size: 1.5rem;
+        color: #000;
+    }
+
+    &--blog {
+        &:link,
+        &:visited {
+            font-size: 1.6rem;
+            color: #fff;
+            font-weight: bold;
+            transition: color .6s;
+        }
+        &:hover {
+            color: #333;
+        }
+    }
+
+
+
+    @include respond(768px) {
+        &--blog {
+            font-size: 1.6rem;
+        }
+    }
+}

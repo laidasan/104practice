@@ -2,7 +2,7 @@ html {
   font-size: 62.5%; }
 
 .section {
-  margin: 3rem 0; }
+  margin: 6rem 0; }
 
 .section__title {
   font-size: 4.2rem;
@@ -55,6 +55,9 @@ ol h2 {
 .heading-fifth {
   font-size: 1.41rem;
   font-weight: bold; }
+
+.u-margin-b-big {
+  margin-bottom: 3rem; }
 
 .banner {
   display: flex;
@@ -133,3 +136,92 @@ ol h2 {
       flex-grow: 0;
       margin: 0;
       flex-basis: 48.5%; } }
+
+.blog {
+  background: #e74e3e; }
+  .blog::after {
+    content: '';
+    display: block;
+    clear: both; }
+  .blog__card {
+    float: left;
+    width: 50%; }
+    .blog__cardWrap::after {
+      content: '';
+      display: block;
+      clear: both; }
+    .blog__card__img-box {
+      float: left;
+      width: 50%; }
+      .blog__card__img-box--right {
+        margin-left: -50%; }
+      .blog__card__img-box > img {
+        vertical-align: middle;
+        width: 100%;
+        object-fit: cover; }
+    .blog__card-txt {
+      overflow: hidden;
+      padding: 4.8rem;
+      padding-right: 3rem;
+      color: #fff;
+      line-height: 1.5; }
+      .blog__card-txt--right {
+        float: left;
+        padding-right: 54%; }
+    .blog__card__title {
+      font-size: 2.4rem;
+      font-weight: bold;
+      line-height: 1.2; }
+      .blog__card__title::after {
+        content: '';
+        display: block;
+        height: 0;
+        width: 0;
+        padding: .09rem 2.4rem;
+        margin: 3rem 0;
+        background: #fff; }
+    .blog__card__article {
+      font-size: 1.5rem;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 3rem; }
+  @media only screen and (max-width: 768px) {
+    .blog__card {
+      float: none;
+      width: auto; }
+      .blog__card:not(:last-child) {
+        margin-bottom: 1.2rem; }
+      .blog__card__img-box {
+        float: none;
+        max-width: 510px;
+        margin: 0 auto;
+        margin-bottom: 4.5rem; }
+      .blog__card-txt {
+        float: none;
+        padding: 0 1.2rem; }
+        .blog__card-txt--right {
+          float: none;
+          width: auto;
+          padding: 0 1.2rem; }
+      .blog__card__title {
+        font-size: 2.1rem; }
+      .blog__card__article {
+        font-size: 1.5rem; } }
+
+.btn:link, .btn:visited {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #000; }
+
+.btn--blog:link, .btn--blog:visited {
+  font-size: 1.6rem;
+  color: #fff;
+  font-weight: bold;
+  transition: color .6s; }
+
+.btn--blog:hover {
+  color: #333; }
+
+@media only screen and (max-width: 768px) {
+  .btn--blog {
+    font-size: 1.6rem; } }
