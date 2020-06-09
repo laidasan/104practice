@@ -1,0 +1,31 @@
+.table {
+    width: 100%;
+    max-width: 1166px;
+    margin: auto;
+    // box-shadow: 0 0 0 1px #cd0000;
+    table-layout: fixed;
+    
+    thead {
+        text-align: left;
+        font-weight: bold;
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+        background: #ccc;
+    }
+
+    tbody {
+        font-size: 1.5rem;
+        font-weight: lighter;
+    }
+
+    tbody tr {
+        border-bottom: 1px solid #ccc;
+
+        &:last-child {
+            font-weight: bold;
+        }
+    }
+    td,th {
+        padding: 3.9rem 2.1rem;
+    }
+}

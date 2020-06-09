@@ -207,6 +207,27 @@ ol h2 {
       .blog__card__article {
         font-size: 1.5rem; } }
 
+.table {
+  width: 100%;
+  max-width: 1166px;
+  margin: auto;
+  table-layout: fixed; }
+  .table thead {
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    background: #ccc; }
+  .table tbody {
+    font-size: 1.5rem;
+    font-weight: lighter; }
+  .table tbody tr {
+    border-bottom: 1px solid #ccc; }
+    .table tbody tr:last-child {
+      font-weight: bold; }
+  .table td, .table th {
+    padding: 3.9rem 2.1rem; }
+
 .btn:link, .btn:visited {
   display: inline-block;
   text-decoration: none;
