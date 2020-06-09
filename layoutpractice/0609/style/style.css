@@ -29,7 +29,8 @@ html {
 .todayReading p {
   font-size: 1.5rem;
   padding: 1.2rem 0;
-  padding-left: 4.2rem; }
+  padding-left: 4.2rem;
+  line-height: 1.5; }
 
 ol a:link,
 ol a:visited {
@@ -43,3 +44,92 @@ ol a:hover {
 ol h2 {
   font-size: 4.2rem;
   margin-bottom: 1.5rem; }
+
+.template {
+  margin-bottom: 3rem; }
+
+.heading-secondary {
+  font-size: 5.1rem;
+  font-weight: bold; }
+
+.heading-fifth {
+  font-size: 1.41rem;
+  font-weight: bold; }
+
+.banner {
+  display: flex;
+  padding: 0 9.3%;
+  color: #fff; }
+  .banner-left {
+    display: flex;
+    flex-basis: 68.1%;
+    background: #3b3d43; }
+    .banner-left__txt {
+      flex-basis: 30%;
+      padding: 4.5rem 0;
+      padding-bottom: 0; }
+    .banner-left__img-box {
+      flex: 1; }
+      .banner-left__img-box > img {
+        vertical-align: middle;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
+    .banner-left__title {
+      font-size: 1.92rem;
+      padding-left: 2.1rem;
+      word-spacing: 3.3px;
+      margin-bottom: 3.3rem; }
+    .banner-left__list {
+      padding: 0 2.1rem; }
+      .banner-left__listItem {
+        position: relative;
+        margin-bottom: 3rem;
+        padding-left: 3.9rem;
+        line-height: 1.5; }
+        .banner-left__listItem > h5::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 3rem;
+          height: 3rem;
+          border-radius: 50%;
+          background: #fff;
+          vertical-align: middle; }
+        .banner-left__listItem > p {
+          font-size: 1.2rem;
+          color: #777; }
+  .banner-right {
+    flex: 1;
+    margin-left: 1.7rem;
+    background: url("../../img/banner-7_1.webp") no-repeat center top/cover; }
+    .banner-right__txt {
+      text-align: center;
+      margin-top: 3.9rem;
+      line-height: 1.5; }
+      .banner-right__txt > span {
+        font-size: 1.71rem; }
+    .banner-right__title {
+      font-size: 7.2rem;
+      font-weight: bold; }
+  @media only screen and (max-width: 1200px) {
+    .banner-left {
+      display: block;
+      flex-basis: 48.5%;
+      margin-right: 3%; }
+      .banner-left__txt {
+        padding: 6rem 4.5rem 9rem 4.5rem; }
+      .banner-left__img-box {
+        display: none; }
+      .banner-left__title {
+        margin-bottom: 2.7rem; }
+      .banner-left__list {
+        padding: 0;
+        padding-left: 1.2rem; }
+        .banner-left__listItem {
+          margin-bottom: 3rem; }
+    .banner-right {
+      flex-grow: 0;
+      margin: 0;
+      flex-basis: 48.5%; } }
