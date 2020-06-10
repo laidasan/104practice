@@ -1,0 +1,11 @@
+@mixin respond($width) {
+    @media only screen and (max-width: $width) { @content }
+};
+
+@mixin clear {
+    &::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}

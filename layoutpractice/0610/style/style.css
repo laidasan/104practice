@@ -1,0 +1,180 @@
+html {
+  font-size: 62.5%; }
+
+.section {
+  margin: 3rem 0; }
+
+.section__title {
+  font-size: 4.2rem;
+  margin-bottom: 1.8rem;
+  text-align: center; }
+
+.template {
+  margin-bottom: 3.3rem; }
+
+.todayReading {
+  /* content: counter(read); */
+  counter-reset: read 0;
+  min-width: 540px;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 3rem; }
+
+.todayReading > li {
+  margin-bottom: 1.5rem; }
+
+.todayReading > .counter::before {
+  content: counters(read, "-") " ";
+  counter-increment: read;
+  font-size: 1.5rem;
+  margin-right: 1.2rem; }
+
+.todayReading p {
+  font-size: 1.5rem;
+  padding: 1.2rem 0;
+  padding-left: 4.2rem;
+  line-height: 1.5; }
+
+ol a:link,
+ol a:visited {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.8rem; }
+
+ol a:hover {
+  color: #cd0000; }
+
+ol h2 {
+  font-size: 4.2rem;
+  margin-bottom: 1.5rem; }
+
+.base-link:link, .base-link:visited {
+  text-decoration: none;
+  color: #000; }
+
+.t-cn {
+  text-align: center; }
+
+.heading-thread {
+  font-size: 2.82rem;
+  font-weight: bold; }
+
+.heading-fourth {
+  font-size: 1.8rem;
+  font-weight: bold; }
+
+.heading-fifth {
+  font-size: 1.41rem;
+  font-weight: bold; }
+
+.u-margin-b-s {
+  margin-bottom: 1.8rem; }
+
+.footer {
+  background: #E5E6E7;
+  padding: 6rem 5.7% 3rem; }
+  .footer-body {
+    margin-left: .9%;
+    display: flex;
+    padding: 3rem 0; }
+    .footer-body-left {
+      flex: 1;
+      flex-basis: 50%; }
+      .footer-body-left__txt h5:first-child {
+        margin-bottom: 2.1rem; }
+      .footer-body-left__txt h5:nth-child(2) {
+        margin-bottom: 1.2rem; }
+    .footer-body-right {
+      flex: 1;
+      flex-basis: 50%;
+      display: flex;
+      justify-content: space-between; }
+      .footer-body-right-l {
+        flex-grow: 1;
+        display: flex;
+        padding-left: 5.7rem; }
+      .footer-body-right-r {
+        flex-basis: 24%; }
+      .footer-body-right .title {
+        font-size: 2.1rem;
+        font-weight: bold; }
+        .footer-body-right .title--shop {
+          font-size: 1.8rem; }
+  .footer-bottom {
+    box-shadow: 0 0 0 1px #00cdcd;
+    margin-left: .9%; }
+    .footer-bottom::after {
+      content: '';
+      display: block;
+      clear: both; }
+    .footer-bottom__nav {
+      float: right;
+      font-size: 1.4rem;
+      font-weight: bold; }
+      .footer-bottom__nav > a:first-child {
+        margin-right: 1.8rem; }
+      .footer-bottom__nav > a {
+        text-transform: uppercase; }
+  .footer__social {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5.4rem; }
+    .footer__social__title {
+      text-transform: uppercase;
+      margin-right: 3rem; }
+    .footer__socialList {
+      display: flex; }
+      .footer__socialList > li {
+        margin-right: 2.7rem;
+        color: #fff; }
+        .footer__socialList > li > i {
+          vertical-align: top;
+          display: inline-block;
+          width: 3.3rem;
+          height: 3.3rem;
+          border-radius: 50%;
+          background: #000; }
+  .footer__nav {
+    font-size: 2.1rem;
+    font-weight: bold;
+    flex-basis: 45%; }
+    .footer__nav a:link, .footer__nav a:visited {
+      display: block;
+      margin-bottom: 1.5rem; }
+  .footer__product {
+    flex-grow: 1; }
+    .footer__product > .title {
+      margin-bottom: 1.2rem; }
+    .footer__productNav {
+      font-size: 1.56rem;
+      font-weight: bold; }
+      .footer__productNav a:link, .footer__productNav a:visited {
+        position: relative;
+        display: block;
+        padding-left: 1.8rem;
+        margin-bottom: 1.5rem; }
+      .footer__productNav a::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 0;
+        height: 0;
+        padding: .09rem .5rem;
+        background: #000; }
+  .footer__copyright {
+    color: #333; }
+
+.btn:link, .btn:visited {
+  display: inline-block; }
+
+.btn--footer:link, .btn--footer:visited {
+  display: block;
+  text-align: center;
+  font-size: 1.8rem;
+  color: #fff;
+  background: #000;
+  padding: 1.2rem 0;
+  margin-bottom: 1.2rem; }

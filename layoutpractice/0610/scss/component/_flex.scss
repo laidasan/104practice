@@ -1,0 +1,158 @@
+.footer {
+    background: #E5E6E7;
+    // box-shadow: 0 0 0 1px #cd0000;
+    padding: 6rem 5.7% 3rem;
+
+
+    &-body {
+        margin-left: .9%;
+        display: flex;
+        // margin-bottom: 3rem;
+        padding: 3rem 0;
+        
+        &-left {
+            flex: 1;
+            flex-basis: 50%;
+
+            &__txt {
+
+                h5:first-child {
+                    margin-bottom: 2.1rem;
+                }
+                h5:nth-child(2) {
+                    margin-bottom: 1.2rem;
+                }
+            }
+        }
+
+        &-right {
+            flex: 1;
+            flex-basis: 50%;
+
+            display: flex;
+            justify-content: space-between;
+
+            &-l {
+                flex-grow: 1;
+                display: flex;
+                padding-left: 5.7rem;
+            }
+
+            &-r {
+                flex-basis: 24%;
+            }
+
+            .title {
+                font-size: 2.1rem;
+                font-weight: bold;
+
+                &--shop {
+                    font-size: 1.8rem;
+                }
+            }
+        }
+
+    }
+
+    &-bottom {
+        box-shadow: 0 0 0 1px #00cdcd;
+        // padding: 3rem 0;
+        margin-left: .9%;
+        
+        @include clear;
+        &__nav {
+            float: right;
+            font-size: 1.4rem;
+            font-weight: bold;
+            
+            > a:first-child {
+                margin-right: 1.8rem;
+            }
+
+            > a {
+                text-transform: uppercase;
+            }
+        }
+    }
+
+
+    &__social {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5.4rem;
+
+
+        &__title {
+            text-transform: uppercase;
+            margin-right: 3rem;
+        }
+        
+        &List {
+            display: flex;
+            > li {
+                margin-right: 2.7rem;
+                color: #fff;
+                > i {
+                    vertical-align: top;
+                    display: inline-block;
+                    width: 3.3rem;
+                    height: 3.3rem;
+                    border-radius: 50%;
+                    background: #000;
+                }
+            }
+        }
+    }
+
+    &__nav {
+        font-size: 2.1rem;
+        font-weight: bold;
+    
+
+        flex-basis: 45%;
+        a {
+            &:link,
+            &:visited {
+                display: block;
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+    
+    &__product {
+        flex-grow: 1;
+
+        > .title {
+            margin-bottom: 1.2rem;
+        }
+        &Nav {
+            font-size: 1.56rem;
+            font-weight: bold;
+
+            a {
+                &:link,
+                &:visited {
+                    position: relative;
+                    display: block;
+                    padding-left: 1.8rem;
+                    margin-bottom: 1.5rem;
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0; top: 0; bottom: 0;
+                    margin: auto;
+                    width: 0;
+                    height: 0;
+                    padding: .09rem .5rem;
+                    background: #000;
+                }
+            }
+        }
+    }
+
+    &__copyright {
+        color: #333;
+    }
+}
