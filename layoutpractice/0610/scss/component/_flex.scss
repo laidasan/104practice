@@ -7,8 +7,8 @@
     &-body {
         margin-left: .9%;
         display: flex;
-        // margin-bottom: 3rem;
         padding: 3rem 0;
+        margin-bottom: 3rem;
         
         &-left {
             flex: 1;
@@ -55,8 +55,6 @@
     }
 
     &-bottom {
-        box-shadow: 0 0 0 1px #00cdcd;
-        // padding: 3rem 0;
         margin-left: .9%;
         
         @include clear;

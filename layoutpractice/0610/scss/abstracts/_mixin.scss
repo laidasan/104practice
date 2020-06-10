@@ -8,4 +8,11 @@
         display: block;
         clear: both;
     }
-}
+};
+
+@mixin link {
+    &:link,
+    &:visited {
+        @content
+    }
+};

@@ -1,0 +1,68 @@
+.blog {
+    background: #00FFBD;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 3rem 7.5rem;
+    @include clear;
+
+
+
+
+    &-title {
+        float: left;
+        margin-top: 5.4rem;
+        width: 37.5%;
+
+
+        &--primary {
+            font-size: 4.5rem;
+            font-weight: bold;
+        }
+        &--sub {
+            font-size: 1.8rem;
+        }
+    }
+
+    &-article {
+        width: 62.5%;
+        float: left;
+
+        &-row {
+            @include clear;
+        }
+    }
+
+    &__card {
+        float: left;
+        width: 48%;
+
+        &:nth-child(odd) {
+            margin-right: 4%;
+        }
+
+        &__img-box {
+            > img {
+                width: 100%;
+                object-fit: cover;
+                vertical-align: middle;
+            }
+        }
+
+        &__title {
+            position: relative;
+            font-size: 1.8rem;
+
+        }
+
+        &__content {
+            line-height: 1.8;
+            margin-bottom: .9rem;
+        }
+
+        &__link {
+          @include link {
+              color: #000;
+          }  
+        }
+    }
+}

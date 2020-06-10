@@ -67,8 +67,17 @@ ol h2 {
   font-size: 1.41rem;
   font-weight: bold; }
 
+.u-margin-b-ss {
+  margin-bottom: 1.2rem; }
+
 .u-margin-b-s {
   margin-bottom: 1.8rem; }
+
+.u-margin-b-m {
+  margin-bottom: 2.4rem; }
+
+.u-margin-b-b {
+  margin-bottom: 6rem; }
 
 .footer {
   background: #E5E6E7;
@@ -76,7 +85,8 @@ ol h2 {
   .footer-body {
     margin-left: .9%;
     display: flex;
-    padding: 3rem 0; }
+    padding: 3rem 0;
+    margin-bottom: 3rem; }
     .footer-body-left {
       flex: 1;
       flex-basis: 50%; }
@@ -101,7 +111,6 @@ ol h2 {
         .footer-body-right .title--shop {
           font-size: 1.8rem; }
   .footer-bottom {
-    box-shadow: 0 0 0 1px #00cdcd;
     margin-left: .9%; }
     .footer-bottom::after {
       content: '';
@@ -166,6 +175,49 @@ ol h2 {
         background: #000; }
   .footer__copyright {
     color: #333; }
+
+.blog {
+  background: #00FFBD;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 3rem 7.5rem; }
+  .blog::after {
+    content: '';
+    display: block;
+    clear: both; }
+  .blog-title {
+    float: left;
+    margin-top: 5.4rem;
+    width: 37.5%; }
+    .blog-title--primary {
+      font-size: 4.5rem;
+      font-weight: bold; }
+    .blog-title--sub {
+      font-size: 1.8rem; }
+  .blog-article {
+    width: 62.5%;
+    float: left; }
+    .blog-article-row::after {
+      content: '';
+      display: block;
+      clear: both; }
+  .blog__card {
+    float: left;
+    width: 48%; }
+    .blog__card:nth-child(odd) {
+      margin-right: 4%; }
+    .blog__card__img-box > img {
+      width: 100%;
+      object-fit: cover;
+      vertical-align: middle; }
+    .blog__card__title {
+      position: relative;
+      font-size: 1.8rem; }
+    .blog__card__content {
+      line-height: 1.8;
+      margin-bottom: .9rem; }
+    .blog__card__link:link, .blog__card__link:visited {
+      color: #000; }
 
 .table {
   box-shadow: 0 0 0 1px #000;
