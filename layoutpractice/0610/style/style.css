@@ -167,6 +167,56 @@ ol h2 {
   .footer__copyright {
     color: #333; }
 
+.table {
+  box-shadow: 0 0 0 1px #000;
+  table-layout: fixed;
+  font-size: 1.32rem;
+  color: #fff; }
+  .table thead {
+    background: #82c7f3; }
+  .table th.day {
+    padding: 1.2rem .36rem; }
+  .table tr {
+    box-shadow: 0 1px 0 1px #fff; }
+  .table td {
+    position: relative;
+    box-shadow: 0 0 0 0.3px rgba(130, 199, 243, 0.6);
+    padding: 1.2rem 0; }
+    .table td[colspan] {
+      background: #82c7f3;
+      box-shadow: 0 0 0 1px #fff; }
+    .table td.time {
+      padding-left: 1rem; }
+  .table span.open {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background: #82c7f3; }
+  .table span.close::after, .table span.close::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 1px;
+    height: 10px;
+    background: #82c7f3;
+    transform-origin: center; }
+  .table span.close::after {
+    transform: rotateZ(45deg); }
+  .table span.close::before {
+    transform: rotateZ(-45deg); }
+  .table span.type {
+    position: relative; }
+
 .btn:link, .btn:visited {
   display: inline-block; }
 

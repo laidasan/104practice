@@ -1,0 +1,75 @@
+.table {
+    box-shadow: 0 0 0 1px #000;
+    table-layout: fixed;
+    font-size: 1.32rem;
+    color: #fff;
+
+    thead {
+        background: #82c7f3;
+    }
+
+    th.day {
+        padding: 1.2rem .36rem;
+    }
+
+    tr {
+        box-shadow: 0 1px 0 1px #fff;
+    }
+
+
+    td {
+        position: relative;
+        box-shadow: 0 0 0 .3px rgba(130,199,243,.6);
+        padding: 1.2rem 0;
+
+        &[colspan] {
+            background: #82c7f3;
+            box-shadow: 0 0 0 1px #fff;
+        }
+
+        &.time {
+            padding-left: 1rem;
+
+            span {
+                // margin-left: 1.2rem;
+            }
+        }
+    }
+    span {
+
+        &.open {
+            position: absolute;
+            left: 0; right: 0; top: 0; bottom: 0;
+            margin: auto;
+            width: 1.2rem;
+            height: 1.2rem;
+            border-radius: 50%;
+            background: #82c7f3;
+        }
+
+        &.close {
+            &::after ,
+            &::before {
+                content: '';
+                position: absolute; left: 0; right: 0; top: 0; bottom: 0;
+                margin: auto;
+                width: 1px;
+                height: 10px;
+                background: #82c7f3;
+                transform-origin: center;
+            }
+
+            &::after {
+                transform: rotateZ(45deg);
+            }
+            &::before {
+                transform: rotateZ(-45deg);
+            }
+        }
+
+        &.type {
+            position: relative;
+        }
+
+    }
+}
