@@ -1,0 +1,36 @@
+@mixin respond($width) {
+    @media only screen and (max-width: $width) { @content }
+};
+
+@mixin clear {
+    &::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+};
+
+@mixin link {
+    &:link,
+    &:visited {
+        @content
+    }
+};
+
+@mixin btn-base($shadow-border:true,$f-size:1.5rem,$p-tb:1.2rem,$p-rl:1.8rem) {
+    &:link,
+    &:visited {
+        display: inline-block;
+        text-decoration: none;
+        color: #000;
+        font-size: $f-size;
+        padding: $p-tb,$p-rl;
+        @if $shadow-border {box-shadow: 0 0 0 1px #000;}
+    }
+};
+
+@mixin gird-sys($col-nm,$col-gutter) {
+    margin-right: $col-gutter;
+    width: calc((100% - ($col-nm - 1) * $col-gutter) / $col-nm);
+    &:nth-child(#{$col-nm}n) {margin-right: 0;}
+};
