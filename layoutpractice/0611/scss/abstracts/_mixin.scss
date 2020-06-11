@@ -1,6 +1,9 @@
 @mixin respond($width) {
     @media only screen and (max-width: $width) { @content }
 };
+@mixin respond-up($width) {
+    @media only screen and (min-width: $width) {@content}
+};
 
 @mixin clear {
     &::after {

@@ -1,0 +1,98 @@
+.profile {
+    &__card {
+        display: flex;
+
+        &__img-box {
+            flex-grow: 1;
+            flex-basis: 48%;
+            margin-right: 3%;
+            border-radius: 12px 0 0 12px;
+
+
+            &.female {
+                background: url("../../img/staff_l.jpg") no-repeat 81% top / cover;
+            }
+            &.male {
+                background: url("../../img/staff_s.jpg") no-repeat center top / cover;
+            }
+        }
+
+        &.male {
+            margin-bottom: 2.4rem;
+        }
+        &.male > &-txt {
+            order: -1;
+        }
+
+        &-txt {
+            flex-grow: 1;
+            flex-basis: 48%;
+            padding: 12rem 0;
+        }
+
+        &__content {
+            margin-left: 1.8rem;
+        }
+
+        &__year {
+            font-size: 1.41rem;
+            margin-bottom: 1.2rem;
+            letter-spacing: 1px;
+        }
+        &__month {
+            font-size: 1.8rem;
+            letter-spacing: 3px;
+            margin-bottom: 1.41rem;
+        }
+
+        &__work ,
+        &__name {
+            font-size: 1.32rem;
+            letter-spacing: .3px;
+            margin-bottom: .9rem;
+        }
+    }
+
+    @include respond-up(640px) {
+        &__card {
+            display: block;
+            flex-basis: 50%;
+            &.male {
+                display: flex;
+                margin-bottom: 1.5rem;
+            }
+
+            &.male > &-txt {
+                order: initial;
+            }
+
+            
+            
+            &.female > &__img-box {
+                padding: 9rem 0;
+                margin: 0;
+                background-position: center;
+                margin-bottom: 1.5rem;
+            }
+
+            &.female > &-txt {
+                padding: 0;
+            }   
+            
+            &.male > &__img-box {
+            }
+            &.male > &-txt {
+                padding: 0;
+                padding: 2.1rem 0;
+            }    
+
+            &.male  &__content {
+                margin-left: .9rem;
+            }
+        }
+    }
+
+    @include respond-up(766px) {
+
+    }
+}

@@ -68,7 +68,7 @@ ol h2 {
 
 img {
     position: relative;
-    // display: inline-block;
+    display: inline-block;
     // width: 100%;
     vertical-align: middle;
 
@@ -78,7 +78,7 @@ img {
     }
 
     &::before {
-        content: '餐扣的img';
+        // content: '餐扣的img';
         display: block;
         visibility: visible;
         padding: 12rem 0;
