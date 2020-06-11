@@ -14,20 +14,7 @@ html {
     margin-bottom: 3.3rem;
 }
 
-.section-flex {
-
-}
-
-.section-float {
-
-}
-
-.section-table {
-
-}
-
 .todayReading {
-    /* content: counter(read); */
     counter-reset: read 0;
     min-width: 540px;
     max-width: 600px;
@@ -71,8 +58,4 @@ ol h2 {
         text-decoration: none;
         color: #000;
     }
-}
-
-.t-cn {
-    text-align: center;
 }
