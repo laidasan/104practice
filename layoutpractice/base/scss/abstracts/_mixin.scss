@@ -29,8 +29,8 @@
     }
 };
 
-@mixin gird-sys($col-nm,$col-gutter) {
-    margin-right: $col-gutter;
-    width: calc((100% - ($col-nm - 1) * $col-gutter) / $col-nm);
-    &:nth-child(#{$col-nm}n) {margin-right: 0;}
+@mixin grid-sys($col-nm,$col-gutter:3) {
+    margin-right: percentage(3 / 100);
+    width: percentage( ((100 - $col-gutter * ($col-nm - 1)) / 3) / 100);
+    &:nth-child(#{$col-nm}n) { margin-right: 0; }
 };
