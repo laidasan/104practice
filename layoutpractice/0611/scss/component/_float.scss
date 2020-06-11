@@ -1,0 +1,81 @@
+.card {
+    &-container {
+        @include clear;
+        padding: 3rem 17%;
+        background: url(../../img/tail-body.gif);
+    }
+
+    @include grid-sys(4,1);
+    float: left;
+    text-align: center;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.41);
+    border-radius: 6px;
+    padding: 3rem 0;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 0 0 0 1px rgba(0,0,0,.41),
+                    3px 3px 3px 3px rgba(0,0,0,.45);
+
+        transform: translate(-3px,-3px);
+
+        .card__title {
+            color: #333;
+        }
+
+        .card__content {
+            color: #333;
+        }
+        .card__more {
+            @include link {
+                color: #333;
+            }
+        }
+    }
+
+    &__logo {
+        position: relative; top: -5.4rem;
+        margin: 0 auto;
+        margin-bottom: -5.4rem;
+
+        &.tools {
+            content: url(../../img/page1-img1.png);
+        }
+
+        &.network {
+            content: url(../../img/page1-img2.png);
+        }
+
+        &.database {
+            content: url(../../img/page1-img3.png);
+        }
+
+        &.webdv {
+            content: url(../../img/page1-img4.png);
+        }
+    }
+
+    &__title {
+        font-size: 1.8rem;
+        color: #ce9a00;
+        font-weight: bold;
+        margin: 1.2rem 0;
+    }
+
+    &__content {
+        line-height: $base-lh;
+        font-size: 1.4rem;
+        padding: 0 1.6rem;
+        margin-bottom: 1.5rem;
+        color: rgba(0,0,0,.41);
+    }
+
+    &__more {
+        @include link {
+            display: inline-block;
+            text-transform: uppercase;
+            color: #ce9a00;
+            font-size: 1.3rem;
+        }
+    }
+}

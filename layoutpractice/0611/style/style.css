@@ -1,0 +1,149 @@
+@charset "UTF-8";
+html {
+  font-size: 62.5%; }
+
+.section {
+  margin: 3rem 0; }
+
+.section__title {
+  font-size: 4.2rem;
+  margin-bottom: 1.8rem;
+  text-align: center; }
+
+.template {
+  margin-bottom: 3.3rem; }
+
+.todayReading {
+  /* content: counter(read); */
+  counter-reset: read 0;
+  min-width: 540px;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 3rem; }
+
+.todayReading > li {
+  margin-bottom: 1.5rem; }
+
+.todayReading > .counter::before {
+  content: counters(read, "-") " ";
+  counter-increment: read;
+  font-size: 1.5rem;
+  margin-right: 1.2rem; }
+
+.todayReading p {
+  font-size: 1.5rem;
+  padding: 1.2rem 0;
+  padding-left: 4.2rem;
+  line-height: 1.5; }
+
+ol a:link,
+ol a:visited {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.8rem; }
+
+ol a:hover {
+  color: #cd0000; }
+
+ol h2 {
+  font-size: 4.2rem;
+  margin-bottom: 1.5rem; }
+
+.base-link:link, .base-link:visited {
+  text-decoration: none;
+  color: #000; }
+
+.t-cn {
+  text-align: center; }
+
+img {
+  position: relative;
+  vertical-align: middle; }
+  img:not([src]) {
+    visibility: hidden; }
+  img::before {
+    content: '餐扣的img';
+    display: block;
+    visibility: visible;
+    padding: 12rem 0;
+    text-align: center;
+    font-size: 2.4rem;
+    color: #fff;
+    background: #aaa; }
+
+.u-margin-b-ss {
+  margin-bottom: 1.2rem; }
+
+.u-margin-b-s {
+  margin-bottom: 1.8rem; }
+
+.u-margin-b-m {
+  margin-bottom: 2.4rem; }
+
+.u-margin-b-b {
+  margin-bottom: 3.6rem; }
+
+.card {
+  margin-right: 1%;
+  width: 24.25%;
+  float: left;
+  text-align: center;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.41);
+  border-radius: 6px;
+  padding: 3rem 0;
+  cursor: pointer; }
+  .card-container {
+    padding: 3rem 17%;
+    background: url(../../img/tail-body.gif); }
+    .card-container::after {
+      content: '';
+      display: block;
+      clear: both; }
+  .card:nth-child(4n) {
+    margin-right: 0; }
+  .card:hover {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.41), 3px 3px 3px 3px rgba(0, 0, 0, 0.45);
+    transform: translate(-3px, -3px); }
+    .card:hover .card__title {
+      color: #333; }
+    .card:hover .card__content {
+      color: #333; }
+    .card:hover .card__more:link, .card:hover .card__more:visited {
+      color: #333; }
+  .card__logo {
+    position: relative;
+    top: -5.4rem;
+    margin: 0 auto;
+    margin-bottom: -5.4rem; }
+    .card__logo.tools {
+      content: url(../../img/page1-img1.png); }
+    .card__logo.network {
+      content: url(../../img/page1-img2.png); }
+    .card__logo.database {
+      content: url(../../img/page1-img3.png); }
+    .card__logo.webdv {
+      content: url(../../img/page1-img4.png); }
+  .card__title {
+    font-size: 1.8rem;
+    color: #ce9a00;
+    font-weight: bold;
+    margin: 1.2rem 0; }
+  .card__content {
+    line-height: 1.5;
+    font-size: 1.4rem;
+    padding: 0 1.6rem;
+    margin-bottom: 1.5rem;
+    color: rgba(0, 0, 0, 0.41); }
+  .card__more:link, .card__more:visited {
+    display: inline-block;
+    text-transform: uppercase;
+    color: #ce9a00;
+    font-size: 1.3rem; }
+
+.btn:link, .btn:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+  font-size: 1.5rem;
+  padding: 1.2rem, 1.8rem;
+  box-shadow: 0 0 0 1px #000; }
