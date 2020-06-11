@@ -140,6 +140,61 @@ img {
     color: #ce9a00;
     font-size: 1.3rem; }
 
+.calendar {
+  width: 100%;
+  max-width: 602px;
+  margin: 0 auto;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 3px 5px;
+  font-weight: bold; }
+  .calendar .work {
+    color: #004566; }
+  .calendar .sat {
+    color: #0099ee; }
+  .calendar th {
+    font-size: 1.5rem;
+    letter-spacing: 2px; }
+    .calendar th.break {
+      color: #bc0000; }
+  .calendar td {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
+    font-size: 2.4rem;
+    padding-left: 1.2rem;
+    padding-top: .3rem;
+    letter-spacing: 1px;
+    color: #004566;
+    vertical-align: top; }
+    .calendar td.break {
+      color: #bc0000;
+      box-shadow: none;
+      background-color: rgba(188, 0, 0, 0.15); }
+      .calendar td.break--work > span {
+        color: #004566; }
+    .calendar td.last {
+      padding-left: .3rem;
+      padding-bottom: 4.5rem;
+      color: #ccc; }
+    .calendar td.sat > span {
+      color: #0099ee; }
+    .calendar td > p {
+      font-size: 1.4rem;
+      text-align: center;
+      margin: 1.2rem 0 .9rem;
+      margin-left: -1.2rem; }
+    .calendar td > .wrap {
+      margin-left: -1.2rem;
+      padding-left: .6rem;
+      padding-bottom: .6rem;
+      font-size: 1.5rem;
+      border-bottom: 3px solid #fff; }
+      .calendar td > .wrap:nth-child(2n) {
+        border: none; }
+      .calendar td > .wrap > p {
+        text-align: right;
+        padding-right: 1.2rem;
+        font-size: 1.4rem; }
+
 .btn:link, .btn:visited {
   display: inline-block;
   text-decoration: none;
