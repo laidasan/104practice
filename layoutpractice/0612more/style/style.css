@@ -1,0 +1,124 @@
+html {
+  font-size: 62.5%; }
+
+.section {
+  margin: 3rem 0; }
+
+.section__title {
+  font-size: 4.2rem;
+  margin-bottom: 1.8rem;
+  text-align: center; }
+
+.template {
+  margin-bottom: 3.3rem; }
+
+.todayReading {
+  counter-reset: read 0;
+  min-width: 540px;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 3rem; }
+
+.todayReading > li {
+  margin-bottom: 1.5rem; }
+
+.todayReading > .counter::before {
+  content: counters(read, "-") " ";
+  counter-increment: read;
+  font-size: 1.5rem;
+  margin-right: 1.2rem; }
+
+.todayReading p {
+  font-size: 1.5rem;
+  padding: 1.2rem 0;
+  padding-left: 4.2rem;
+  line-height: 1.5; }
+
+ol a:link,
+ol a:visited {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.8rem; }
+
+ol a:hover {
+  color: #cd0000; }
+
+ol h2 {
+  font-size: 4.2rem;
+  margin-bottom: 1.5rem; }
+
+.base-link:link, .base-link:visited {
+  text-decoration: none;
+  color: #000; }
+
+.product {
+  padding: 0 18%; }
+  .product::after {
+    content: '';
+    display: block;
+    clear: both; }
+  .product__img-box {
+    float: left;
+    width: 45%; }
+    .product__img-box > img {
+      width: 100%;
+      vertical-align: middle; }
+  .product__title {
+    float: right;
+    width: 55%;
+    font-size: 3.6rem;
+    font-weight: bold;
+    margin-bottom: 7.5rem;
+    padding: .9rem 0; }
+  .product-info {
+    text-align: left;
+    overflow: hidden;
+    padding: 1px;
+    margin-bottom: 4.5rem; }
+    .product-info::after {
+      content: '';
+      display: block;
+      clear: both; }
+    .product-info__descrip {
+      float: left;
+      margin-right: 3%;
+      width: 48.5%;
+      box-shadow: 0 0 0 1px #000;
+      padding: 4.5rem 0;
+      margin-bottom: 1.2rem; }
+      .product-info__descrip:nth-child(2n) {
+        margin-right: 0; }
+  @media only screen and (max-width: 990px) {
+    .product {
+      text-align: center; }
+      .product__title {
+        float: none;
+        width: auto;
+        margin: 0; }
+      .product__img-box {
+        width: auto;
+        float: none; } }
+  @media only screen and (max-width: 1200px) {
+    .product__title {
+      margin-bottom: 4.5rem; }
+    .product-info {
+      margin-bottom: 3rem; } }
+
+.btn:link, .btn:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+  font-size: 1.5rem;
+  padding: 1.2rem, 1.8rem;
+  box-shadow: 0 0 0 1px #000; }
+
+.btn--room:link, .btn--room:visited {
+  padding: 1.8rem 4.5rem;
+  background: rgba(82, 104, 104, 0.8);
+  color: #fff;
+  box-shadow: none;
+  border-radius: 6px; }
+
+@media only screen and (max-width: 990px) {
+  .btn--room:link, .btn--room:visited {
+    padding: 1.8rem 7.5rem; } }

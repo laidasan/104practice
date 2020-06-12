@@ -1,0 +1,57 @@
+@mixin respond-down($width) {
+    @media only screen and (max-width: $width) { @content }
+};
+@mixin respond-up($width) {
+    @media only screen and (min-width: $width) {@content}
+};
+
+$breakpoints: (
+    'desktop': 1024px,
+    'ipad': 990px,
+    'mobile': 660px
+);
+@mixin respond($breakpoint) {
+    @media only screen and (max-width: map-get($breakpoints,$breakpoint)){@content}
+};
+
+
+@mixin clear {
+    &::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+};
+
+
+
+@mixin link {
+    &:link,
+    &:visited {
+        @content
+    }
+};
+
+@mixin btn-base($shadow-border:true,$f-size:1.5rem,$p-tb:1.2rem,$p-rl:1.8rem) {
+    &:link,
+    &:visited {
+        display: inline-block;
+        text-decoration: none;
+        color: #000;
+        font-size: $f-size;
+        padding: $p-tb,$p-rl;
+        @if $shadow-border {box-shadow: 0 0 0 1px #000;}
+    }
+};
+
+
+@mixin grid-sys($col-nm,$col-gutter:3,$float:false,$width:100) {
+    @if $float {float: left;}
+    margin-right: percentage($col-gutter / 100);
+    width: percentage( (($width - $col-gutter * ($col-nm - 1)) / $col-nm) / $width);
+    &:nth-child(#{$col-nm}n) { margin-right: 0; }
+};
+
+@mixin table-sys($col-nm,$width) {
+}
+

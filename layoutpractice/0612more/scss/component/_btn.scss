@@ -1,0 +1,25 @@
+.btn {
+    @include btn-base(true);
+
+    &--room {
+        @include link {
+            padding:  1.8rem 4.5rem;
+            background: rgba(82, 104, 104,.8);
+            color: #fff;
+            box-shadow: none;
+            border-radius: 6px;
+        }
+    }
+
+
+    @include respond-down(990px) {
+        &--room {
+            @include link {
+                padding: 1.8rem 7.5rem;
+                // display: block;
+                // padding: 1.8rem 0;
+                // text-align: center;
+            }
+        }
+    }
+}
