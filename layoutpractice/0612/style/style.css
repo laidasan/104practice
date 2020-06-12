@@ -1,0 +1,81 @@
+html {
+  font-size: 62.5%; }
+
+.section {
+  margin: 3rem 0; }
+
+.section__title {
+  font-size: 4.2rem;
+  margin-bottom: 1.8rem;
+  text-align: center; }
+
+.template {
+  margin-bottom: 3.3rem; }
+
+.todayReading {
+  counter-reset: read 0;
+  min-width: 540px;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 3rem; }
+
+.todayReading > li {
+  margin-bottom: 1.5rem; }
+
+.todayReading > .counter::before {
+  content: counters(read, "-") " ";
+  counter-increment: read;
+  font-size: 1.5rem;
+  margin-right: 1.2rem; }
+
+.todayReading p {
+  font-size: 1.5rem;
+  padding: 1.2rem 0;
+  padding-left: 4.2rem;
+  line-height: 1.5; }
+
+ol a:link,
+ol a:visited {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.8rem; }
+
+ol a:hover {
+  color: #cd0000; }
+
+ol h2 {
+  font-size: 4.2rem;
+  margin-bottom: 1.5rem; }
+
+.base-link:link, .base-link:visited {
+  text-decoration: none;
+  color: #000; }
+
+.u-margin-b-ss {
+  margin-bottom: 1.2rem; }
+
+.u-margin-b-s {
+  margin-bottom: 1.8rem; }
+
+.u-margin-b-m {
+  margin-bottom: 2.4rem; }
+
+.u-margin-b-b {
+  margin-bottom: 3.6rem; }
+
+.t-cn-cn {
+  text-align: center; }
+
+.t-cn-l {
+  text-align: left; }
+
+.t-cn-r {
+  text-align: right; }
+
+.btn:link, .btn:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+  font-size: 1.5rem;
+  padding: 1.2rem, 1.8rem;
+  box-shadow: 0 0 0 1px #000; }
