@@ -63,14 +63,62 @@ ol h2 {
 .u-margin-b-b {
   margin-bottom: 3.6rem; }
 
-.t-cn-cn {
+.t-cn {
   text-align: center; }
 
-.t-cn-l {
+.t-l {
   text-align: left; }
 
-.t-cn-r {
+.t-r {
   text-align: right; }
+
+.price {
+  max-width: 879px;
+  margin: 0 auto;
+  color: #444;
+  border-collapse: separate;
+  padding: 4.5rem 3rem;
+  background: #f2f9fc;
+  border-spacing: 1.5rem 0;
+  table-layout: fixed; }
+  .price th {
+    border-bottom: 1px solid #82c7e9; }
+  .price thead {
+    font-weight: bold; }
+    .price thead th {
+      padding-bottom: 1.4rem;
+      border-bottom: 1px solid #82c7e9; }
+    .price thead span {
+      font-size: 1.5rem; }
+  .price, .price-inner {
+    width: 100%; }
+  .price thead, .price th {
+    text-align: left; }
+  .price td {
+    font-size: 1.4rem; }
+    .price td.title {
+      font-size: 1.5rem;
+      font-weight: bold; }
+      .price td.title.border-none {
+        border: none; }
+  .price-inner td {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #82c7e9; }
+    .price-inner td.title {
+      padding: 1.8rem 0; }
+  .price-inner span.itemmoney {
+    font-weight: bold; }
+  .price-inner span.circle::before {
+    content: '';
+    display: inline-block;
+    padding: .6rem;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #82c7e9;
+    vertical-align: middle;
+    margin-right: 1.2rem; }
+  .price .checkmoney {
+    font-size: 2.7rem;
+    font-weight: bold; }
 
 .btn:link, .btn:visited {
   display: inline-block;
