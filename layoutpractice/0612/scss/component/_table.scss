@@ -11,6 +11,28 @@
     border-spacing: 1.5rem 0;
     table-layout: fixed;
 
+
+    &__title-primary {
+        padding: 3rem 2.7rem;
+        color: #fff;
+        font-size: 1.8rem;
+        background: #82c7e9;
+        max-width: 825px;
+        margin: 0 auto;
+        font-weight: bold;
+
+        > span:first-child {
+            letter-spacing: 2.1px;
+        }
+
+        > span:last-child {
+            float: right;
+            font-size: 1.4rem;
+            padding: .3rem 0;
+            font-weight: normal;
+        }
+    }
+
     th{
         // padding-bottom: 1.4rem;
         border-bottom: 1px solid #82c7e9;

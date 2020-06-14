@@ -8,6 +8,9 @@
             text-decoration: none;
             display: block;
         }
+        &:hover {
+            color: #fff;
+        }
     }
     
     &__title {
@@ -57,7 +60,21 @@
 
     &__list {
         li {
-
+            &.dash {
+                > a {
+                    position: relative;
+                    padding-left: 2.7rem;
+                    &::before {
+                        content: '';
+                        position: absolute; top: 0; bottom: 0; left: 1.5rem;
+                        width: 0;
+                        height: 0;
+                        margin: auto 0;
+                        padding: .05rem .27rem;
+                        background: #fff;
+                    }
+                }
+            }
         }
     }
 

@@ -82,6 +82,8 @@ ol h2 {
   .footer a:link, .footer a:visited {
     text-decoration: none;
     display: block; }
+  .footer a:hover {
+    color: #fff; }
   .footer__title a:link, .footer__title a:visited {
     color: #fff; }
   .footer__content:link, .footer__content:visited {
@@ -101,6 +103,20 @@ ol h2 {
   .footer__wrap:nth-child(4) {
     flex-grow: 1;
     padding-left: 2.1%; }
+  .footer__list li.dash > a {
+    position: relative;
+    padding-left: 2.7rem; }
+    .footer__list li.dash > a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 1.5rem;
+      width: 0;
+      height: 0;
+      margin: auto 0;
+      padding: .05rem .27rem;
+      background: #fff; }
 
 .process {
   color: #333; }
@@ -198,6 +214,21 @@ ol h2 {
   background: #f2f9fc;
   border-spacing: 1.5rem 0;
   table-layout: fixed; }
+  .price__title-primary {
+    padding: 3rem 2.7rem;
+    color: #fff;
+    font-size: 1.8rem;
+    background: #82c7e9;
+    max-width: 825px;
+    margin: 0 auto;
+    font-weight: bold; }
+    .price__title-primary > span:first-child {
+      letter-spacing: 2.1px; }
+    .price__title-primary > span:last-child {
+      float: right;
+      font-size: 1.4rem;
+      padding: .3rem 0;
+      font-weight: normal; }
   .price th {
     border-bottom: 1px solid #82c7e9; }
   .price thead {
