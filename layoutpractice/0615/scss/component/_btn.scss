@@ -1,3 +1,19 @@
 .btn {
     @include btn-base(true);
+
+    &--articleAll {
+
+        @include link {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            box-shadow: none;
+        }
+
+        &:hover {
+            color: #00aacd;
+            > .arrow {
+                transform: translate(6px,6px);
+            }
+        }
+    }
 }

@@ -75,6 +75,105 @@ ol h2 {
 .t-r {
   text-align: right; }
 
+.article img {
+  width: 100%;
+  vertical-align: middle;
+  object-fit: cover; }
+
+.article-container {
+  max-width: 600px;
+  margin: 0 auto; }
+
+.article-titleWrap {
+  text-align: center; }
+  .article-titleWrap::after {
+    content: '';
+    display: block;
+    height: 0;
+    padding: .45rem 0;
+    background: linear-gradient(to right, #ff6636 10%, #9f3a86 25%, #3969ca 40%, #3969ca 60%, #9f3a86 75%, #ff6636 90%);
+    background-size: 200%;
+    margin-top: 1.5rem; }
+
+.article__title--primary {
+  font-size: 3.6rem;
+  font-weight: bold;
+  word-spacing: -3px;
+  letter-spacing: -.6px;
+  margin-bottom: 1.2rem; }
+
+.article__title--sub {
+  font-size: 1.8rem;
+  letter-spacing: 2.1px; }
+
+.article-content::after {
+  content: '';
+  display: block;
+  height: 0;
+  padding: .09rem 0;
+  background: #0000aa;
+  margin: 1.2rem 0; }
+
+.article-content-titleWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 6% 1.2rem 9%; }
+
+.article-content__title--primary {
+  font-size: 3rem;
+  letter-spacing: 3px; }
+
+.article-content__banner {
+  margin-bottom: 4.5rem; }
+  .article-content__banner::after {
+    content: '';
+    display: block;
+    clear: both; }
+  .article-content__banner__link {
+    display: none; }
+  .article-content__banner__title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.5;
+    float: left;
+    padding: 7.2rem 0;
+    padding-right: 63%;
+    padding-left: 1.2rem; }
+  .article-content__banner__img-box {
+    float: left;
+    width: 57%;
+    margin-left: -57%; }
+
+.article-content__news {
+  float: left;
+  margin-right: 7.5%;
+  width: 46.25%;
+  margin-bottom: 1.5rem; }
+  .article-content__newsWrap::after {
+    content: '';
+    display: block;
+    clear: both; }
+  .article-content__news:nth-child(2n) {
+    margin-right: 0; }
+  .article-content__news__img-box {
+    float: left; }
+  .article-content__news__txt {
+    overflow: hidden;
+    font-size: 1.42rem;
+    line-height: 1.5;
+    padding-left: 1.8rem; }
+
+.article-content__articleAll:hover {
+  color: #00aacd; }
+
+.article-content__articleAll > .arrow {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  vertical-align: middle;
+  transition: all .15s linear; }
+
 .table {
   width: 100%;
   max-width: 891px;
@@ -104,3 +203,13 @@ ol h2 {
   font-size: 1.5rem;
   padding: 1.2rem, 1.8rem;
   box-shadow: 0 0 0 1px #000; }
+
+.btn--articleAll:link, .btn--articleAll:visited {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  box-shadow: none; }
+
+.btn--articleAll:hover {
+  color: #00aacd; }
+  .btn--articleAll:hover > .arrow {
+    transform: translate(6px, 6px); }
