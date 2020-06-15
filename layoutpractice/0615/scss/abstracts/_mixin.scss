@@ -32,7 +32,7 @@ $breakpoints: (
     }
 };
 
-@mixin btn-base($shadow-border:true,$f-size:1.5rem,$p-tb:1.2rem,$p-rl:1.8rem) {
+@mixin btn-base($shadow-border:true,$border-radius:false,$f-size:1.5rem,$p-tb:1.2rem,$p-rl:1.8rem) {
     &:link,
     &:visited {
         display: inline-block;
@@ -42,6 +42,7 @@ $breakpoints: (
         padding: $p-tb,$p-rl;
         @if $shadow-border {box-shadow: 0 0 0 1px #000;}
     }
+    // @extend %btn-base;
 };
 
 
@@ -54,3 +55,28 @@ $breakpoints: (
 @mixin table-sys($col-nm,$width) {
 }
 
+
+
+
+
+
+%btn-base {
+
+}
+
+@mixin font($level:1) {
+    font-size: nth($list,$level);
+    // line-height: nth($list,$level) + 4px;
+    line-height: calc-line-height(nth($list,$level));
+}
+
+// 如果有很多地方用到 font
+@function calc-line-height($font-size) {
+    @return $font-size + 4px;
+}
+
+// 比較大的 mixin 
+@mixin  big-mixin {
+    @extend %btn-base;
+    @include font($level);
+}

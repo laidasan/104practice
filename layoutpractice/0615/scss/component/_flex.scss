@@ -1,0 +1,94 @@
+// #ff6636
+
+.life {
+    &-container {
+        display: flex;
+        max-width: 843px;
+        margin: 0 auto;
+        padding: 0 3rem;
+        justify-content: space-between;
+    }
+    &__item {
+        flex-basis: 31.2%;
+
+        &__img-box {
+
+            > img {
+                max-width: 100%;
+                vertical-align: middle;
+            }
+        }
+
+        &__content {
+            &__icon {
+                position: relative; top: -18px;
+                z-index: 0;
+                display: block;
+                width: 36px;
+                height: 36px;
+                margin: 0 auto;
+                margin-bottom: -1.2rem;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    z-index: -1;
+                    left: -12px; right: -12px; top: -12px; bottom: -12px;
+                    background: #fff;
+                    border-radius: 50%;
+                }
+            }
+            &__title {
+                display: block;
+                font-size: 1.8rem;
+                color: #ff6636;
+                letter-spacing: .6px;
+                padding: 2.1rem 0;
+                padding-top: 0;
+                font-weight: bold;
+                text-decoration: none;
+                
+                &:hover {
+                    color: #3969ca;
+                }
+            }
+            &__txt {
+                display: inline-block;
+                font-size: 1.8rem;
+                line-height: 1.8;
+                color: #000;
+                text-decoration: none;
+                &:hover {
+                    color: #3969ca;
+                }
+            }
+
+            &::after {
+                content: '';
+                display: block;
+                height: 0;
+                padding: .09rem 0;
+                background: #ccc;
+                margin: 1.2rem 0;
+            }
+        }
+
+        &__footer {
+            &__tagWrap {
+                padding: 1.5rem 0;
+            }
+            &__tag {
+                display: inline-block;
+                text-decoration: none;
+                color: #3969ca;
+                font-size: 1.8rem;
+                font-weight: bold;
+            }
+            &__time {
+                font-size: 1.5rem;
+                letter-spacing: 2.1px;
+                color: #999;
+                font-weight: bold;
+            }
+        }
+    }
+}

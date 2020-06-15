@@ -15,5 +15,52 @@
                 transform: translate(6px,6px);
             }
         }
+
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn2 {
+    padding: $gurrer;
+    border: $border;
+    color: $color-black;
+    border-radius: $border-radius;
+    
+    @at-root a#{&} {
+        text-decoration: none;
+    }
+}
+
+.btn2-warning {
+    color: #fff;
+    background: #cd0000;
+    @include font(3);
+}
+
+a.btn {
+    text-decoration: none;
+}
+
+%btn-color-green {
+    color: green;
+}
+.btn3 {
+    // @extend .btn2;
+    // @extend %btn2;
+    @extend %btn-color-green;
+}
+
+
+

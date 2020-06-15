@@ -1,0 +1,19 @@
+%clear {
+    &::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+
+%btn-base {
+    &:link,
+    &:visited {
+        display: inline-block;
+        text-decoration: none;
+        color: #000;
+        font-size: $f-size;
+        padding: $p-tb,$p-rl;
+        @if $shadow-border {box-shadow: 0 0 0 1px #000;}
+    }
+}

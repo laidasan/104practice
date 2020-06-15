@@ -75,6 +75,77 @@ ol h2 {
 .t-r {
   text-align: right; }
 
+.life-container {
+  display: flex;
+  max-width: 843px;
+  margin: 0 auto;
+  padding: 0 3rem;
+  justify-content: space-between; }
+
+.life__item {
+  flex-basis: 31.2%; }
+  .life__item__img-box > img {
+    max-width: 100%;
+    vertical-align: middle; }
+  .life__item__content__icon {
+    position: relative;
+    top: -18px;
+    z-index: 0;
+    display: block;
+    width: 36px;
+    height: 36px;
+    margin: 0 auto;
+    margin-bottom: -1.2rem; }
+    .life__item__content__icon::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      left: -12px;
+      right: -12px;
+      top: -12px;
+      bottom: -12px;
+      background: #fff;
+      border-radius: 50%; }
+  .life__item__content__title {
+    display: block;
+    font-size: 1.8rem;
+    color: #ff6636;
+    letter-spacing: .6px;
+    padding: 2.1rem 0;
+    padding-top: 0;
+    font-weight: bold;
+    text-decoration: none; }
+    .life__item__content__title:hover {
+      color: #3969ca; }
+  .life__item__content__txt {
+    display: inline-block;
+    font-size: 1.8rem;
+    line-height: 1.8;
+    color: #000;
+    text-decoration: none; }
+    .life__item__content__txt:hover {
+      color: #3969ca; }
+  .life__item__content::after {
+    content: '';
+    display: block;
+    height: 0;
+    padding: .09rem 0;
+    background: #ccc;
+    margin: 1.2rem 0; }
+  .life__item__footer__tagWrap {
+    padding: 1.5rem 0; }
+  .life__item__footer__tag {
+    display: inline-block;
+    text-decoration: none;
+    color: #3969ca;
+    font-size: 1.8rem;
+    font-weight: bold; }
+  .life__item__footer__time {
+    font-size: 1.5rem;
+    letter-spacing: 2.1px;
+    color: #999;
+    font-weight: bold; }
+
 .article img {
   width: 100%;
   vertical-align: middle;
@@ -231,3 +302,23 @@ ol h2 {
   color: #00aacd; }
   .btn--articleAll:hover > .arrow {
     transform: translate(6px, 6px); }
+
+.btn2 {
+  padding: 1.5rem 2.1rem;
+  border: 1px solid #000;
+  color: #000;
+  border-radius: 6px; }
+  a.btn2 {
+    text-decoration: none; }
+
+.btn2-warning {
+  color: #fff;
+  background: #cd0000;
+  font-size: 20px;
+  line-height: 24px; }
+
+a.btn {
+  text-decoration: none; }
+
+.btn3 {
+  color: green; }
