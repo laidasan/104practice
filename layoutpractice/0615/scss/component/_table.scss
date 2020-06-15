@@ -1,0 +1,42 @@
+.table {
+    // bolder #910581
+    // color: rgb(86,74,23)
+    // background: #rgba(145,5,129,.1)
+
+    
+    
+    width: 100%;
+    max-width: 891px;
+    margin: 0 auto;
+    // border-collapse: separate;
+    box-shadow: 0 0 0 1.5px #910581;
+    color: rgb(86,74,23);
+    font-size: 1.5rem;
+    table-layout: fixed;
+
+    thead {
+        background: rgba(145,5,129,.1);
+    }
+
+    th,td {
+        box-shadow: 0 0 0 .6px #910581;
+    }
+
+    th , td{
+        padding: .9rem 0;
+    }
+
+    .area > th:first-child {
+        padding: .3rem 0rem;
+    }
+
+    tbody {
+        td {
+            text-align: center;
+        }
+        tr > td:first-child {
+            padding-left:1rem;
+            text-align: left;
+        }
+    }
+}
