@@ -1,0 +1,4 @@
+// 如果有很多地方用到 font
+@function calc-line-height($font-size) {
+    @return $font-size + 4px;
+}
