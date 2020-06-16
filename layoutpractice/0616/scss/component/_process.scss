@@ -1,19 +1,39 @@
 .process {
     &-container {
-        box-shadow: 0 0 0 1px #cd0000;
         margin: 0 16.5%;
         @include clear;
     }
     &__item {
+        position: relative;
         float: left;
         @include grid-sys(3,0);
-        box-shadow: 0 0 0 1px #0000cd;
         color: $color-primary;
+        padding: 1.2rem 0;
+
+        
+        &__link {
+            position: absolute;
+            left: 0; right: 0; bottom: 0; top: 0;
+            z-index: 3;
+
+            &:hover {
+                ~ .process__item__header {
+
+                    &::before {
+                        transform: scale(1.1);
+                    }
+                    > .btn-arrow {
+                        // transform: rotate(90deg) translateX(6px);
+                        animation: btn-arrow--process 1s linear infinite;
+                    }
+                }
+            }
+        }
 
         &__header {
             position: relative;
-            box-shadow: 0 0 0 1px #cd0000;
             padding: 3rem 0;
+            margin-bottom: nth($mb,9);
 
             &-txt {
                 margin-bottom: nth($mb,6);
@@ -22,13 +42,57 @@
                 }
             }
 
-            &::after {
+            &::before {
                 content: '';
-                position: absolute;
+                position: absolute; left: 0; right: 0; bottom: 0; top: 0;
+                z-index: -1;
+                margin: auto;
+                width: 0;
+                height: 0;
+                padding: 8rem;
+                border-radius: 50%;
+                box-shadow: 0 0 0 6px $color-primary-sub;
+                background: $color-white;
+                transition: all .15s;
+            }
+
+            &::after {
+                content: '';  
+                position: absolute; top: 0; bottom: 0;
+                z-index: -2;
+                margin: auto;
+                width: 50%;
+                height: 0;
+                padding: .45rem 0;
+                background: $color-primary-sub;
+            }
+        }
+
+        &:nth-child(1) {
+            .process__item__header {
+                &::after {
+                    right: 0;
+                }
+            }
+        }
+        &:nth-child(2) {
+            .process__item__header {
+                &::after {
+                    width: auto;
+                    left: 0; right: 0;
+                }
+            }
+        }
+        &:nth-child(3) {
+            .process__item__header {
+                &::after {
+                    left: 0;
+                }
             }
         }
 
         &__footer {
+            @include font(2,1,3);
         }
     }
 }

@@ -1,3 +1,15 @@
+@keyframes btn-arrow--process {
+  0% {
+    transform: rotate(90deg) translateX(0px); }
+  30% {
+    transform: rotate(90deg) translateX(6px); }
+  50% {
+    transform: rotate(90deg) translateX(6px); }
+  80% {
+    transform: rotate(90deg) translateX(0px); }
+  100% {
+    transform: rotate(90deg) translateX(0px); } }
+
 html {
   font-size: 62.5%; }
 
@@ -255,7 +267,6 @@ ol h2 {
         padding-left: 1.2rem; } }
 
 .process-container {
-  box-shadow: 0 0 0 1px #cd0000;
   margin: 0 16.5%; }
   .process-container::after {
     content: '';
@@ -263,21 +274,69 @@ ol h2 {
     clear: both; }
 
 .process__item {
+  position: relative;
   float: left;
   margin-right: 0%;
   width: 33.33333%;
-  box-shadow: 0 0 0 1px #0000cd;
-  color: #19a78e; }
+  color: #19a78e;
+  padding: 1.2rem 0; }
   .process__item:nth-child(3n) {
     margin-right: 0; }
+  .process__item__link {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 3; }
+    .process__item__link:hover ~ .process__item__header::before {
+      transform: scale(1.1); }
+    .process__item__link:hover ~ .process__item__header > .btn-arrow {
+      animation: btn-arrow--process 1s linear infinite; }
   .process__item__header {
     position: relative;
-    box-shadow: 0 0 0 1px #cd0000;
-    padding: 3rem 0; }
+    padding: 3rem 0;
+    margin-bottom: 3rem; }
     .process__item__header-txt {
       margin-bottom: 2.1rem; }
       .process__item__header-txt > h4 {
         margin-bottom: 0.6rem; }
+    .process__item__header::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      z-index: -1;
+      margin: auto;
+      width: 0;
+      height: 0;
+      padding: 8rem;
+      border-radius: 50%;
+      box-shadow: 0 0 0 6px #fbb730;
+      background: #fff;
+      transition: all .15s; }
     .process__item__header::after {
       content: '';
-      position: absolute; }
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      z-index: -2;
+      margin: auto;
+      width: 50%;
+      height: 0;
+      padding: .45rem 0;
+      background: #fbb730; }
+  .process__item:nth-child(1) .process__item__header::after {
+    right: 0; }
+  .process__item:nth-child(2) .process__item__header::after {
+    width: auto;
+    left: 0;
+    right: 0; }
+  .process__item:nth-child(3) .process__item__header::after {
+    left: 0; }
+  .process__item__footer {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 2.5rem; }

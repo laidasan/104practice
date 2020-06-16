@@ -1,0 +1,17 @@
+@keyframes btn-arrow--process {
+    0% {
+        transform: rotate(90deg) translateX(0px);
+    }
+    30% {
+        transform: rotate(90deg) translateX(6px);
+    }
+    50% {
+        transform: rotate(90deg) translateX(6px);
+    }
+    80% {
+        transform: rotate(90deg) translateX(0px);
+    }
+    100% {
+        transform: rotate(90deg) translateX(0px);
+    }
+}
