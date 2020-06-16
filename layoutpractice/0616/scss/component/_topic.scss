@@ -1,0 +1,148 @@
+.topic {
+    color: $color-white;
+    background: $color-primary;
+    margin: 0 18%;
+
+    
+    &__list {
+        padding: 3.6rem 4.2%;
+        margin-bottom: nth($mb,2);
+
+        &__item {
+            position: relative;
+            z-index: 0;
+            margin-bottom: nth($mb,1);
+            background: $color-primary-dark;
+            border-radius: nth($border-radius,2);
+            overflow: hidden;
+
+            &::after {
+                content: '';
+                position: absolute; top: 0; bottom: 0; right: 4.5rem;
+                padding: 0 .05rem;
+                background: $color-border;
+            }
+
+            &__link {
+                position: absolute;
+                z-index: 3;
+                left: 0; right: 0; top: 0; bottom: 0;
+                &:hover {
+                    ~ .topic__list__item__btn > .btn-arrow {
+                        width: 2.4rem;
+                        height: 2.4rem;
+
+                        &::after {
+                            background: $color-primary-sub;
+                        }
+
+                        > span {
+                            &::after,&::before {
+                                background: $color-primary-sub;
+                            }
+                        }
+                    }
+
+                    ~ .topic__list__item__content {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            &__title {
+                float: left;
+                width: 10%;
+                padding: 1.8rem 0;
+                padding-left: 1.2rem;
+                font-size: nth($font-size,1);
+                color: $color-primary-light;
+                background: $color-white;
+                // border-radius: nth($border-radius,2);
+                // border-bottom-right-radius: 0;
+                // border-top-right-radius: 0;
+            }
+
+            &__content {
+                position: relative;
+                overflow: hidden;
+                background: $color-primary-dark;
+                padding: 1.5rem 0;  
+                padding-left: 1.2rem;
+                
+                &::after {
+                    // content: '';
+                    position: absolute; top: 0; bottom: 0; right: 0;
+                    // padding: 0 .05rem;
+                    padding: 9999px .05rem;
+                    background: $color-border;
+                }
+                
+                > .time {
+                    display: inline-block;
+                    padding: .3rem .6rem;
+                    background: $color-primary;
+                    border-radius: 12px;
+                }
+
+                > .message {
+
+                }
+            }
+
+            &__btn {
+                position: relative;
+                background: $color-primary-dark;
+                float: right;
+                padding: 2.55rem 2.1rem;
+                color: $color-white;
+                // border-radius: nth($border-radius,2);
+                // border-top-left-radius: 0;
+                // border-bottom-left-radius: 0;
+            }
+        }
+    }
+
+    @include respond-down(982px) {
+        &__list {
+
+            &__item {
+                border-radius: nth($border-radius,2);
+                overflow: hidden;
+
+                &::after {
+                    content: none;
+                }
+
+                &__title {
+                    float: none;
+                    width: auto;
+                    background: $color-primary-dark;
+                    border-bottom: 1px solid $color-border;
+                    // border-radius: nth($border-radius,2);
+                    // border-bottom-left-radius: 0;
+                    // border-bottom-right-radius: 0;
+                    border-radius: 0;
+
+                    > span {
+                        background: $color-white;
+                        padding: .3rem .6rem;
+                        border-radius: nth($border-radius,2);
+                    }
+                }
+                
+
+                // &__content {
+                //     &::after {
+                //         content: none;
+                //     }
+                // }
+
+                &__btn {
+                    border-radius: 0;
+                    padding-left: 1.2rem;
+                }
+            }
+            
+        }
+    }
+}

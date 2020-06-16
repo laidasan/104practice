@@ -1,0 +1,51 @@
+// base
+$base-lh: 1.5;
+
+$breakpoints: (
+    'desktop': 1024px,
+    'ipad': 990px,
+    'mobile': 660px
+);
+
+$font-size: 1.2rem 1.5rem 1.8rem 2.1rem 2.4rem 2.7rem 3rem 3.6rem;
+$font-weight: 400 500 700 900;
+
+$mb: .6rem .9rem 1.2rem 1.5rem 1.8rem 2.1rem 2.4rem 2.7rem 3rem 3.6rem;
+$ml: .6rem .9rem 1.2rem 1.5rem 1.8rem 2.1rem 2.4rem 2.7rem 3rem 3.6rem;
+$mt: .6rem .9rem 1.2rem 1.5rem 1.8rem 2.1rem 2.4rem 2.7rem 3rem 3.6rem;
+$mr: .6rem .9rem 1.2rem 1.5rem 1.8rem 2.1rem 2.4rem 2.7rem 3rem 3.6rem;
+
+
+$border-radius: 3px 6px 9px 12px;
+$border-radius-circle: 50%;
+
+
+$color-balck: #000;
+$color-white: #fff;
+
+// 變數管理
+// $flex-map: (
+//     $font-size : 1.5rem 1.8rem 2.1rem,
+// );
+
+// $float-map: (
+//     $font-size : 1.5rem 1.8rem 2.1rem,
+// );
+
+// $table-map: (
+//     $font-size : 1.5rem 1.8rem 2.1rem,
+// );
+
+
+// page
+
+$color-primary: #19a78e;
+$color-primary-dark: #019276;
+// $color-primary-light: #19A88e;
+$color-primary-light: #55b8a3;
+
+$color-primary-sub: #fbb730;
+
+$color-border: #87c9bb;
+
+

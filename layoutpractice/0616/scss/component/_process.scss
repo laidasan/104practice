@@ -1,0 +1,34 @@
+.process {
+    &-container {
+        box-shadow: 0 0 0 1px #cd0000;
+        margin: 0 16.5%;
+        @include clear;
+    }
+    &__item {
+        float: left;
+        @include grid-sys(3,0);
+        box-shadow: 0 0 0 1px #0000cd;
+        color: $color-primary;
+
+        &__header {
+            position: relative;
+            box-shadow: 0 0 0 1px #cd0000;
+            padding: 3rem 0;
+
+            &-txt {
+                margin-bottom: nth($mb,6);
+                > h4 {
+                    margin-bottom: nth($mb,1);
+                }
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+            }
+        }
+
+        &__footer {
+        }
+    }
+}

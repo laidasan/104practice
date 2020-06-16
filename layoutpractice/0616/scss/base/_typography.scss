@@ -1,0 +1,23 @@
+.heading {
+    &-primary {
+        &--sub {
+
+        }
+    }
+
+    &-secondary {
+        @include font(8,0,3);
+    }
+
+    &-thread {
+
+    }
+
+    &-fourth {
+        @include font(3,0,3);
+    }
+
+    &-fifth {
+        @include font(2,0,3);
+    }
+}

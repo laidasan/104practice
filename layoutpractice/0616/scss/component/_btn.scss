@@ -1,0 +1,89 @@
+.btn {
+    @include btn-base(false);
+
+    &-arrow {
+        position: absolute; right: 0; bottom: 0;
+        margin: auto;
+        transition: all .15s;
+
+        // 橫線
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; bottom: 0;right: .5rem;
+            margin: auto;
+            width: 0;
+            height: 0;
+            background: $color-white;
+        }
+
+        // 尖端
+        > span {
+            &::after,&::before {
+                content: '';
+                @include absolute-fill-ct; left: -.15rem;
+                width: 0; height: 0;
+                padding: .1rem .3rem;
+                background: $color-white;
+                transform-origin: right center;
+                border-radius: 15px;
+            }
+            &::after {
+                transform: rotate(45deg);
+            }
+            &::before {
+                transform: rotate(-45deg);
+            }
+        }
+
+        &--topic {
+            top: 0; left: 0; bottom: 0;right: 0;
+            width: 1.8rem;
+            height: 1.8rem;
+            box-shadow: 0 0 0 2px $color-white;
+            border-radius: $border-radius-circle;
+
+            &::after {
+                // control arrow size
+                // 橫線
+                padding: .12rem .5rem;
+            }
+        }
+
+        &--process {
+            position: relative;
+            display: block;
+            background: #cd0000;
+            transform:  rotate(90deg);
+
+            &::after {
+                padding: .24rem 1rem;
+                background: $color-primary;
+                border-radius: 6px;
+            }
+
+            > span {
+                &::after , &::before {
+                    background: $color-primary;
+                    left: 0;
+                    bottom: 0;
+                    padding: .21rem .6rem;
+                    border-radius: 0;
+                    // transform-origin: right top;
+                }
+
+                &::after {
+                    padding: .21rem .6rem;
+                    transform-origin: right top;
+                }
+                &::before {
+                    transform-origin: right bottom;
+                }
+            }
+        }
+
+        &--fill {
+            background: $color-white;
+        }
+    }
+}
