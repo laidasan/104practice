@@ -1,9 +1,17 @@
 html {
     font-size: 62.5%;
 }
-// .section {
-//     margin: 3rem 0;
-// }
+.section {
+    // padding: 6.9rem 0;
+
+    &--talent,&--welfare {
+        background: $color-secondary;
+    }
+    &--career {
+        padding-top: 0;
+        // padding-bottom: 130rem;
+    }
+}
 
 // .section__title {
 //     font-size: 4.2rem;

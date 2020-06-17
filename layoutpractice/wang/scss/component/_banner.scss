@@ -1,0 +1,13 @@
+.banner {
+    padding: 28rem 0;
+    padding: 12rem 0 26rem;
+    box-shadow: 0 0 0 1px #cd0000;
+    background: url("../../img/bk/keyimage-bg.png")no-repeat center / cover $color-primary;
+
+    &__title-box {
+        text-align: center;
+        img {
+            vertical-align: middle;
+        }
+    }
+}

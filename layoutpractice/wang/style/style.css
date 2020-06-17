@@ -1,6 +1,12 @@
 html {
   font-size: 62.5%; }
 
+.section--talent, .section--welfare {
+  background: #fafafa; }
+
+.section--career {
+  padding-top: 0; }
+
 .template {
   margin-bottom: 3.3rem; }
 
@@ -55,13 +61,13 @@ ol h2 {
 .u-margin-b-b {
   margin-bottom: 3.6rem; }
 
-.t-cn-cn {
+.t-cn {
   text-align: center; }
 
-.t-cn-l {
+.t-l {
   text-align: left; }
 
-.t-cn-r {
+.t-r {
   text-align: right; }
 
 .btn:link, .btn:visited {
@@ -71,3 +77,91 @@ ol h2 {
   font-size: 1.2rem;
   padding: 1.2rem, 1.8rem;
   box-shadow: 0 0 0 1px #000; }
+
+.header-container {
+  margin: 0 21%;
+  padding-top: 4.2rem;
+  background: url("../../img/logo.png") no-repeat left top; }
+
+.header__nav {
+  text-align: right;
+  padding-bottom: 2.1rem; }
+  .header__nav > a:link, .header__nav > a:visited {
+    position: relative;
+    color: #c9032e;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.8rem; }
+  .header__nav > a::after, .header__nav > a::before {
+    position: absolute;
+    left: -3rem;
+    right: -3rem;
+    padding: .24rem 0;
+    background: #fff;
+    height: 0; }
+  .header__nav > a::after {
+    content: '';
+    bottom: 0; }
+  .header__nav > a.choose::before {
+    content: '';
+    bottom: -2.1rem;
+    background: #c9032e; }
+  .header__nav > a:not(:last-child) {
+    margin-right: 4.2rem; }
+
+.banner {
+  padding: 28rem 0;
+  padding: 12rem 0 26rem;
+  box-shadow: 0 0 0 1px #cd0000;
+  background: url("../../img/bk/keyimage-bg.png") no-repeat center/cover #c9032e; }
+  .banner__title-box {
+    text-align: center; }
+    .banner__title-box img {
+      vertical-align: middle; }
+
+.talent {
+  text-align: center;
+  padding: 6.9rem 0;
+  background: url("../../img/bk/section-1-bg.png") no-repeat center; }
+  .talent__img-box > img {
+    vertical-align: middle;
+    object-fit: contain; }
+  .talent__img-box--paragraph {
+    display: inline-block; }
+  .talent__img-box--title.one {
+    margin-bottom: 1.8rem; }
+  .talent__img-box--title.two {
+    margin-bottom: 1.5rem; }
+  .talent-group {
+    margin-bottom: 1.8rem; }
+
+.career {
+  position: relative;
+  z-index: -1;
+  padding-bottom: 60rem;
+  text-align: center;
+  background: url("../../img/bk/career-bg.png") no-repeat center #c9032e; }
+  .career__img-box--title {
+    position: relative;
+    top: -14rem;
+    margin-bottom: -14rem; }
+  .career__img-box--training {
+    max-width: 459px;
+    max-height: 289px; }
+    .career__img-box--training > img {
+      width: 100%;
+      height: 100%; }
+  .career-group {
+    margin: 2.1rem 0 3.9rem; }
+    .career-group > .img-box {
+      display: inline-block; }
+
+.welfare {
+  padding: 6.9rem 0;
+  padding-bottom: 18rem;
+  background: url("../../img/bk/welfare-bg.png") no-repeat center; }
+  .welfare-group > .img-box {
+    display: inline-block; }
+    .welfare-group > .img-box:nth-child(2) {
+      position: relative;
+      top: 3.9rem; }

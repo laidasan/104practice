@@ -1,0 +1,17 @@
+// 19.5% , 外面包一層
+.welfare {
+    padding: $padding;
+    padding-bottom: 18rem;
+    background: url("../../img/bk/welfare-bg.png") no-repeat center;
+
+    &-group {
+        > .img-box {
+            display: inline-block;
+
+            &:nth-child(2) {
+                position: relative;
+                top: 3.9rem;
+            }
+        }
+    }
+}

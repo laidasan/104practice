@@ -1,0 +1,45 @@
+// 0 21%
+.header {
+    &-container {
+        margin: 0 21%;
+        padding-top: nth($p,12);
+        background: url('../../img/logo.png')no-repeat left top;
+    }
+
+    &__nav {
+        text-align: right;
+        padding-bottom: nth($p,6);
+
+        > a {
+
+            @include link {
+                position: relative;
+                color: $color-primary;
+                @include font(3,0);
+            }
+
+            &::after,&::before {
+                position: absolute; left: -3rem; right: -3rem;
+                padding: .24rem 0;
+                background: #fff;
+                height: 0;
+            }
+
+            &::after {
+                content: '';
+                bottom: 0;
+            }
+
+
+            &.choose::before {
+                content: '';
+                bottom: -2.1rem;
+                background: $color-primary;
+            }
+
+            &:not(:last-child) {
+                margin-right: nth($m,12);
+            }
+        }
+    }
+}

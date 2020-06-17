@@ -1,0 +1,36 @@
+// 36% title 
+// 30% 以下都是 30% , maybe 選擇這個 , 外面包一層
+
+.talent {
+    text-align: center;
+    // padding: 6.9rem 0;
+    padding: $padding;
+    background: url("../../img/bk/section-1-bg.png")no-repeat center;
+
+    &__img-box {
+
+        >img {
+            vertical-align: middle;
+            object-fit: contain;
+        }
+
+        &--paragraph {
+            display: inline-block;
+        }
+
+        &--title {
+            &.one {
+                margin-bottom: nth($m,5);
+            }
+
+            &.two {
+                margin-bottom: nth($m,4);
+            }
+        }
+    }
+
+    &-group {
+        margin-bottom: nth($m,5);
+    }
+
+}
