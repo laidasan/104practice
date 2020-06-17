@@ -1,3 +1,4 @@
+@import "abstracts/extend";
 @import "abstracts/mixin";
 @import "abstracts/variable";
 
@@ -8,3 +9,10 @@
 
 
 @import "component/btn";
+@import "component/header";
+@import "component/banner";
+@import "component/talent";
+@import "component/career";
+@import "component/welfare";
+@import "component/active-show";
+@import "component/footer";
