@@ -22,9 +22,10 @@
     }
 
     &-group {
-        margin: nth($m,6) 0 nth($m,11);
+        // margin: nth($m,6) 0 nth($m,11);
         > .img-box {
             display: inline-block;
+            margin: nth($m,6) 0 nth($m,11);
         }
     }
 

@@ -1,14 +1,24 @@
 .active {
     box-shadow: 0 0 0 1px #cd0000;
     @include clear;
+
     &__img-box {
         float: left;
         box-shadow: 0 0 0 1px #cd0000;
         @include grid-sys(4,0);
+
         > img {
             width: 100%;
             vertical-align: middle;
             object-fit: cover;
+        }
+    }
+
+    @include respond('phone') {
+        &__img-box {
+            float: none;
+            width: auto;
+            margin: 0;
         }
     }
 }

@@ -205,7 +205,8 @@ ol h2 {
     vertical-align: middle;
     object-fit: contain; }
   .talent__img-box--paragraph {
-    display: inline-block; }
+    display: inline-block;
+    margin-bottom: 2.1rem; }
   .talent__img-box--title.one {
     margin-bottom: 1.8rem; }
   .talent__img-box--title.two {
@@ -213,18 +214,19 @@ ol h2 {
   .talent-group {
     margin-bottom: 1.8rem; }
   .talent__company-wrap {
-    margin-bottom: 0.9rem; }
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: left;
+    margin-bottom: 0.9rem;
+    font-size: 0; }
   .talent__company {
     display: inline-block;
-    width: 3.3rem;
-    height: 3.3rem;
+    width: 3rem;
+    height: 3rem;
     box-shadow: 0 0 0 1px #000;
     border-radius: 50%;
-    margin: .1rem 0;
+    margin: .05rem .27rem;
     margin-bottom: .6rem; }
-  @media only screen and (max-width: 480px) {
-    .talent__company-wrap {
-      margin: 0; } }
   @media only screen and (max-width: 768px) {
     .talent__img-box--step > img {
       width: 100%; } }
@@ -242,10 +244,9 @@ ol h2 {
   .career__img-box--training {
     position: relative;
     top: 3px; }
-  .career-group {
+  .career-group > .img-box {
+    display: inline-block;
     margin: 2.1rem 0 3.9rem; }
-    .career-group > .img-box {
-      display: inline-block; }
   @media only screen and (max-width: 768px) {
     .career__img-box--growing > img, .career__img-box--title > img {
       width: 100%; } }
@@ -266,6 +267,9 @@ ol h2 {
     font-weight: 400;
     line-height: 2.1rem;
     letter-spacing: 2px; }
+  @media only screen and (max-width: 480px) {
+    .welfare {
+      padding-bottom: 7rem; } }
 
 .active {
   box-shadow: 0 0 0 1px #cd0000; }
@@ -284,6 +288,11 @@ ol h2 {
       width: 100%;
       vertical-align: middle;
       object-fit: cover; }
+  @media only screen and (max-width: 480px) {
+    .active__img-box {
+      float: none;
+      width: auto;
+      margin: 0; } }
 
 .footer {
   color: #dadada;

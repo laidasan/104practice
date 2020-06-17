@@ -23,4 +23,8 @@
         @include font(4,0);
         letter-spacing: 2px;
     }
+
+    @include respond('phone') {
+        padding-bottom: 7rem;
+    }
 }

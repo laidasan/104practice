@@ -16,6 +16,7 @@
 
         &--paragraph {
             display: inline-block;
+            margin-bottom: nth($m,6);
         }
 
         &--title {
@@ -36,16 +37,20 @@
     }
 
     &__company-wrap {
+        max-width: 780px;
+        margin: 0 auto;
+        text-align: left;
         margin-bottom: nth($m,2);
+        font-size: 0;
     }
 
     &__company {
         display: inline-block;
-        width: 3.3rem;
-        height: 3.3rem;
+        width: 3rem;
+        height: 3rem;
         box-shadow: 0 0 0 1px #000;
         border-radius: 50%;
-        margin: .1rem 0;
+        margin: .05rem .27rem;
         margin-bottom: .6rem;
     }
 
@@ -55,20 +60,8 @@
     //     margin: 0 30%;
     // }
 
-    @include respond('phone') {
-
-        &__company-wrap {
-            margin: 0;
-        }
-
-        &__company {
-            // display: inline-block;
-            // width: 3.3rem;
-            // height: 3.3rem;
-            // box-shadow: 0 0 0 1px #000;
-            // border-radius: 50%;
-        }
-    }
+    // @include respond('phone') {
+    // }
 
     @include respond('tablet') {
         &__img-box {
