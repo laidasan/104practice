@@ -4,14 +4,23 @@
     padding-bottom: 18rem;
     background: url("../../img/bk/welfare-bg.png") no-repeat center;
 
+    &__img-box {
+        &--title {
+            margin-bottom: nth($m,3);
+        }
+    }
+
     &-group {
+        margin-bottom: nth($m,6);
+
         > .img-box {
             display: inline-block;
-
-            &:nth-child(2) {
-                position: relative;
-                top: 3.9rem;
-            }
         }
+    }
+
+    &__remark {
+        color: $color-primary;
+        @include font(4,0);
+        letter-spacing: 2px;
     }
 }

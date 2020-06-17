@@ -28,6 +28,14 @@
     }
 
     @include respond('tablet') {
+        &__img-box {
+            &--btn {
+                > img {
+                    width: 100%;
+                }
+            }
+        }
+
         &__content {
             &__title-2 {
                 text-align: center;

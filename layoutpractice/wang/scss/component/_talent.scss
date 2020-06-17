@@ -27,6 +27,8 @@
                 margin-bottom: nth($m,6);
             }
         }
+
+        
     }
 
     &-group {
@@ -65,6 +67,16 @@
             // height: 3.3rem;
             // box-shadow: 0 0 0 1px #000;
             // border-radius: 50%;
+        }
+    }
+
+    @include respond('tablet') {
+        &__img-box {
+            &--step {
+                > img {
+                    width: 100%;
+                }
+            }
         }
     }
 

@@ -6,8 +6,16 @@
 
     &__title-box {
         text-align: center;
-        img {
+        > img {
             vertical-align: middle;
+        }
+    }
+
+    @include respond('tablet') {
+        &__title-box {
+            > img {
+                width: 100%;
+            }
         }
     }
 }
