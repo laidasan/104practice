@@ -22,7 +22,16 @@
     }
 
     &__content {
-        padding-left: 30%;
+        // padding-left: 30%;
+        text-align: center;
         @include font(4,1.4rem);
+    }
+
+    @include respond('tablet') {
+        &__content {
+            &__title-2 {
+                text-align: center;
+            }
+        }
     }
 }

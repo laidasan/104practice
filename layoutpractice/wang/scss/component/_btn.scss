@@ -1,3 +1,39 @@
 .btn {
-    @include btn-base(true);
+    @include btn-base(false);
+
+
+    &--nav {
+        display: none;
+    }
+
+    &--talent {
+        @include link {
+            @include font(4,0,3);
+            background: $color-primary-sub;
+            padding: nth($p,3) nth($p,6);
+            margin-bottom: nth($m,3);
+        }
+    }
+
+
+
+    @include respond('phone') {
+
+        // 0617 13:45  還要加入向右 arrow
+        &--nav {
+            display: block;
+            border: none;
+            position: absolute; right: 0; top: 0;
+            width: 6rem;
+            height: 6rem;
+            transform: translateX(120%);
+            border-radius: 50%;
+            background: $color-primary-sub;
+
+            &::after {
+                content: 'arrow';
+            }
+        }
+    }
+
 }

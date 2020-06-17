@@ -14,7 +14,6 @@
         padding-bottom: nth($p,6);
 
         > a {
-
             @include link {
                 position: relative;
                 color: $color-primary;
@@ -52,11 +51,39 @@
 
     @include respond('phone') {
         &-container {
+            margin: 0;
+            padding: nth($p,12);
             background-position: center;
         }
 
         &__nav {
-            position: fixed; right: 0
+            position: fixed; left: 0;
+            z-index: 3;
+            transform: translateX(calc(-110% - 2.1rem));
+            transition: translateX .3s;
+
+            // just show how to open nav , will use click listener.
+            &:hover {
+                transform: translateX(0);
+            }
+
+
+            > a {
+                @include link {
+                    display: block;
+                    margin: 0;
+                    letter-spacing: 3px;
+                    padding: nth($p,2);
+                    padding-right: nth($p,12);
+                    background: $color-primary-sub;
+                    border-radius: nth($border-radius,3);
+                    margin-bottom: nth($m,2);
+                }
+
+                &::before,&.choose::before {
+                    content: none;
+                }
+            }
         }
     }
 
