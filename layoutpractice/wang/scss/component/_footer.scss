@@ -1,1 +1,28 @@
 // 30% , 外面包一層
+.footer {
+    color: $color-text;
+    padding: $padding;
+    background: $color-primary;
+
+    &__title {
+        @include font(4,1rem);
+        margin-bottom: nth($m,3);
+
+        &-2 {
+            color: $color-primary-sub;
+        }
+    }
+    &__img-box {
+        &--title {
+            margin-bottom: nth($m,3);
+        }
+        > img {
+            vertical-align: middle;
+        }
+    }
+
+    &__content {
+        padding-left: 30%;
+        @include font(4,1.4rem);
+    }
+}

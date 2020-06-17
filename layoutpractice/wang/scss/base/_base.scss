@@ -1,6 +1,7 @@
 html {
     font-size: 62.5%;
 }
+
 .section {
     // padding: 6.9rem 0;
 
@@ -66,5 +67,11 @@ ol h2 {
     &:visited {
         text-decoration: none;
         color: #000;
+    }
+}
+
+@include respond('phone') {
+    img {
+        width: 100%;
     }
 }

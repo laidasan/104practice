@@ -1,9 +1,12 @@
 // 0 21%
 .header {
+    background: url("../../img/bk/bk-element.png") repeat;
+
     &-container {
         margin: 0 21%;
         padding-top: nth($p,12);
-        background: url('../../img/logo.png')no-repeat left top;
+        background: url('../../img/logo.png') no-repeat;
+        background-position: left 1.8rem;
     }
 
     &__nav {
@@ -15,25 +18,29 @@
             @include link {
                 position: relative;
                 color: $color-primary;
+                text-decoration: none;
                 @include font(3,0);
             }
 
-            &::after,&::before {
-                position: absolute; left: -3rem; right: -3rem;
-                padding: .24rem 0;
-                background: #fff;
-                height: 0;
-            }
-
-            &::after {
+            // under line
+            &::before {
                 content: '';
-                bottom: 0;
+                position: absolute; left: 50%; right: 50%;
+                height: 0;
+                padding: .21rem 0;
+                bottom: -1.5rem;
+                border-radius: nth($border-radius , 2);
+                transition: all .3s;
             }
-
 
             &.choose::before {
                 content: '';
-                bottom: -2.1rem;
+                left: -3rem; right: -3rem;
+                background: $color-primary;
+            }
+
+            &:hover::before {
+                left: -3rem; right: -3rem;
                 background: $color-primary;
             }
 
@@ -42,4 +49,22 @@
             }
         }
     }
+
+    @include respond('phone') {
+        &-container {
+            background-position: center;
+        }
+
+        &__nav {
+            position: fixed; right: 0
+        }
+    }
+
+    @include respond-down(1440px) {
+
+        &-container {
+            margin: 0 12%;
+        }
+    }
+
 }
