@@ -11,11 +11,13 @@
         }
     }
 
-    @include respond('tablet') {
+    @include respond-down(553px) {
         &__title-box {
             > img {
                 width: 100%;
             }
         }
     }
+    // @include respond('phone') {
+    // }
 }

@@ -16,6 +16,7 @@
         > a {
             @include link {
                 position: relative;
+                // display: inline-block;
                 color: $color-primary;
                 text-decoration: none;
                 @include font(3,0);
@@ -49,11 +50,33 @@
         }
     }
 
-    @include respond('phone') {
+    @include respond('large-desktop') {
+        &-container {
+            margin: 0 6%;
+        }
+    }
+
+    @include respond('desktop') {
+        &-container {
+            margin: 0 3%;
+        }
+    }
+
+    @include respond('tablet') {
         &-container {
             margin: 0;
-            padding: nth($p,12);
             background-position: center;
+        }
+
+        &__nav {
+            margin-top: nth($m,14);
+            text-align: center;
+        }
+    }
+
+    @include respond('phone') {
+        &-container {
+            padding: nth($p,12) 0;
         }
 
         &__nav {
@@ -86,12 +109,9 @@
             }
         }
     }
+    
+    
 
-    @include respond-down(1440px) {
-
-        &-container {
-            margin: 0 12%;
-        }
-    }
+    
 
 }
