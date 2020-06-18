@@ -5,7 +5,7 @@
     text-align: center;
     // padding: 6.9rem 0;
     padding: $padding;
-    background: url("../../img/bk/section-1-bg.png")no-repeat center;
+    background: url("../../img/bk/section-1-bg.png") no-repeat center;
 
     &__img-box {
 
@@ -39,7 +39,6 @@
     &__company-wrap {
         max-width: 780px;
         margin: 0 auto;
-        text-align: left;
         margin-bottom: nth($m,2);
         font-size: 0;
     }
@@ -54,16 +53,12 @@
         margin-bottom: .6rem;
     }
 
-
-
-    // &__company-wrap {
-    //     margin: 0 30%;
-    // }
-
-    // @include respond('phone') {
-    // }
+    @include respond('desktop') {
+        background-size: 180%;
+    }
 
     @include respond('tablet') {
+
         &__img-box {
             &--step {
                 > img {
@@ -72,5 +67,18 @@
             }
         }
     }
+
+    @include respond-down(716px) {
+        background: url("../../img/bk/bk-element.png") repeat;
+
+        &-group {
+            background: url('../../img/bk/section-1-bg.png') repeat center top / 150%;
+        }
+        // background-repeat: repeat-y;
+        // background-size: 180%;
+
+        // background-size: 30%;
+    }
+
 
 }

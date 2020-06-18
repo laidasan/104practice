@@ -3,12 +3,19 @@
     position: relative;
     z-index: -1;
     
-    padding-bottom: 60rem;
+    padding-bottom: 7rem;
     text-align: center;
-    background: url("../../img/bk/career-bg.png") no-repeat center $color-primary;
+    background: url('../../img/bk/bk-element-3.png') repeat top left;
 
     &__img-box {
+        margin: 0 auto;
+
+        > img {
+            width: 100%;
+        }
+
         &--title {
+            max-width: 630px;
             position: relative;
             top: -14rem;
             margin-bottom: -14rem;
@@ -19,24 +26,43 @@
             position: relative;
             top: 3px;
         }
+
+        &--growing-2 {
+            max-width: 1070px;
+            margin: 0 auto;
+        }
+
+        &--growing-1 {
+            max-width: 768px;
+        }
+
     }
 
     &-group {
-        // margin: nth($m,6) 0 nth($m,11);
         > .img-box {
             display: inline-block;
             margin: nth($m,6) 0 nth($m,11);
         }
     }
 
-    @include respond('tablet') {
+    @include respond('phone') {
+        padding-bottom: 4.5rem;
         &__img-box {
-            &--growing,&--title {
-                > img {
-                    width: 100%;
-                }
+            &--title {
+                top: -9rem;
+                margin-bottom: -9rem;
             }
         }
     }
+
+    // @include respond('tablet') {
+    //     &__img-box {
+    //         &--growing-1,&--title {
+    //             > img {
+    //                 width: 100%;
+    //             }
+    //         }
+    //     }
+    // }
 }
 

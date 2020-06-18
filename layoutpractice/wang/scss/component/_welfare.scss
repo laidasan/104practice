@@ -15,6 +15,7 @@
 
         > .img-box {
             display: inline-block;
+            margin-bottom: nth($m,6);
         }
     }
 
@@ -24,7 +25,20 @@
         letter-spacing: 2px;
     }
 
+    @include respond('tablet') {
+        // padding-bottom: 7rem;
+        background-position: center bottom 6rem;
+        background-size: contain;
+    }
+
     @include respond('phone') {
-        padding-bottom: 7rem;
+        // padding-bottom: 7rem;
+        &__img-box {
+            &--title {
+                max-width: 383px;
+                margin: 0 auto;
+                margin-bottom: nth($m,9);
+            }
+        }
     }
 }
