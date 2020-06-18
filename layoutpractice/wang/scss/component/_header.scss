@@ -94,13 +94,22 @@
 
         &__nav {
             position: fixed; left: 0;
+            padding-right: 30px;
             z-index: 3;
-            transform: translateX(calc(-110% - 2.1rem));
-            transition: translateX .3s;
+            transform: translateX(calc(-100% - 2.1rem));
+            transition: all .3s;
 
             // just show how to open nav , will use click listener.
             &:hover {
                 transform: translateX(0);
+            }
+            &:hover > .btn--nav {
+                > span {
+                    transform: scale(-1);
+                    &::after,&::before {
+                        left: 0;
+                    }
+                }
             }
 
 

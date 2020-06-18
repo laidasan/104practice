@@ -38,20 +38,42 @@
 
     @include respond('phone') {
 
-        // 0617 13:45  還要加入向右 arrow
         &--nav {
             display: block;
             border: none;
             position: absolute; right: 0; top: 0;
             width: 6rem;
             height: 6rem;
-            transform: translateX(120%);
+            transform: translateX(100%);
             border-radius: 50%;
             background: $color-primary-sub;
 
-            &::after {
-                content: 'arrow';
+            // arrow 
+            > span {
+                position: absolute; left: 0; right: 0; bottom: 0; top: 0;
+                // transform: scale(-1);
+                border-radius: 50%;
+
+                &::after,&::before {
+                    content: '';
+                    @include absolute-fill-ct;
+                    left: 9px;
+                    width: 12px;
+                    height: 3px;
+                    background: $color-primary;
+                    border-radius: nth($border-radius,3);
+                }
+    
+                &::before {
+                    transform-origin: right bottom;
+                    transform: rotate(30deg);
+                }
+                &::after {
+                    transform-origin: right top;
+                    transform: rotate(-30deg);
+                }
             }
+
         }
     }
 

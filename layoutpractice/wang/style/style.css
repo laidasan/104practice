@@ -88,6 +88,24 @@ img {
   top: 0;
   z-index: 2; }
 
+.float-btn {
+  position: fixed;
+  right: 3rem;
+  top: 9rem;
+  width: 9rem;
+  height: 12rem;
+  z-index: 3; }
+  .float-btn > img {
+    width: 100%; }
+  @media only screen and (max-width: 768px) {
+    .float-btn {
+      width: 6rem;
+      height: 6rem; } }
+  @media only screen and (max-width: 480px) {
+    .float-btn {
+      top: 3rem;
+      right: 1.5rem; } }
+
 .btn:link, .btn:visited {
   display: inline-block;
   text-decoration: none;
@@ -135,11 +153,35 @@ img {
     top: 0;
     width: 6rem;
     height: 6rem;
-    transform: translateX(120%);
+    transform: translateX(100%);
     border-radius: 50%;
     background: #ffb25a; }
-    .btn--nav::after {
-      content: 'arrow'; } }
+    .btn--nav > span {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      border-radius: 50%; }
+      .btn--nav > span::after, .btn--nav > span::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        left: 9px;
+        width: 12px;
+        height: 3px;
+        background: #c9032e;
+        border-radius: 9px; }
+      .btn--nav > span::before {
+        transform-origin: right bottom;
+        transform: rotate(30deg); }
+      .btn--nav > span::after {
+        transform-origin: right top;
+        transform: rotate(-30deg); } }
 
 .header {
   background: url("../../img/bk/bk-element.png") repeat; }
@@ -205,11 +247,16 @@ img {
     .header__nav {
       position: fixed;
       left: 0;
+      padding-right: 30px;
       z-index: 3;
-      transform: translateX(calc(-110% - 2.1rem));
-      transition: translateX .3s; }
+      transform: translateX(calc(-100% - 2.1rem));
+      transition: all .3s; }
       .header__nav:hover {
         transform: translateX(0); }
+      .header__nav:hover > .btn--nav > span {
+        transform: scale(-1); }
+        .header__nav:hover > .btn--nav > span::after, .header__nav:hover > .btn--nav > span::before {
+          left: 0; }
       .header__nav > a:link, .header__nav > a:visited {
         display: block;
         margin: 0;
@@ -244,12 +291,16 @@ img {
       background-position: center 4.2rem ,center bottom; } }
   @media only screen and (max-width: 480px) {
     .banner {
+      background-size: 51%,contain;
       background-position: center 5rem , center bottom; } }
-  @media only screen and (max-width: 360px) {
+  @media only screen and (max-width: 375px) {
     .banner {
       padding: 10rem 0;
-      background-position: center 30% , center bottom;
+      background-position: center 3.3rem , center bottom;
       background-size: 60% , contain; } }
+  @media only screen and (max-width: 320px) {
+    .banner {
+      background-position: center 4.5rem ,center bottom; } }
 
 .talent {
   text-align: center;
@@ -343,10 +394,13 @@ img {
     font-weight: 400;
     line-height: 2.1rem;
     letter-spacing: 2px; }
+  @media only screen and (max-width: 1128px) {
+    .welfare {
+      background-position: center bottom 9rem; } }
   @media only screen and (max-width: 768px) {
     .welfare {
       background-position: center bottom 6rem;
-      background-size: contain; } }
+      background-size: 150%; } }
   @media only screen and (max-width: 480px) {
     .welfare__img-box--title {
       max-width: 383px;
@@ -410,3 +464,11 @@ img {
       .footer__content {
         padding: 0 3%;
         margin-bottom: 14rem; } }
+  @media only screen and (max-width: 480px) {
+    .footer {
+      padding-bottom: 0; }
+      .footer__content {
+        margin-bottom: 15rem; }
+      .footer__img-box--btn {
+        position: relative;
+        top: -14rem; } }

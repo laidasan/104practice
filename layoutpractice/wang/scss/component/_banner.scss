@@ -36,26 +36,17 @@
     }
 
     @include respond('phone') {
+        background-size: 51%,contain;
         background-position: center 5rem , center bottom;
     }
 
-    @include respond-down(360px) {
+    @include respond-down(375px) {
         padding: 10rem 0;
-        background-position: center 30% , center bottom;
+        background-position: center 3.3rem , center bottom;
         background-size: 60% , contain;
     }
-    // @include respond-down(553px) {
-    //     // background-position: center 6rem;
 
-    //     &__title-box {
-    //         max-width: 75%;
-    //         margin: 0 auto;
-    //         > img {
-    //             width: 100%;
-    //         }
-    //     }
-    // }
-    // @include respond('phone') {
-    //     background-size: contain;
-    // }
+    @include respond-down(320px) {
+        background-position: center 4.5rem ,center bottom;
+    }
 }

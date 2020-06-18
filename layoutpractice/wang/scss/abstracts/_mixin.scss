@@ -47,6 +47,36 @@
     }
 };
 
+@mixin btn-arrow($style:1) {
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    background: #fff;
+    
+    // arrow 
+    > span {
+        position: absolute; left: 0; right: 0; bottom: 0; top: 0;
+    
+        &::after,&::before {
+            content: '';
+            @include absolute-fill-ct;
+            width: 1.2rem;
+            height: .3rem;
+            background: #000;
+            border-radius: nth($border-radius,3);
+        }
+    
+        &::before {
+            transform-origin: right bottom;
+            transform: rotate(30deg);
+        }
+        &::after {
+            transform-origin: right top;
+            transform: rotate(-30deg);
+        }
+    }
+}
+
 
 @mixin grid-sys($col-nm,$col-gutter:3,$width:100) {
     margin-right: percentage($col-gutter / 100);

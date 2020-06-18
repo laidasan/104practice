@@ -25,14 +25,16 @@
         letter-spacing: 2px;
     }
 
+    @include respond-down(1128px) {
+        background-position: center bottom 9rem;
+    }
+
     @include respond('tablet') {
-        // padding-bottom: 7rem;
         background-position: center bottom 6rem;
-        background-size: contain;
+        background-size: 150%;
     }
 
     @include respond('phone') {
-        // padding-bottom: 7rem;
         &__img-box {
             &--title {
                 max-width: 383px;

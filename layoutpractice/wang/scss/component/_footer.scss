@@ -56,4 +56,18 @@
             margin-bottom: 14rem;
         }
     }
+
+    @include respond('phone') {
+        padding-bottom: 0;
+        &__content {
+            margin-bottom: 15rem;
+        }
+
+        &__img-box {
+            &--btn {
+                position: relative;
+                top: -14rem;
+            }
+        }
+    }
 }

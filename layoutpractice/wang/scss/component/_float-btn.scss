@@ -1,0 +1,21 @@
+.float-btn {
+    position: fixed;
+     right: 3rem;
+     top: 9rem;
+     width: 9rem;
+     height: 12rem;
+     z-index: 3;
+     > img {
+         width: 100%;
+     }
+
+     @include respond('tablet') {
+         width: 6rem;
+         height: 6rem;
+     }
+
+     @include respond('phone') {
+         top: 3rem;
+         right: 1.5rem;
+     }
+}
