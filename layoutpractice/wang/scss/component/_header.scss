@@ -4,9 +4,18 @@
 
     &-container {
         margin: 0 21%;
-        padding-top: nth($p,12);
-        background: url('../../img/logo.png') no-repeat;
-        background-position: left 1.8rem;
+        padding-top: nth($p,5);
+
+        // padding-top: nth($p,12);
+        // background: url('../../img/logo.png') no-repeat;
+        // background-position: left 1.8rem;
+    }
+
+    &__logo {
+        @include font(6,0,3);
+        color: $color-primary;
+        content: url('../../img/logo.png');
+        cursor: pointer;
     }
 
     &__nav {
@@ -16,7 +25,6 @@
         > a {
             @include link {
                 position: relative;
-                // display: inline-block;
                 color: $color-primary;
                 text-decoration: none;
                 @include font(3,0);
@@ -65,7 +73,12 @@
     @include respond('tablet') {
         &-container {
             margin: 0;
-            background-position: center;
+            // background-position: center;
+        }
+
+        &__logo {
+            text-align: center;
+            margin: 0 auto;
         }
 
         &__nav {
