@@ -54,8 +54,22 @@
     &:nth-child(#{$col-nm}n) { margin-right: 0; }
 };
 
-// @mixin table-sys($col-nm,$width) {
-// };
+@mixin grid-sys-test($col-nm,$col-gutter:20px,$mode:between) {
+    @if $mode == between {
+        margin-right: $col-gutter;
+        width: calc((100% - #{($col-nm - 1)} * #{$gutter}) / #{$col-nm});
+        &:nth-child(#{$col-nm}n) { margin-right: 0;}
+    };
+    @if $mode == around {
+        margin: 0 $col-gutter / 2;
+        width: calc((100% - #{$col-nm} * #{$col-gutter}) / #{$col-nm});
+    }
+    @if $mode == even {
+        margin-right: $col-gutter;
+        width: calc((100% - #{($col-nm + 1)} * #{$col-gutter}) / #{$col-nm});
+        &:first-child { margin-left: $col-gutter;}
+    };
+}
 
 @mixin  font($f-size-level:2,$lh:0px,$f-weight-level:1) {
     font-size: nth($font-size , $f-size-level);
