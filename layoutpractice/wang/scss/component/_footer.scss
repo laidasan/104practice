@@ -1,8 +1,8 @@
 // 30% , 外面包一層
 .footer {
     color: $color-text;
-    padding: $padding;
-    background: $color-primary;
+    padding: nth($p,10) 0;
+    background: url('../../img/bk/about-bg.png') no-repeat center / 114% $color-primary;
 
     &__title {
         @include font(4,1rem);
@@ -12,24 +12,39 @@
             color: $color-primary-sub;
         }
     }
+
     &__img-box {
+
         &--title {
             margin-bottom: nth($m,3);
         }
-        > img {
-            vertical-align: middle;
+
+        &--btn {
+            text-align: left;
+            padding-left: 30%;
         }
     }
 
     &__content {
-        // padding-left: 30%;
-        text-align: center;
-        @include font(4,1.4rem);
+        padding: 0 30%;
+        @include font(3,1.4rem);
+    }
+
+    @include respond('large-desktop') {
+        &__img-box {
+            &--btn {
+                text-align: center;
+                padding: 0;
+            }
+        }
     }
 
     @include respond('tablet') {
+        background-position: center calc(100% - 4.5rem);
+
         &__img-box {
             &--btn {
+                // margin-top: 12rem;
                 > img {
                     width: 100%;
                 }
@@ -37,9 +52,8 @@
         }
 
         &__content {
-            &__title-2 {
-                text-align: center;
-            }
+            padding: 0 3%;
+            margin-bottom: 12rem;
         }
     }
 }
