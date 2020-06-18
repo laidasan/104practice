@@ -1,23 +1,61 @@
 .banner {
     padding: 28rem 0;
-    padding: 12rem 0 26rem;
+    // padding: 12rem 0 26rem;
     box-shadow: 0 0 0 1px #cd0000;
-    background: url("../../img/bk/keyimage-bg.png")no-repeat center / cover $color-primary;
+    background: url("../../img/title/keyimage-title.png") no-repeat center 12rem,
+                url("../../img/bk/keyimage-bg.png")no-repeat center / cover $color-primary;
+    // background-position: center 12rem,
+                        //  center;
+    // &__title-box {
+    //     text-align: center;
+    //     > img {
+    //         vertical-align: middle;
+    //     }
+    // }
 
-    &__title-box {
-        text-align: center;
-        > img {
-            vertical-align: middle;
-        }
+    @include respond('desktop') {
+        background: url("../../img/title/keyimage-title.png") no-repeat no-repeat center 12rem / 57%,
+                    url("../../img/bk/keyimage-bg-un-desk.png") no-repeat center bottom / contain,
+                    url("../../img/bk/bk-element-2.png") repeat;
+    }
+    
+    @include respond-down(883px) {
+        padding: 21rem;
+        background-position: center 7.5rem , center bottom;
+    }
+    @include respond('tablet') {
+        padding: 18rem 0;
+        // background-position: center 18rem , center bottom;
+        background-size: 51% , contain;
     }
 
-    @include respond-down(553px) {
-        &__title-box {
-            > img {
-                width: 100%;
-            }
-        }
+    @include respond-down(600px) {
+        padding: 12rem 0;
+        background-size: 45% , contain;
+        background-position: center 4.2rem ,center bottom;
     }
+
+    @include respond('phone') {
+        background-position: center 5rem , center bottom;
+    }
+
+    @include respond-down(360px) {
+        padding: 10rem 0;
+        background-position: center 30% , center bottom;
+        background-size: 60% , contain;
+    }
+    // @include respond-down(553px) {
+    //     // background-position: center 6rem;
+
+    //     &__title-box {
+    //         max-width: 75%;
+    //         margin: 0 auto;
+    //         > img {
+    //             width: 100%;
+    //         }
+    //     }
+    // }
     // @include respond('phone') {
+    //     background-size: contain;
     // }
 }
