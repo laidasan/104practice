@@ -20,5 +20,9 @@
     
     @include respond('phone') {
         animation: none;
+        &-shadow {
+            animation: none;
+            display: none;
+        }
     }
 }

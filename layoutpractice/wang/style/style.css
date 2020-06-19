@@ -160,7 +160,10 @@ img {
     animation: none; }
   @media only screen and (max-width: 480px) {
     .bounce {
-      animation: none; } }
+      animation: none; }
+      .bounce-shadow {
+        animation: none;
+        display: none; } }
 
 .btn:link, .btn:visited {
   display: inline-block;
