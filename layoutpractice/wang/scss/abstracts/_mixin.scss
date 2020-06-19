@@ -107,10 +107,6 @@
     line-height: nth($font-size , $f-size-level) + $lh;
 }
 
-
-
-// 比較大的 mixin 
-// @mixin  big-mixin {
-//     @extend %btn-base;
-//     @include font($level);
-// }
+@mixin bounce {
+    @extend %bounce;
+}

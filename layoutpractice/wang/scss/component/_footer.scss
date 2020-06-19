@@ -60,13 +60,13 @@
     @include respond('phone') {
         padding-bottom: 0;
         &__content {
-            margin-bottom: 15rem;
+            margin-bottom: 18rem;
         }
 
         &__img-box {
             &--btn {
                 position: relative;
-                top: -14rem;
+                top: -18rem;
             }
         }
     }

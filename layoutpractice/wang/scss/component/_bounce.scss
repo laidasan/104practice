@@ -1,0 +1,11 @@
+.bounce {
+    @include bounce;
+
+    &:hover {
+        animation: none;
+    }
+    
+    @include respond('phone') {
+        animation: none;
+    }
+}

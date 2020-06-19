@@ -1,3 +1,4 @@
+@import "abstracts/animation";
 @import "abstracts/extend";
 @import "abstracts/mixin";
 @import "abstracts/variable";
@@ -10,6 +11,7 @@
 
 @import "component/fill-link";
 @import "component/float-btn";
+@import "component/bounce";
 @import "component/btn";
 @import "component/header";
 @import "component/banner";
