@@ -3,7 +3,7 @@
 
     &__img-box {
         float: left;
-        @include grid-sys(4,0);
+        @include grid-sys(4,0px);
 
         > img {
             width: 100%;

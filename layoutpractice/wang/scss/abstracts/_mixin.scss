@@ -77,17 +77,10 @@
     }
 }
 
-
-@mixin grid-sys($col-nm,$col-gutter:3,$width:100) {
-    margin-right: percentage($col-gutter / 100);
-    width: percentage( (($width - $col-gutter * ($col-nm - 1)) / $col-nm) / $width);
-    &:nth-child(#{$col-nm}n) { margin-right: 0; }
-};
-
-@mixin grid-sys-test($col-nm,$col-gutter:20px,$mode:between) {
+@mixin grid-sys($col-nm,$col-gutter:20px,$mode:between) {
     @if $mode == between {
         margin-right: $col-gutter;
-        width: calc((100% - #{($col-nm - 1)} * #{$gutter}) / #{$col-nm});
+        width: calc((100% - #{($col-nm - 1)} * #{$col-gutter}) / #{$col-nm});
         &:nth-child(#{$col-nm}n) { margin-right: 0;}
     };
     @if $mode == around {

@@ -3,8 +3,6 @@
     @return $font-size + 4px;
 }
 
-
-
 @for $col-nm from 1 through $columns {
     @if $columns % $col-nm == 0 {
         .col-#{$columns / $col-nm} {

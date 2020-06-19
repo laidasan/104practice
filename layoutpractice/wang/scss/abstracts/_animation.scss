@@ -3,7 +3,7 @@ $bounce: (
     transform: (
         height: -60px,
         bounce: -7px
-    )
+    ),
 );
 
 @keyframes bounce {
@@ -27,5 +27,29 @@ $bounce: (
     }
     100% {
         transform: scale(1,1) translateY(0px);
+    }
+}
+
+@keyframes bounce-shadow {
+    0% {
+        transform: scale(1,1) 
+    }
+    10% {
+        transform: scale(1.1,.9) 
+    }
+    30% {
+        transform: scale(.7,1.2);
+    }
+    50% {
+        transform: scale(.95,1.05) 
+    }
+    57% {
+        transform: scale(.9,1); // 彈到地面反彈
+    }
+    64% {
+        transform: scale(1,1) 
+    }
+    100% {
+        transform: scale(1,1) 
     }
 }

@@ -1,5 +1,18 @@
 .bounce {
+    display: inline-block;
     @include bounce;
+
+    &-shadow {
+        position: absolute; bottom: -1.2rem; left: 0; right: 0;
+        background: #333;
+        height: 1.2rem;
+        border-radius: 50%;
+
+        animation-name: bounce-shadow;
+        animation-duration: 2.1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+    }
 
     &:hover {
         animation: none;
