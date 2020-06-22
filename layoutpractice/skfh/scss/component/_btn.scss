@@ -1,3 +1,14 @@
 .btn {
     @include btn-base(false);
+
+    &--primary {
+        @include link {
+            box-shadow: 0 0 0 1px #cd0000;
+            color: $color-white;
+            background: $color-primary;
+            padding: nth($p,2) nth($p,8);
+            border-radius: nth($border-radius,1);
+            letter-spacing: .6px;
+        }
+    }
 }

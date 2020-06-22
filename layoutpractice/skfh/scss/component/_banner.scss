@@ -1,0 +1,79 @@
+.banner {
+    padding: 0 1.2rem;
+    padding-top: 3rem;
+    // padding-bottom: 27rem;
+    // background:url("../../img/bk/kv-image-bg-xs.png") no-repeat center bottom / 100%,
+    //            url('../../img/bk/kv-image-bg-xs-3.png') no-repeat top left / 12rem,
+    //            url('../../img/bk/kv-image-bg-xs-4.png') no-repeat right top / 6rem,
+    //          #f0f0f0;
+    background:
+                url('../../img/bk/kv-image-bg-xs-3.png') no-repeat top left / 12rem,
+                url('../../img/bk/kv-image-bg-xs-4.png') no-repeat right top / 6rem,
+             #f0f0f0;
+
+    &__title-box {
+
+        max-width: 285px;
+        margin: 0 auto;
+
+        > img {
+            width: 100%;
+        }
+    }
+
+    &__bk-xs {
+        margin: 0 -1.2rem;
+        > img {
+            width: 100%;
+        }
+    }
+
+    @include respond('sm') {
+        &__title-box {
+            max-width: 320px;
+        }
+    }
+
+    @include respond-up(620px) {
+        padding-bottom: 24rem;
+        background: url('../../img/bk/kv-image-bg.png') no-repeat center / cover;
+
+        &__title-box {
+            margin: 0;
+        }
+        &__bk-xs {
+            display: none;
+        }
+    }
+
+    @include respond('md') {
+        &__title-box {
+            max-width: 360px;
+            margin-left: 6%;
+        }
+    }
+
+    @include respond('lg') {
+        &__title-box {
+            max-width: 420px;
+        }
+    }
+
+    @include respond('xl') {
+        &__title-box {
+            max-width: 538px;
+            margin-left: 12%;
+        }
+    }
+
+    @include respond-up(1600px) {
+        &__title-box {
+            margin-left: 15%;
+        }
+    }
+    @include respond-up(1920px) {
+        &__title-box {
+            margin-left: 18%;
+        }
+    }
+}

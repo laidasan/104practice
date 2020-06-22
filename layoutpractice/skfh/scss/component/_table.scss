@@ -1,0 +1,53 @@
+.table {
+    
+    &--resume {
+        display: none;
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        box-shadow: 0 0 0 1px $color-tb-border;
+        @include font(2);
+
+        tbody {
+
+            tr {
+                box-shadow: 0 0 0 1px $color-tb-border;
+
+                &:nth-child(odd) {
+                    background: $color-tb-bk-light;
+                }
+                &:nth-child(even) {
+                    background: $color-tb-bk-dark;
+                }   
+            }
+
+            td {
+                padding: nth($p,4) 0;
+                box-shadow: 0 0 0 1px #000;
+
+                &:first-child {
+                    padding-left: nth($p,12);
+                }
+                &:nth-child(2) {
+                    padding-left: 7.5rem;
+                }
+                &:nth-child(4) {
+                    text-align: center;
+                }
+            }
+        }
+
+        thead {
+            background: $color-primary;
+            color: $color-white;
+        }
+
+        th {
+            padding: nth($p,3);
+        }
+    }
+
+    td.import {
+        color: $color-tb-import;
+    }
+}

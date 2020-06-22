@@ -2,6 +2,17 @@ html {
     font-size: 62.5%;
 }
 .section {
-    padding-top: 6.9rem;
-    padding-bottom: 6.9rem;
+    padding-top: 3.3rem;
+    padding-bottom: 3.3rem;
+}
+
+img {
+    vertical-align: middle;
+}
+
+@include respond('lg') {
+    .section {
+        padding-top: 6.9rem;
+        padding-bottom: 6.9rem;
+    }
 }

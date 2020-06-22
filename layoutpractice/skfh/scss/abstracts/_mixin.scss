@@ -7,7 +7,7 @@
 
 
 @mixin respond($breakpoint) {
-    @media only screen and (max-width: map-get($breakpoints, $breakpoint)){@content}
+    @media only screen and (min-width: map-get($breakpoints, $breakpoint)){@content}
 };
 
 
@@ -47,7 +47,7 @@
     }
 };
 
-@mixin  font($f-size-level:2,$lh:0px,$f-weight-level:1) {
+@mixin  font($f-size-level:2,$lh:0,$f-weight-level:1) {
     font-size: nth($font-size , $f-size-level);
     font-weight: nth($font-weight,$f-weight-level);
     line-height: nth($font-size , $f-size-level) + $lh;
