@@ -1,0 +1,88 @@
+@mixin respond-down($width) {
+    @media only screen and (max-width: $width) { @content }
+};
+@mixin respond-up($width) {
+    @media only screen and (min-width: $width) {@content}
+};
+
+
+@mixin respond($breakpoint) {
+    @media only screen and (max-width: map-get($breakpoints, $breakpoint)){@content}
+};
+
+
+@mixin clear {
+    &::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+};
+
+
+
+@mixin link {
+    &:link,
+    &:visited {
+        @content
+    }
+};
+
+@mixin absolute-fill-ct {
+    position: absolute; 
+    top: 0; bottom: 0; right: 0; left: 0;
+    margin: auto;
+};
+
+@mixin btn-base($shadow-border:true,$b-radius-level:0,$f-size-level:1,$p-tb:1.2rem,$p-rl:1.8rem) {
+    &:link,
+    &:visited {
+        display: inline-block;
+        text-decoration: none;
+        color: #000;
+        font-size: nth($font-size,$f-size-level);
+        padding: $p-tb,$p-rl;
+        @if $shadow-border {box-shadow: 0 0 0 1px #000;}
+        @if $b-radius-level > 0 {border-radius: nth($border-radius , $b-radius-level);}
+    }
+};
+
+@mixin  font($f-size-level:2,$lh:0px,$f-weight-level:1) {
+    font-size: nth($font-size , $f-size-level);
+    font-weight: nth($font-weight,$f-weight-level);
+    line-height: nth($font-size , $f-size-level) + $lh;
+}
+
+// $gutter 帶任何單位都可以 px , rem , em , % etc....
+// 一個 container 裡面一次只能使用一種 mode （不能混用）
+// 但因為 { between（兩端貼邊） , even（間距相同） } 這兩種模式都需要準確的選頭或是尾來增減間距
+// 所以限制較大 , 這兩種 mode 除了一個 container 裡面只能塞一種 mode 外 , 也只能夠使用一種欄位數量（比如說-col-1,就只能用col-1)
+// around 則可以使用不同種欄位數量 , 缺點是無法靠邊對齊（grid-system 產生的css , 如 col-1 , 用的是 around
+// 結構為：
+// wrapper - 設置寬度 , around mode 額外再加 $gutter , 才能夠內容（colmuns)正確寬度
+//  container
+//   columns
+@mixin grid-sys($col-nm,$col-gutter:20px,$mode:between) {
+    @if $mode == between {
+        margin-right: $col-gutter;
+        width: calc((100% - #{($col-nm - 1)} * #{$col-gutter}) / #{$col-nm});
+        &:nth-child(#{$col-nm}n) { margin-right: 0;}
+    };
+    @if $mode == around {
+        margin: 0 $col-gutter / 2;
+        width: calc((100% - #{$col-nm} * #{$col-gutter}) / #{$col-nm});
+    }
+    @if $mode == even {
+        margin-right: $col-gutter;
+        width: calc((100% - #{($col-nm + 1)} * #{$col-gutter}) / #{$col-nm});
+        &:nth-child(#{$col-nm}n + 1) { margin-left: $col-gutter;}
+    };
+}
+
+
+// animation
+
+// bounce
+@mixin bounce {
+    @extend %bounce;
+}
