@@ -11,4 +11,34 @@
             letter-spacing: .6px;
         }
     }
+
+
+    @include respond-up(600px) {
+        &--primary {
+            @include link {
+                padding: nth($p,3) nth($p,9);
+                @include font(2);
+            }
+        }
+    }
+
+    @include respond('md') {
+        &--primary {
+            @include link {
+                padding: nth($p,2) nth($p,8);
+                margin-top: 2.1rem;
+            }
+        }
+    }
+
+    @include respond('xl') {
+        &--primary {
+            @include link {
+                // margin-top: calc(125px - 33px) / 2;
+                margin-top: 4.6rem;
+                border-radius: 0;
+                @include font(3)
+            }
+        } 
+    }
 }

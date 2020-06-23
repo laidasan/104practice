@@ -14,8 +14,22 @@
 }
 
 
+
+// @each $key,$value in $breakpoints {
+//     @include respond-down($value) {
+//         @for $col-nm from 1 through $columns {
+//             @if $columns % $col-nm == 0 {
+//                 .#{$key}\:col-#{$columns / $col-nm} {
+//                     @include grid-sys($col-nm,$gutter,around);
+//                     // float: left;
+//                 }
+//             }
+//         }
+//     }
+// }
+
 @each $key,$value in $breakpoints {
-    @include respond-down($value) {
+    @include respond($key) {
         @for $col-nm from 1 through $columns {
             @if $columns % $col-nm == 0 {
                 .#{$key}\:col-#{$columns / $col-nm} {

@@ -28,3 +28,13 @@
         text-align: right;
     }
 }
+
+@each $key,$value in $breakpoints {
+    @include respond($key) {
+        .#{$key}\:t {
+            &-cn {text-align: center;}
+            &-l {text-align: left;}
+            &-r {text-align: right;}
+        }
+    }
+}

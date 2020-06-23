@@ -1,12 +1,20 @@
 .table {
-    
+
     &--resume {
-        display: none;
         width: 100%;
-        max-width: 900px;
         margin: 0 auto;
         box-shadow: 0 0 0 1px $color-tb-border;
-        @include font(2);
+        @include font(2,.6rem);
+
+        tr {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        th , td {
+            letter-spacing: .6px;
+        }
 
         tbody {
 
@@ -21,18 +29,39 @@
                 }   
             }
 
+
             td {
+                position: relative;
                 padding: nth($p,4) 0;
-                box-shadow: 0 0 0 1px #000;
+                flex-basis: 50%;
+                text-align: center;
+
+                // padding-left: nth($p,12);
 
                 &:first-child {
-                    padding-left: nth($p,12);
+                    flex-basis: 100%;
+                    box-shadow: 0 0 0 1px #000;
+                    &::after {
+                        content: attr(data-type);
+                        &.import {
+                            color: $color-tb-import;
+                        }
+                    }
                 }
-                &:nth-child(2) {
-                    padding-left: 7.5rem;
+
+                &:nth-child(3) {
+                    &::before {
+                        content: '';
+                        position: absolute; left: 0; top: 0; bottom: 0;
+                        width: 0;
+                        padding: 0 .06rem;
+                        background: $color-black;
+                    }
                 }
+
+
                 &:nth-child(4) {
-                    text-align: center;
+                    display: none;
                 }
             }
         }
@@ -40,14 +69,95 @@
         thead {
             background: $color-primary;
             color: $color-white;
-        }
 
-        th {
-            padding: nth($p,3);
+            th {
+                flex-basis: 50%;
+                padding: nth($p,3) 0;
+            }
+
+            th:first-child {
+                flex-basis: 100%;
+                &::after {
+                    content: attr(data-type);
+                }
+            }
+
+            th:last-child {
+                display: none;
+            }
         }
     }
 
     td.import {
         color: $color-tb-import;
     }
+
+
+    @include respond('lg') {
+
+        &--resume {
+            max-width: 90rem;
+
+            tr {
+                display: table-row;
+            }
+
+            thead {
+                th {
+                    box-shadow: none;
+                    &:first-child {
+                        &::after {
+                            content: none;
+                        }
+                    }
+
+                    &:last-child {
+                        display: table-cell;
+                    }
+                }
+            }
+
+            tbody {
+                td {
+                    box-shadow: 0 0 0 .3px $color-black;
+                    &:first-child {
+                        box-shadow: 0 0 0 .1px $color-black;
+                        &::after {
+                            content: none;
+                        }
+
+                        &.import {
+                            color: $color-black;
+                        }
+                    }
+
+                    &:nth-child(2),&:nth-child(3) {
+                        padding-left: 3.6rem;
+                        text-align: left;
+                    }
+                    &:nth-child(3) {
+                        &::before {
+                            content: none;
+                        }
+                    }
+                    &:nth-child(4) {
+                        // padding: 0 1.2rem;
+                        display: table-cell;
+                    }
+                }
+            }
+
+        }
+    }
+
+    @include respond('xl') {
+        tbody {
+            td {
+                &:nth-child(2) {
+                    padding-left: 6rem;
+                }
+            }
+        }
+    }
+
 }
