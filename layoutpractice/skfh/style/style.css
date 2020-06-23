@@ -167,6 +167,8 @@ html {
 .section {
   padding-top: 3.3rem;
   padding-bottom: 3.3rem; }
+  .section-form--health {
+    background: url("../../img/bk/form-health-bg.png") no-repeat center/cover; }
 
 img {
   vertical-align: middle; }
@@ -755,22 +757,105 @@ img {
     padding-left: 6rem; } }
 
 .form {
-  font-size: 0; }
+  text-align: center; }
+  .form::after {
+    content: '';
+    display: block;
+    clear: both; }
   .form-wrapper {
-    max-width: 784px;
-    padding: 7.8rem 9.6rem 3.9rem;
+    position: relative;
+    z-index: 0;
+    max-width: 984px;
+    padding-top: 2.4rem;
+    padding-bottom: 1.8rem;
     margin: 0 auto;
+    border-radius: 3px; }
+    .form-wrapper::after {
+      content: ''; }
+  .form__container, .form__label {
+    float: left;
+    margin-bottom: 2.1rem;
     border-radius: 3px;
-    background: #fff;
-    box-shadow: 0 0 0 1px #0000aa; }
+    box-shadow: 0 0 0 1px #000; }
+  .form__label {
+    position: relative; }
+    .form__label > .tag {
+      position: absolute;
+      left: 1.2rem;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.2rem;
+      line-height: 3.3rem; }
   .form__input {
-    background: #ccc;
     border: none;
-    padding: 1.2rem 0;
-    padding-left: 1.2rem;
-    margin-bottom: 2.1rem; }
-    .form__input:focus {
-      outline: 1px solid; }
+    width: 100%;
+    padding: 0.9rem 0; }
+    .form__input--text {
+      padding-left: 4.8rem; }
+    .form__input--email {
+      padding-left: 7.2rem; }
+    .form__input--school {
+      padding-left: 6.6rem; }
+    .form__input--master {
+      padding-left: 7.5rem; }
+    .form__input--status {
+      display: none; }
+      .form__input--status:checked ~ .form__lb--StatusRadio > .radio-box::after, .form__input--status:checked ~ .form__lb--StatusRadio > .radio-box::before {
+        content: ''; }
+      .form__input--status:checked ~ .form__lb--select {
+        pointer-events: auto;
+        opacity: 1; }
+  .form__select {
+    width: 100%;
+    padding: 0.9rem 0;
+    border: none;
+    background: #fff; }
+  .form__container {
+    box-shadow: none; }
+    .form__container > span {
+      display: block;
+      margin-bottom: 1.2rem; }
+    .form__container-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2.1rem; }
+  .form__lb--StatusRadio {
+    position: relative;
+    text-align: left;
+    padding-left: 3.3rem;
+    margin-right: 1.2rem; }
+    .form__lb--StatusRadio > .radio-box {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      left: 1.2rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      box-shadow: 0 0 0 1px #000; }
+      .form__lb--StatusRadio > .radio-box::after, .form__lb--StatusRadio > .radio-box::before {
+        position: absolute;
+        top: 0;
+        width: .3rem;
+        background: #000; }
+      .form__lb--StatusRadio > .radio-box::after {
+        height: 1.2rem;
+        right: .3rem;
+        transform: rotate(45deg); }
+      .form__lb--StatusRadio > .radio-box::before {
+        height: .75rem;
+        top: .5rem;
+        left: .21rem;
+        transform: rotate(-45deg); }
+  .form__lb--select {
+    flex-grow: 1;
+    box-shadow: 0 0 0 1px #000;
+    border-radius: 3px;
+    opacity: .3;
+    pointer-events: none; }
 
 .btn:link, .btn:visited {
   display: inline-block;

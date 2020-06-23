@@ -46,6 +46,6 @@ table {
 	/* border-collapse: separate; */
 	border-spacing: 0;
 }
-input[type="text"],input[type="email"] {
+input[type="text"],input[type="email"],input[type="tel"] {
 	box-sizing: border-box;
 }

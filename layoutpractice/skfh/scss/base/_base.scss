@@ -4,6 +4,12 @@ html {
 .section {
     padding-top: 3.3rem;
     padding-bottom: 3.3rem;
+
+    &-form {
+        &--health {
+            background: url('../../img/bk/form-health-bg.png') no-repeat center / cover;
+        }
+    }
 }
 
 img {
