@@ -693,11 +693,16 @@ img {
   box-shadow: 0 0 0 1px #626262;
   font-size: 1.5rem;
   font-weight: 400;
-  line-height: 2.1rem; }
+  line-height: 2.1rem;
+  display: block;
+  max-height: 45rem;
+  overflow-y: auto; }
   .table--resume tr {
     display: flex;
     flex-wrap: wrap;
     align-items: center; }
+  .table--resume thead, .table--resume tbody {
+    display: block; }
   .table--resume th, .table--resume td {
     letter-spacing: .6px; }
   .table--resume tbody tr {
@@ -745,11 +750,21 @@ img {
 .table td.import {
   color: #cb0700; }
 
+@media only screen and (min-width: 600px) {
+  .table--resume {
+    max-height: 51rem; } }
+
 @media only screen and (min-width: 960px) {
   .table--resume {
-    max-width: 90rem; }
+    max-width: 90rem;
+    max-height: none;
+    display: table; }
     .table--resume tr {
       display: table-row; }
+    .table--resume thead {
+      display: table-header-group; }
+    .table--resume tbody {
+      display: table-row-group; }
     .table--resume thead th {
       box-shadow: none; }
       .table--resume thead th:first-child::after {
