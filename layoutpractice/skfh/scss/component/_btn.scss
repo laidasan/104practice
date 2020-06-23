@@ -12,6 +12,23 @@
         }
     }
 
+    &-form {
+        border: none;
+        color: $color-white;
+        padding: nth($p,2) nth($p,12);
+        border-radius: nth($border-radius,2);
+        letter-spacing: .6px;
+
+        &--primary {
+            background: $color-primary;
+
+        }
+
+        &--dark {
+            background: $color-black;
+        }
+    }
+
 
     @include respond-up(600px) {
         &--primary {
@@ -31,6 +48,14 @@
         }
     }
 
+    @include respond('lg') {
+        &-form {
+            padding: nth($p,3) 9.6rem;
+            border-radius: nth($border-radius,2);
+            font-size: nth($font-size,3);
+        }
+    }
+
     @include respond('xl') {
         &--primary {
             @include link {
@@ -40,5 +65,9 @@
                 @include font(3)
             }
         } 
+
+        &-form {
+            font-size: nth($font-size,5);
+        }
     }
 }

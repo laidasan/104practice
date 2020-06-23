@@ -1,0 +1,45 @@
+.resume-form {
+    position: relative;
+    z-index: 0;
+
+    &::after {
+        content: '';
+        position: absolute; left: 0; right: 0; top: 0 ;bottom: 0;
+        background: url('../../img/bk/form-resume-bg-xs.png') no-repeat center / cover;
+        opacity: .9;
+        z-index: -1;
+    }
+
+    @include respond-up(600px) {
+        &::before {
+            content: '';
+            position: absolute; left: 0; right: 0; top: 0 ;bottom: 0;
+            background: url('../../img/people/form-resume-people.png') no-repeat 21% top / 12rem;
+        }
+    }
+
+    @include respond('md') {
+        background: url('../../img/bk/form-resume-bg.png') no-repeat center / cover;
+        opacity: 1;
+    }
+
+    @include respond-up(1200px) {
+        &::before {
+            background-size: auto;
+            background-position: left bottom;
+        }
+    }
+    
+    @include respond('xl') {
+        &::before {
+            right: 9rem;
+        }
+    }
+
+    @include respond-up(1920px) {
+        &::before {
+            right: 0;
+            left: 15rem;
+        }
+    }
+}

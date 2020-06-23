@@ -103,100 +103,195 @@
             </table>
         </div>
     </section>
-    <section class="section section-form section-form--health">
-        <div class="health">
-            <div class="form-wrapper form-wrapper--health">
-                <form class="form form--health">
-                    <label for="Name" class="form__label col-12">
-                        <input id="Name" type="text" class="form__input form__input--text">
-                        <span class="tag">姓名*</span>
-                    </label>
-                    <label for="Tel" class="form__label col-12">
-                        <input id="Tel" type="tel" class="form__input form__input--text">
-                        <span class="tag">電話*</span>
-                    </label>
-                    <label for="Email" class="form__label col-12">
-                        <input id="Email" type="email" class="form__input form__input--email">
-                        <span class="tag">電子信箱*</span>
-                    </label>
-                    <div class="form__container col-12">
-                        <span class="tag">就業狀態</span>
-                        <div class="form__container-group">
-                            <input type="radio" name="Status" id="StautsSchool" class="form__input form__input--status">
-                            <label for="StautsSchool" class="form__lb--StatusRadio">
-                                <span class="radio-box"></span>
-                                就業中
-                            </label>
-                            <label for="" class="form__lb--select">
-                                <select name="" id="SchoolYear" class="form__select">
-                                    <option value="0" hidden>年級</option>
-                                    <option value="1">一</option>
-                                    <option value="2">二</option>
-                                    <option value="3">三</option>
-                                </select>
-                            </label>
-                        </div>
-                        <div class="form__container-group">
-                            <input type="radio" name="Status" id="StautsGradu" class="form__input form__input--status">
-                            <label for="StautsGradu" class="form__lb--StatusRadio">
-                                <span class="radio-box"></span>
-                                已畢業
-                            </label>
-                            <label for="" class="form__lb--select">
-                                <select name="" id="SchoolYear" class="form__select">
-                                    <option value="0" hidden>畢業年次</option>
-                                    <option value="2010">2010</option>
-                                    <option value="2011">2011</option>
-                                    <option value="2012">2012</option>
-                                </select>
-                            </label>
-                        </div>
+    <section class="section section-form section-form--health health">
+        <div class="section-form__title-box"><img src="./img/title/form-health-title.png" alt="" class="health__title"></div>
+        <div class="form-wrapper form-wrapper--health">
+            <h3 class="form__title">報名3/9(六)台大履歷健診填寫</h3>
+            <form class="form form--health">
+                <label for="Name" class="form__label col-12 sm:col-6">
+                    <input id="Name" type="text" class="form__input form__input--text">
+                    <span class="tag">姓名*</span>
+                </label>
+                <label for="Tel" class="form__label col-12 sm:col-6">
+                    <input id="Tel" type="tel" class="form__input form__input--text">
+                    <span class="tag">電話*</span>
+                </label>
+                <label for="Email" class="form__label col-12">
+                    <input id="Email" type="email" class="form__input form__input--email">
+                    <span class="tag">電子信箱*</span>
+                </label>
+                <div class="form__container col-12">
+                    <span class="tag">就業狀態</span>
+                    <div class="form__container-group">
+                        <input type="radio" name="Status" id="HealthStautsSchool" class="form__input form__input--status">
+                        <label for="HealthStautsSchool" class="form__lb--StatusRadio">
+                            <span class="radio-box"></span>
+                            就業中
+                        </label>
+                        <label for="" class="form__lb--select">
+                            <select name="" id="SchoolYear" class="form__select">
+                                <option value="0" hidden>年級</option>
+                                <option value="1">一</option>
+                                <option value="2">二</option>
+                                <option value="3">三</option>
+                            </select>
+                        </label>
                     </div>
-                    <label for="School" class="form__label col-12">
-                        <input id="School" type="text" class="form__input form__input--school">
-                        <span class="tag">最高學歷</span>
-                    </label>
-                    <label for="master" class="form__label col-12">
-                        <input id="master" type="text" class="form__input form__input--master">
-                        <span class="tag">學校與科系</span>
-                    </label>
-                    <label for="" class="form__label col-12">
-                        <select name="Time" id="Time" class="form__select">
-                            <option value="" disabled selected>診斷時間</option>
-                            <option value="afternoon">下午</option>
-                            <option value="afternoon">下午</option>
-                            <option value="afternoon">下午</option>
-                            <option value="afternoon">下午</option>
-                        </select>
-                    </label>
-                    <label for="" class="form__label col-6">
-                        <select name="Time" id="Time" class="form__select">
-                            <option value="" disabled selected>想要應徵職務</option>
-                            <option value="F2E">F2E</option>
-                        </select>
-                    </label>
-                    <label for="" class="form__label col-6">
-                        <select name="Time" id="Time" class="form__select">
-                            <option value="" disabled selected>希望工作地點</option>
-                            <option value="Taipei">Teipei</option>
-                        </select>
-                    </label>
-                    <button class="btn btn--form" type="submit">確認送出</button>
-                </form>
-            </div>
+                    <div class="form__container-group">
+                        <input type="radio" name="Status" id="StautsGradu" class="form__input form__input--status">
+                        <label for="StautsGradu" class="form__lb--StatusRadio">
+                            <span class="radio-box"></span>
+                            已畢業
+                        </label>
+                        <label for="" class="form__lb--select">
+                            <select name="" id="SchoolYear" class="form__select">
+                                <option value="0" hidden>畢業年次</option>
+                                <option value="2010">2010</option>
+                                <option value="2011">2011</option>
+                                <option value="2012">2012</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+                <label for="School" class="form__label col-12 sm:col-6">
+                    <input id="School" type="text" class="form__input form__input--school">
+                    <span class="tag">最高學歷</span>
+                </label>
+                <label for="master" class="form__label col-12 sm:col-6">
+                    <input id="master" type="text" class="form__input form__input--master">
+                    <span class="tag">學校與科系</span>
+                </label>
+                <label for="" class="form__label col-12">
+                    <select name="Time" id="Time" class="form__select">
+                        <option value="" disabled selected>診斷時間</option>
+                        <option value="afternoon">下午</option>
+                        <option value="afternoon">下午</option>
+                        <option value="afternoon">下午</option>
+                        <option value="afternoon">下午</option>
+                    </select>
+                </label>
+                <label for="" class="form__label col-6">
+                    <select name="Time" id="Time" class="form__select">
+                        <option value="" disabled selected>想要應徵職務</option>
+                        <option value="F2E">F2E</option>
+                    </select>
+                </label>
+                <label for="" class="form__label col-6">
+                    <select name="Time" id="Time" class="form__select">
+                        <option value="" disabled selected>希望工作地點</option>
+                        <option value="Taipei">Teipei</option>
+                    </select>
+                </label>
+                <button class="btn-form btn-form--primary" type="submit">確認送出</button>
+            </form>
+            <h5 class="form-warn">
+                ※限應徵金融行業相關職缺履歷健診<br>
+                ※當天請攜帶履歷至現場<br>
+                ※請務必準時到場，若過健診時段，視同放棄<br>
+                ※若於活動當日釋出履歷健診缺額，候補名額將依序通知遞補<br>
+            </h5>
         </div>
     </section>
-    <section class="section section-form section-form--resume"></section>
-    <!-- <section class="section section-form">
-        <div class="form-wrapper">
-            <form class="form">
-                <input type="text" class="form__input col-6">
-                <input type="text" class="form__input col-6">
-                <input type="email" name="" id="" class="form__input col-12">
+    <section class="section section-form section-form--resume resume-form">
+        <div class="section-form__title-box"><img src="./img/title/resume-title-2.png" alt="" class="health__title"></div>
+        <div class="form-wrapper form-wrapper--resume">
+            <h3 class="form__title u-text-white">加入新光金控填寫</h3>
+            <form class="form form--health">
+                <label for="Name" class="form__label col-12 sm:col-6">
+                    <input id="Name" type="text" class="form__input form__input--text">
+                    <span class="tag">姓名*</span>
+                </label>
+                <label for="Tel" class="form__label col-12 sm:col-6">
+                    <input id="Tel" type="tel" class="form__input form__input--text">
+                    <span class="tag">電話*</span>
+                </label>
+                <label for="Email" class="form__label col-12">
+                    <input id="Email" type="email" class="form__input form__input--email">
+                    <span class="tag">電子信箱*</span>
+                </label>
+                <div class="form__container col-12 u-text-white">
+                    <span class="tag">就業狀態</span>
+                    <div class="form__container-group">
+                        <input type="radio" name="StatusJoin" id="ResumeStautsSchool" class="form__input form__input--status">
+                        <label for="ResumeStautsSchool" class="form__lb--StatusRadio">
+                            <span class="radio-box white"></span>
+                            就業中
+                        </label>
+                        <label for="" class="form__lb--select">
+                            <select name="" id="SchoolYear" class="form__select">
+                                <option value="0" hidden>年級</option>
+                                <option value="1">一</option>
+                                <option value="2">二</option>
+                                <option value="3">三</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="form__container-group">
+                        <input type="radio" name="StatusJoin" id="ResumeStautsGradu" class="form__input form__input--status">
+                        <label for="ResumeStautsGradu" class="form__lb--StatusRadio">
+                            <span class="radio-box white"></span>
+                            已畢業
+                        </label>
+                        <label for="" class="form__lb--select">
+                            <select name="" id="SchoolYear" class="form__select">
+                                <option value="0" hidden>畢業年次</option>
+                                <option value="2010">2010</option>
+                                <option value="2011">2011</option>
+                                <option value="2012">2012</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+                <label for="School" class="form__label col-12 sm:col-6">
+                    <input id="School" type="text" class="form__input form__input--school">
+                    <span class="tag">最高學歷</span>
+                </label>
+                <label for="master" class="form__label col-12 sm:col-6">
+                    <input id="master" type="text" class="form__input form__input--master">
+                    <span class="tag">學校與科系</span>
+                </label>
+                <label for="" class="form__label col-6">
+                    <select name="Time" id="Time" class="form__select">
+                        <option value="" disabled selected>想要應徵職務</option>
+                        <option value="F2E">F2E</option>
+                    </select>
+                </label>
+                <label for="" class="form__label col-6">
+                    <select name="Time" id="Time" class="form__select">
+                        <option value="" disabled selected>希望工作地點</option>
+                        <option value="Taipei">Teipei</option>
+                    </select>
+                </label>
+                <div class="form__container col-12 u-text-white">
+                    <span class="tag tag--resume">錄取後可報到日</span>
+                    <div class="form__container-group form__container-group--resume">
+                        <input type="radio" name="Start" id="ResumeStautsAny" class="form__input form__input--status">
+                        <label for="ResumeStautsAny" class="form__lb--StatusRadio">
+                            <span class="radio-box white"></span>
+                            隨時
+                        </label>
+                    </div>
+                    <div class="form__container-group form__container-group--resume">
+                        <input type="radio" name="Start" id="ResumeStautsChoose" class="form__input form__input--status">
+                        <label for="ResumeStautsChoose" class="form__lb--StatusRadio">
+                            <span class="radio-box white"></span>
+                            已畢業
+                        </label>
+                        <label for="" class="form__lb--select">
+                            <select name="" id="SchoolYear" class="form__select">
+                                <option value="0" hidden>畢業年次</option>
+                                <option value="2010">2010</option>
+                                <option value="2011">2011</option>
+                                <option value="2012">2012</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+                <button class="btn-form btn-form--dark" type="submit">確認送出</button>
             </form>
+            <h5 class="form-warn">※簡歷經審查後，符合資格者將通知面試，不符合資格者恕不另行通知</h5>
         </div>
-    </section> -->
-
+    </section>
     <script src="./source/table.js"></script>
 </body>
 </html>

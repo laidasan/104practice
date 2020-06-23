@@ -167,16 +167,33 @@ html {
 .section {
   padding-top: 3.3rem;
   padding-bottom: 3.3rem; }
-  .section-form--health {
-    background: url("../../img/bk/form-health-bg.png") no-repeat center/cover; }
+  .section-form__title-box {
+    max-width: 24rem;
+    margin: 0 auto;
+    margin-bottom: 3rem; }
+    .section-form__title-box > img {
+      width: 100%; }
 
 img {
   vertical-align: middle; }
 
+@media only screen and (min-width: 480px) {
+  .section-form__title-box {
+    max-width: 27rem; } }
+
 @media only screen and (min-width: 960px) {
   .section {
     padding-top: 6.9rem;
-    padding-bottom: 6.9rem; } }
+    padding-bottom: 6.9rem; }
+    .section-form__title-box {
+      max-width: 36rem; } }
+
+@media only screen and (min-width: 1440px) {
+  .section-form__title-box {
+    max-width: none;
+    text-align: center; }
+    .section-form__title-box > img {
+      width: auto; } }
 
 .u-margin-b-ss {
   margin-bottom: 1.2rem; }
@@ -238,6 +255,9 @@ img {
     text-align: left; }
   .xl\:t-r {
     text-align: right; } }
+
+.u-text-white {
+  color: #fff; }
 
 .header {
   padding: 2.1rem 0;
@@ -757,21 +777,30 @@ img {
     padding-left: 6rem; } }
 
 .form {
+  margin-bottom: 2.1rem;
   text-align: center; }
   .form::after {
     content: '';
     display: block;
     clear: both; }
+  .form__title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    margin-bottom: 1.2rem; }
   .form-wrapper {
     position: relative;
     z-index: 0;
-    max-width: 984px;
+    max-width: 78.4rem;
     padding-top: 2.4rem;
     padding-bottom: 1.8rem;
     margin: 0 auto;
     border-radius: 3px; }
-    .form-wrapper::after {
-      content: ''; }
+    .form-wrapper--health {
+      background: #fff; }
+    .form-wrapper--resume {
+      background: #97120e; }
   .form__container, .form__label {
     float: left;
     margin-bottom: 2.1rem;
@@ -817,7 +846,8 @@ img {
     box-shadow: none; }
     .form__container > span {
       display: block;
-      margin-bottom: 1.2rem; }
+      margin-bottom: 1.2rem;
+      font-weight: 700; }
     .form__container-group {
       display: flex;
       align-items: center;
@@ -850,12 +880,164 @@ img {
         top: .5rem;
         left: .21rem;
         transform: rotate(-45deg); }
+      .form__lb--StatusRadio > .radio-box.white {
+        box-shadow: 0 0 0 1px #fff;
+        background: #fff; }
   .form__lb--select {
     flex-grow: 1;
     box-shadow: 0 0 0 1px #000;
     border-radius: 3px;
     opacity: .3;
     pointer-events: none; }
+  .form-warn {
+    position: relative;
+    z-index: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 2.25rem;
+    padding: 0.9rem 0; }
+    .form-warn::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: #fff;
+      opacity: .9;
+      z-index: -1; }
+  @media only screen and (min-width: 600px) {
+    .form-wrapper {
+      padding-left: 6rem;
+      padding-right: 6rem; }
+    .form__container {
+      display: flex; }
+      .form__container > span {
+        flex-basis: 12%;
+        text-align: left;
+        line-height: 3.5rem;
+        font-size: 1.2rem; }
+        .form__container > span.tag--resume {
+          flex-basis: 31%; }
+      .form__container-group {
+        flex-basis: 44%; }
+        .form__container-group--resume:nth-of-type(1) {
+          flex-basis: 24%; } }
+  @media only screen and (min-width: 768px) {
+    .form {
+      padding-left: 7.2rem;
+      padding-right: 7.2rem; }
+      .form-warn {
+        margin-left: 7.2rem;
+        margin-right: 7.2rem;
+        padding-left: .6rem; } }
+  @media only screen and (min-width: 960px) {
+    .form-wrapper {
+      padding: 0;
+      padding-top: 7.8rem;
+      padding-bottom: 3.9rem;
+      max-width: 78.4rem; }
+      .form-wrapper--health {
+        background: #fff; }
+      .form-wrapper--resume {
+        background: #97120e; }
+    .form__input, .form__select {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      font-size: 1.8rem; }
+    .form__input--text {
+      padding-left: 6rem; }
+    .form__input--email {
+      padding-left: 9rem; }
+    .form__input--school {
+      padding-left: 8.4rem; }
+    .form__input--master {
+      padding-left: 9rem; }
+    .form__label > .tag, .form__container > .tag {
+      font-size: 1.5rem;
+      line-height: 5.1rem; } }
+  @media only screen and (min-width: 1440px) {
+    .form-wrapper {
+      padding: 0 9.6rem;
+      padding-top: 7.8rem;
+      padding-bottom: 3.9rem;
+      max-width: 78.4rem; } }
+
+.health {
+  position: relative;
+  z-index: 0; }
+  .health::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: url("../../img/bk/form-health-bg-xs.png") no-repeat center/cover;
+    opacity: .9;
+    z-index: -1; }
+  @media only screen and (min-width: 600px) {
+    .health::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: url("../../img/people/form-health-people.png") no-repeat 84% top/12rem; } }
+  @media only screen and (min-width: 768px) {
+    .health {
+      background: url("../../img/bk/form-health-bg.png") no-repeat center/cover;
+      opacity: 1; } }
+  @media only screen and (min-width: 1200px) {
+    .health::before {
+      background-size: auto;
+      background-position: right -6rem bottom; } }
+  @media only screen and (min-width: 1440px) {
+    .health::before {
+      right: -3rem;
+      background-position: right bottom; } }
+  @media only screen and (min-width: 1920px) {
+    .health::before {
+      right: 6rem; } }
+
+.resume-form {
+  position: relative;
+  z-index: 0; }
+  .resume-form::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: url("../../img/bk/form-resume-bg-xs.png") no-repeat center/cover;
+    opacity: .9;
+    z-index: -1; }
+  @media only screen and (min-width: 600px) {
+    .resume-form::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: url("../../img/people/form-resume-people.png") no-repeat 21% top/12rem; } }
+  @media only screen and (min-width: 768px) {
+    .resume-form {
+      background: url("../../img/bk/form-resume-bg.png") no-repeat center/cover;
+      opacity: 1; } }
+  @media only screen and (min-width: 1200px) {
+    .resume-form::before {
+      background-size: auto;
+      background-position: left bottom; } }
+  @media only screen and (min-width: 1440px) {
+    .resume-form::before {
+      right: 9rem; } }
+  @media only screen and (min-width: 1920px) {
+    .resume-form::before {
+      right: 0;
+      left: 15rem; } }
 
 .btn:link, .btn:visited {
   display: inline-block;
@@ -872,6 +1054,17 @@ img {
   border-radius: 3px;
   letter-spacing: .6px; }
 
+.btn-form {
+  border: none;
+  color: #fff;
+  padding: 0.9rem 4.2rem;
+  border-radius: 6px;
+  letter-spacing: .6px; }
+  .btn-form--primary {
+    background: #d6251f; }
+  .btn-form--dark {
+    background: #000; }
+
 @media only screen and (min-width: 600px) {
   .btn--primary:link, .btn--primary:visited {
     padding: 1.2rem 3rem;
@@ -884,10 +1077,18 @@ img {
     padding: 0.9rem 2.7rem;
     margin-top: 2.1rem; } }
 
+@media only screen and (min-width: 960px) {
+  .btn-form {
+    padding: 1.2rem 9.6rem;
+    border-radius: 6px;
+    font-size: 1.8rem; } }
+
 @media only screen and (min-width: 1440px) {
   .btn--primary:link, .btn--primary:visited {
     margin-top: 4.6rem;
     border-radius: 0;
     font-size: 1.8rem;
     font-weight: 400;
-    line-height: 1.8rem; } }
+    line-height: 1.8rem; }
+  .btn-form {
+    font-size: 2.4rem; } }

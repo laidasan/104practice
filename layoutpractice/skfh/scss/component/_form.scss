@@ -1,24 +1,29 @@
 .form {
-    // font-size: 0;
     @include clear;
+    margin-bottom: nth($m,6);
     text-align: center;
+
+    &__title {
+        text-align: center;
+        @include font(2,0,2);
+        margin-bottom: nth($m,3);
+    }
 
     &-wrapper {
         position: relative;
         z-index: 0;
-        max-width: 984px;
-        // padding: 0 9.6rem;
-        // padding-top: 7.8rem;
-        // padding-bottom: 3.9rem;
+        max-width: 78.4rem;
         padding-top: 2.4rem;
         padding-bottom: 1.8rem;
         margin: 0 auto;
         border-radius: nth($border-radius,1);
-        // background: $color-white;
-        
-        &::after {
-            content: '';
-            
+
+        &--health {
+            background: $color-white;
+        }
+
+        &--resume {
+            background: $color-primary-dark;
         }
     }
 
@@ -94,10 +99,7 @@
         > span {
             display: block;
             margin-bottom: nth($m,3);
-            // display: inline-block;
-            // font-size: nth($font-size,1);
-            // font-weight: 700;
-            // width: 10%;
+            font-weight: 700;
         }
 
         &-group {
@@ -123,6 +125,8 @@
                 height: 1.5rem;
                 box-shadow: 0 0 0 1px #000;
 
+                
+
                 &::after , &::before {
                     // content: '';
                     position: absolute; top: 0;
@@ -144,6 +148,14 @@
                     transform: rotate(-45deg);
                 }
 
+                &.white {
+                    box-shadow: 0 0 0 1px $color-white;
+                    background: $color-white;
+
+                    &::after,&::before {
+                    }
+                }
+
 
             }
         }
@@ -158,16 +170,129 @@
             pointer-events: none;
         }
     }
-    // &__input {
-    //     background: #ccc;
-    //     border: none;
-    //     padding: 1.2rem 0;
-    //     padding-left: 1.2rem;
-    //     margin-bottom: nth($m,6);
 
-    //     &:focus {
-    //         outline: 1px solid;
-    //     }
-    // }
+    &-warn {
+        position: relative;
+        z-index: 0;
+        @include font(2,.75rem,3);
+        padding: nth($p,2) 0;
+
+        &::after {
+            content: '';
+            position: absolute; left: 0; right:0 ; top: 0; bottom: 0;
+            background: $color-white;
+            opacity: .9;
+            z-index: -1;
+        }
+    }
+    
+    @include respond-up(600px) {
+        &-wrapper {
+            padding-left: 6rem;
+            padding-right: 6rem;
+        }
+
+        &__container {
+            display: flex;
+
+            > span {
+                flex-basis: 12%;
+                text-align: left;
+                line-height: 3.5rem;
+                font-size: nth($font-size,1);
+
+                &.tag--resume {
+                    flex-basis: 31%;
+                }
+                
+            }
+            &-group {
+                flex-basis: 44%;
+                &--resume {
+                    &:nth-of-type(1) {
+                        flex-basis: 24%;
+                    }
+                }
+            }
+        }
+    }
+    
+    @include respond('md') {
+        padding-left: 7.2rem;
+        padding-right: 7.2rem;
+
+        // &-wrapper {
+        //     &--health {
+        //         background: $color-white;
+        //     }
+
+        //     &--resume {
+        //         background: $color-primary-dark;
+        //     }
+        // }
+
+        &-warn {
+            margin-left: 7.2rem;
+            margin-right: 7.2rem;
+            padding-left: .6rem;
+        }
+    }
+    
+    @include respond('lg') {
+        &-wrapper {
+            padding: 0;
+            padding-top: 7.8rem;
+            padding-bottom: 3.9rem;
+            max-width: 78.4rem;
+
+            &--health {
+                background: $color-white;
+            }
+
+            &--resume {
+                background: $color-primary-dark;
+            }
+        }
+
+        &__input , &__select {
+            padding-top: nth($p,4);
+            padding-bottom: nth($p,4);
+            font-size: nth($font-size,3);
+        }
+        &__input {
+            &--text {
+                padding-left: 6rem;
+            }
+    
+            &--email {
+                padding-left: 9rem;
+            }
+    
+            &--school {
+                padding-left: 8.4rem;
+            }
+    
+            &--master {
+                padding-left: 9rem;
+            }
+
+        }
+        &__label,&__container {
+            > .tag {
+                font-size: nth($font-size,2);
+                line-height: 5.1rem;
+            }
+        }
+    }
+
+    @include respond('xl') {
+        &-wrapper {
+            padding: 0 9.6rem;
+            padding-top: 7.8rem;
+            padding-bottom: 3.9rem;
+            max-width: 78.4rem;
+        }
+    }
+
 
 }

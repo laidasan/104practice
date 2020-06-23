@@ -6,8 +6,14 @@ html {
     padding-bottom: 3.3rem;
 
     &-form {
-        &--health {
-            background: url('../../img/bk/form-health-bg.png') no-repeat center / cover;
+        &__title-box {
+            max-width: 24rem;
+            margin: 0 auto;
+            margin-bottom: nth($m,9);
+    
+            > img {
+                width: 100%;
+            }
         }
     }
 }
@@ -16,9 +22,40 @@ img {
     vertical-align: middle;
 }
 
+@include respond('sm') {
+    .section {
+        &-form {
+            &__title-box {
+                max-width: 27rem;
+            }
+        }
+    }
+}
+
 @include respond('lg') {
     .section {
         padding-top: 6.9rem;
         padding-bottom: 6.9rem;
+
+        &-form {
+            &__title-box {
+                max-width: 36rem;
+            }
+        }
+    }
+}
+
+@include respond('xl') {
+    .section {
+        &-form {
+            &__title-box {
+                max-width: none;
+                text-align: center;
+
+                > img {
+                    width: auto;
+                }
+            }
+        }
     }
 }
