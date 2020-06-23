@@ -4,7 +4,6 @@
     padding-right: 6%;
     padding-bottom: nth($p,3);
     background-color: $color-primary;
-    @include clear;
     
     &__logo-box {
         max-width: 240px;
@@ -40,6 +39,8 @@
 
 
     @include respond-up(620px) {
+        padding-bottom: 0;
+
         &__nav {
             white-space: normal;
             overflow: auto;
@@ -48,6 +49,8 @@
             > a {
                 @include link {
                     padding: nth($p,2) nth($p,6);
+                    // padding-bottom: nth($m,6);
+                    margin-bottom: nth($m,6);
                 }
     
     
@@ -71,10 +74,65 @@
                 
                 // under line
                 &.choose::before {
-                    position: absolute; left: 0; right: 0; bottom: 0;
+                    position: absolute; left: 0; right: 0; bottom: -2.1rem;
                     height: 0;
                     padding: .06rem 0;
                     background: $color-primary-sub;
+                }
+            }
+        }
+    }
+
+    @include respond('lg') {
+        padding: nth($p,6) 6%;
+        padding-bottom: 0;
+
+        @include clear;
+
+        &__logo-box {
+            max-width: 300px;
+            float: left;
+            margin-bottom: 0;
+        }
+
+        &__nav {
+            text-align: right;
+
+            a {
+                @include link {
+                    padding-left: nth($p,3);
+                    padding-right: nth($p,3);
+                    margin-bottom: nth($m,3);
+                }
+
+                &.choose::before {
+                    bottom: -#{nth($m,3)};
+                    padding: .14rem 0;
+                }
+            }
+        }
+    }
+
+    @include respond('xl') {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+
+    @include respond-up(1920px) {
+        padding: nth($p,5) 0;
+        padding-left: 21%;
+        padding-right: 21%;
+
+        &__logo-box {
+            max-width: none;
+        }
+
+        &__nav {
+            a {
+                @include link {
+                    padding-left: nth($p,6);
+                    padding-right: nth($p,6);
+                    letter-spacing: 1px;
                 }
             }
         }

@@ -1,7 +1,6 @@
 .banner {
     padding: 0 1.2rem;
-    padding-top: 3rem;
-    // padding-bottom: 27rem;
+    padding-top: 4.2rem;
     // background:url("../../img/bk/kv-image-bg-xs.png") no-repeat center bottom / 100%,
     //            url('../../img/bk/kv-image-bg-xs-3.png') no-repeat top left / 12rem,
     //            url('../../img/bk/kv-image-bg-xs-4.png') no-repeat right top / 6rem,
@@ -49,17 +48,22 @@
     @include respond('md') {
         &__title-box {
             max-width: 360px;
-            margin-left: 6%;
+            margin-left: 5.1%;
         }
     }
 
     @include respond('lg') {
+        padding-bottom: 33rem;
+
         &__title-box {
             max-width: 420px;
+            margin-left: 9%;
         }
     }
 
     @include respond('xl') {
+        padding-bottom: 33rem;
+
         &__title-box {
             max-width: 538px;
             margin-left: 12%;
@@ -68,12 +72,12 @@
 
     @include respond-up(1600px) {
         &__title-box {
-            margin-left: 15%;
+            margin-left: 18%;
         }
     }
     @include respond-up(1920px) {
         &__title-box {
-            margin-left: 18%;
+            margin-left: 23%;
         }
     }
 }

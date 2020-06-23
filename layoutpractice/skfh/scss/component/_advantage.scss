@@ -52,6 +52,7 @@
             color: $color-primary;
             margin-bottom: nth($m,1);
             padding: nth($p,4) 0;
+            min-height: 48px;
             letter-spacing: .6px;
         }
 
@@ -71,6 +72,87 @@
     @include respond('sm') {
         &::after {
             background-size: contain;
+        }
+
+        &-content {
+            &__title {
+                padding: 0;
+                min-height: 0;
+            }
+        }
+    }
+
+    @include respond('md') {
+        &::after {
+            background: url('../../img/bk/advantage-bg.png') no-repeat left top / cover;
+        }
+
+        &__title-box {
+            max-width: 33rem;
+        }
+
+        &-content {
+            padding: 0;
+            max-width: 600px;
+            margin: 0 auto;
+
+            &__icon-box {
+                max-width: 9.6rem;
+                margin-right: nth($m,9);
+            }
+
+            &__title {
+                min-height: 0;
+                margin-bottom: 0;
+                padding: nth($p,3) 0;
+            }
+        }
+    }
+
+    @include respond('lg') {
+        &::after {
+            opacity: .9;
+        }
+
+        &__title-box {
+            max-width: 42rem;
+        }
+        &-content {
+            max-width: 69rem;
+
+            &__icon-box {
+                max-width: 12rem;
+            }
+
+            &__title {
+                padding-top: nth($p,6);
+            }
+            &__descrip {
+                line-height: 1.6;
+            }
+        }
+    }
+
+    @include respond('xl') {
+        &::after {
+            opacity: 1;
+        }
+
+        &__title-box {
+            max-width: none;
+            text-align: center;
+            > img {
+                width: auto;
+            }
+        }
+
+        &-content {
+            &-group {
+                margin-bottom: 6rem;
+            }
+            &__icon-box {
+                max-width: none;
+            }
         }
     }
 }

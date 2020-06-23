@@ -203,10 +203,6 @@ img {
   padding-right: 6%;
   padding-bottom: 1.2rem;
   background-color: #d6251f; }
-  .header::after {
-    content: '';
-    display: block;
-    clear: both; }
   .header__logo-box {
     max-width: 240px;
     margin: 0 auto;
@@ -230,38 +226,77 @@ img {
       .header__nav > a:link.choose, .header__nav > a:visited.choose {
         color: #fffc00; }
   @media only screen and (min-width: 620px) {
-    .header__nav {
-      white-space: normal;
-      overflow: auto;
-      text-align: center; }
-      .header__nav > a:link, .header__nav > a:visited {
-        padding: 0.9rem 2.1rem; }
-      .header__nav > a::after, .header__nav > a::before {
-        content: ''; }
-      .header__nav > a:last-child::after {
-        content: none; }
-      .header__nav > a::after {
-        position: absolute;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        width: 0;
-        height: 0;
-        padding: .6rem .06rem;
-        background: #fff; }
-      .header__nav > a.choose::before {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 0;
-        padding: .06rem 0;
-        background: #f5d932; } }
+    .header {
+      padding-bottom: 0; }
+      .header__nav {
+        white-space: normal;
+        overflow: auto;
+        text-align: center; }
+        .header__nav > a:link, .header__nav > a:visited {
+          padding: 0.9rem 2.1rem;
+          margin-bottom: 2.1rem; }
+        .header__nav > a::after, .header__nav > a::before {
+          content: ''; }
+        .header__nav > a:last-child::after {
+          content: none; }
+        .header__nav > a::after {
+          position: absolute;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          width: 0;
+          height: 0;
+          padding: .6rem .06rem;
+          background: #fff; }
+        .header__nav > a.choose::before {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: -2.1rem;
+          height: 0;
+          padding: .06rem 0;
+          background: #f5d932; } }
+  @media only screen and (min-width: 960px) {
+    .header {
+      padding: 2.1rem 6%;
+      padding-bottom: 0; }
+      .header::after {
+        content: '';
+        display: block;
+        clear: both; }
+      .header__logo-box {
+        max-width: 300px;
+        float: left;
+        margin-bottom: 0; }
+      .header__nav {
+        text-align: right; }
+        .header__nav a:link, .header__nav a:visited {
+          padding-left: 1.2rem;
+          padding-right: 1.2rem;
+          margin-bottom: 1.2rem; }
+        .header__nav a.choose::before {
+          bottom: -1.2rem;
+          padding: .14rem 0; } }
+  @media only screen and (min-width: 1440px) {
+    .header {
+      padding-left: 15%;
+      padding-right: 15%; } }
+  @media only screen and (min-width: 1920px) {
+    .header {
+      padding: 1.8rem 0;
+      padding-left: 21%;
+      padding-right: 21%; }
+      .header__logo-box {
+        max-width: none; }
+      .header__nav a:link, .header__nav a:visited {
+        padding-left: 2.1rem;
+        padding-right: 2.1rem;
+        letter-spacing: 1px; } }
 
 .banner {
   padding: 0 1.2rem;
-  padding-top: 3rem;
+  padding-top: 4.2rem;
   background: url("../../img/bk/kv-image-bg-xs-3.png") no-repeat top left/12rem, url("../../img/bk/kv-image-bg-xs-4.png") no-repeat right top/6rem, #f0f0f0; }
   .banner__title-box {
     max-width: 285px;
@@ -286,20 +321,25 @@ img {
   @media only screen and (min-width: 768px) {
     .banner__title-box {
       max-width: 360px;
-      margin-left: 6%; } }
+      margin-left: 5.1%; } }
   @media only screen and (min-width: 960px) {
-    .banner__title-box {
-      max-width: 420px; } }
+    .banner {
+      padding-bottom: 33rem; }
+      .banner__title-box {
+        max-width: 420px;
+        margin-left: 9%; } }
   @media only screen and (min-width: 1440px) {
-    .banner__title-box {
-      max-width: 538px;
-      margin-left: 12%; } }
+    .banner {
+      padding-bottom: 33rem; }
+      .banner__title-box {
+        max-width: 538px;
+        margin-left: 12%; } }
   @media only screen and (min-width: 1600px) {
     .banner__title-box {
-      margin-left: 15%; } }
+      margin-left: 18%; } }
   @media only screen and (min-width: 1920px) {
     .banner__title-box {
-      margin-left: 18%; } }
+      margin-left: 23%; } }
 
 .advantage {
   position: relative;
@@ -345,6 +385,7 @@ img {
       color: #d6251f;
       margin-bottom: 0.6rem;
       padding: 1.5rem 0;
+      min-height: 48px;
       letter-spacing: .6px; }
     .advantage-content__descrip {
       font-size: 1.5rem;
@@ -354,7 +395,51 @@ img {
         display: none; }
   @media only screen and (min-width: 480px) {
     .advantage::after {
-      background-size: contain; } }
+      background-size: contain; }
+    .advantage-content__title {
+      padding: 0;
+      min-height: 0; } }
+  @media only screen and (min-width: 768px) {
+    .advantage::after {
+      background: url("../../img/bk/advantage-bg.png") no-repeat left top/cover; }
+    .advantage__title-box {
+      max-width: 33rem; }
+    .advantage-content {
+      padding: 0;
+      max-width: 600px;
+      margin: 0 auto; }
+      .advantage-content__icon-box {
+        max-width: 9.6rem;
+        margin-right: 3rem; }
+      .advantage-content__title {
+        min-height: 0;
+        margin-bottom: 0;
+        padding: 1.2rem 0; } }
+  @media only screen and (min-width: 960px) {
+    .advantage::after {
+      opacity: .9; }
+    .advantage__title-box {
+      max-width: 42rem; }
+    .advantage-content {
+      max-width: 69rem; }
+      .advantage-content__icon-box {
+        max-width: 12rem; }
+      .advantage-content__title {
+        padding-top: 2.1rem; }
+      .advantage-content__descrip {
+        line-height: 1.6; } }
+  @media only screen and (min-width: 1440px) {
+    .advantage::after {
+      opacity: 1; }
+    .advantage__title-box {
+      max-width: none;
+      text-align: center; }
+      .advantage__title-box > img {
+        width: auto; }
+    .advantage-content-group {
+      margin-bottom: 6rem; }
+    .advantage-content__icon-box {
+      max-width: none; } }
 
 .resume {
   position: relative;
