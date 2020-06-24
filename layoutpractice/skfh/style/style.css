@@ -1230,7 +1230,7 @@ img {
     background: #000; }
 
 .btn--top {
-  transform: translateY(100%); }
+  transform: translateY(150%); }
   .btn--top:link, .btn--top:visited {
     position: fixed;
     bottom: 3%;
