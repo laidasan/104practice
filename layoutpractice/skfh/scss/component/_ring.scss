@@ -1,0 +1,89 @@
+.ring {
+
+    &::before {
+        content: '';
+        @extend %ab-fill;
+        border-radius: 50%;
+        box-shadow: inset .3rem -.1rem 0 .2rem $color-primary-light,
+                inset -.2rem -.01rem 0 .3rem $color-primary-dark,
+                0 0 0 .15rem #fff,
+                0 0 0 .27rem $color-primary-dark,
+                0 0 0 .45rem #fff,
+                0 0 0 .6rem $color-primary-dark,
+                0 0 0 .75rem #fff,
+                0 0 0 .9rem $color-primary-dark;
+    }
+
+    &__ball-1 {
+        position: absolute; left: .1rem; right: .1rem; top: .1rem; bottom: .1rem;
+        
+        &::after {
+            content: '';
+            @extend %ab-fill;
+            background: radial-gradient(circle at center , $color-primary-light , $color-primary-light .6rem , transparent .6rem) no-repeat right bottom / 1.2rem 1.2rem;
+            transform: rotate(-15deg);
+        }
+        
+        &::before {
+            content: '';
+            @extend %ab-fill;
+            background: radial-gradient(circle at center ,$color-primary-light , $color-primary-light .5rem , transparent .5rem) no-repeat left top / 1rem 1rem;
+            transform: rotate(12deg);
+        }
+    }
+
+    &__ball-2 {
+        position: absolute; left: -.3rem; right: -.3rem; top: -.3rem; bottom: -.3rem;
+        z-index: -1;
+
+        &::after{
+            content: '';
+            @extend %ab-fill;
+            background: radial-gradient(circle at center , $color-primary-dark , $color-primary-dark .7rem , transparent .7rem) no-repeat left top / 1.4rem 1.4rem;
+        }
+
+        &::before {
+            content: '';
+            @extend %ab-fill;
+            position: absolute; left: -.21rem; right: -.21rem; top: -.21rem; bottom: -.21rem;
+            background: radial-gradient(circle at center , $color-primary-dark , $color-primary-dark .9rem , transparent .9rem) no-repeat right bottom / 2rem 2rem;
+        }
+    }
+
+
+    @include respond('lg') {
+        &__ball-1 {
+            @include position-all(.3rem);
+        }
+
+        &__ball-2 {
+            @include position-all(0);
+        }
+    }
+
+    @include respond('xl') {
+        &__ball-1 {
+            @include position-all(.6rem);
+
+            &::after {
+                background: radial-gradient(circle at center , $color-primary-light , $color-primary-light .75rem , transparent .75rem) no-repeat right bottom / 1.5rem 1.5rem;
+            }
+            
+            &::before {
+                background: radial-gradient(circle at center ,$color-primary-light , $color-primary-light .6rem , transparent .6rem) no-repeat left top / 1.2rem 1.2rem;
+            }
+        }
+
+        &__ball-2 {
+            @include position-all(.3rem);
+
+            &::after{
+                background: radial-gradient(circle at center , $color-primary-dark , $color-primary-dark .9rem , transparent .9rem) no-repeat left top / 1.8rem 1.8rem;
+            }
+    
+            &::before {
+                background: radial-gradient(circle at center , $color-primary-dark , $color-primary-dark 1.2rem , transparent 1.2rem) no-repeat right bottom / 2.4rem 2.4rem;
+            }
+        }
+    }
+}   

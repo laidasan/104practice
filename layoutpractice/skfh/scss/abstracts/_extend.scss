@@ -19,3 +19,8 @@
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
 }
+
+%ab-fill {
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+}

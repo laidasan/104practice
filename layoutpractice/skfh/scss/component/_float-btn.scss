@@ -1,0 +1,73 @@
+.float-btn {
+    display: inline-block;
+    position: fixed; right: -1.5rem;
+    z-index: 3;
+    width: 6rem;
+    padding: 1.2rem 0 1.8rem;
+    border-radius: 50%;
+    background: $color-primary;
+    color: $color-text-sub;
+    text-align: center;
+    text-decoration: none;  
+
+    &--sfsh {
+        bottom: 6rem;
+    }
+
+    &--med {
+        bottom: 15rem; 
+    }
+
+    .go {
+        display: inline-block;
+        color: $color-white;
+        margin-bottom: .3rem;
+        font-size: nth($font-size,2);
+    }
+    
+    @include respond('sm') {
+        width: 7.5rem;
+        padding: 1.95rem 0 2.55rem;
+
+        &--med {
+            bottom: 16.5rem; 
+        }
+    }
+
+    @include respond('md') {
+        width: 9rem;
+        padding: 2.4rem 0 3rem;
+        font-size: nth($font-size,2);
+
+
+        &--med {
+            bottom: 18rem; 
+        }
+
+        .go {
+            font-size: nth($font-size,3);
+        }
+    }
+
+    @include respond('lg') {
+        right: 1.2rem;
+    }
+
+    @include respond('xl') {
+        width: 12rem;
+        padding: 2.95rem 0 3.55rem;
+        font-size: nth($font-size,4);
+
+        &--med {
+            bottom: 21rem;
+        }
+
+        .go {
+            font-size: nth($font-size,6);
+            margin-bottom: nth($m,1);
+        }
+    }
+
+    
+    
+}
