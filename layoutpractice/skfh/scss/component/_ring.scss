@@ -1,5 +1,6 @@
 .ring {
-
+    @include ring-parent-hover();
+    
     &::before {
         content: '';
         @extend %ab-fill;
@@ -16,6 +17,7 @@
 
     &__ball-1 {
         position: absolute; left: .1rem; right: .1rem; top: .1rem; bottom: .1rem;
+        @include ring-ball-an(1);
         
         &::after {
             content: '';
@@ -34,6 +36,7 @@
 
     &__ball-2 {
         position: absolute; left: -.3rem; right: -.3rem; top: -.3rem; bottom: -.3rem;
+        @include ring-ball-an(1);
         z-index: -1;
 
         &::after{

@@ -1,5 +1,4 @@
 .float-btn {
-    display: inline-block;
     position: fixed; right: -1.5rem;
     z-index: 3;
     width: 6rem;
@@ -9,6 +8,13 @@
     color: $color-text-sub;
     text-align: center;
     text-decoration: none;  
+    transition: transform .1s;
+
+    > .full-link {
+        @include ab-fill(-1.2rem); 
+        right: -99rem;
+        z-index: 1;
+    }
 
     &--sfsh {
         bottom: 6rem;
@@ -23,6 +29,10 @@
         color: $color-white;
         margin-bottom: .3rem;
         font-size: nth($font-size,2);
+    }
+
+    &:hover {
+        transform: translateX(-1.5rem);
     }
     
     @include respond('sm') {

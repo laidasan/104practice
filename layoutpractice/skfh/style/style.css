@@ -37,12 +37,24 @@
     transform: scale(1, 1) rotateX(45deg);
     opacity: .9; } }
 
+@keyframes ring-ball-an-1 {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+
 .ring::before, .ring__ball-1::after, .ring__ball-1::before, .ring__ball-2::after, .ring__ball-2::before {
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0; }
+
+.ring__ball-1, .ring__ball-2 {
+  animation-name: ring-ball-an-1;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; }
 
 .col-12 {
   margin: 0 1.2rem;
@@ -1132,7 +1144,6 @@ img {
       left: 15rem; } }
 
 .float-btn {
-  display: inline-block;
   position: fixed;
   right: -1.5rem;
   z-index: 3;
@@ -1142,7 +1153,16 @@ img {
   background: #d6251f;
   color: #fffc00;
   text-align: center;
-  text-decoration: none; }
+  text-decoration: none;
+  transition: transform .1s; }
+  .float-btn > .full-link {
+    position: absolute;
+    left: -1.2rem;
+    right: -1.2rem;
+    top: -1.2rem;
+    bottom: -1.2rem;
+    right: -99rem;
+    z-index: 1; }
   .float-btn--sfsh {
     bottom: 6rem; }
   .float-btn--med {
@@ -1152,6 +1172,8 @@ img {
     color: #fff;
     margin-bottom: .3rem;
     font-size: 1.5rem; }
+  .float-btn:hover {
+    transform: translateX(-1.5rem); }
   @media only screen and (min-width: 480px) {
     .float-btn {
       width: 7.5rem;
