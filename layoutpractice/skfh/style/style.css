@@ -1229,6 +1229,21 @@ img {
   .btn-form--dark {
     background: #000; }
 
+.btn--top {
+  transform: translateY(100%); }
+  .btn--top:link, .btn--top:visited {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background: #000;
+    color: #fff;
+    width: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    text-align: center;
+    border-radius: 50%;
+    transition: all .6s; }
+
 @media only screen and (min-width: 600px) {
   .btn--primary:link, .btn--primary:visited {
     padding: 1.2rem 3rem;
