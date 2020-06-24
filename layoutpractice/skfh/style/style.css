@@ -1233,16 +1233,18 @@ img {
   transform: translateY(100%); }
   .btn--top:link, .btn--top:visited {
     position: fixed;
-    bottom: 0;
-    right: 0;
+    bottom: 3%;
+    right: 15%;
     background: #000;
     color: #fff;
-    width: 4.5rem;
-    width: 4.5rem;
-    line-height: 4.5rem;
+    width: 6rem;
+    width: 6rem;
+    line-height: 6rem;
     text-align: center;
     border-radius: 50%;
-    transition: all .6s; }
+    transition: all .6s;
+    font-weight: 700;
+    letter-spacing: .6px; }
 
 @media only screen and (min-width: 600px) {
   .btn--primary:link, .btn--primary:visited {
@@ -1254,7 +1256,13 @@ img {
 @media only screen and (min-width: 768px) {
   .btn--primary:link, .btn--primary:visited {
     padding: 0.9rem 2.7rem;
-    margin-top: 2.1rem; } }
+    margin-top: 2.1rem; }
+  .btn--top:link, .btn--top:visited {
+    width: 7.5rem;
+    height: 7.5rem;
+    line-height: 7.5rem;
+    font-size: 1.5rem;
+    letter-spacing: 1px; } }
 
 @media only screen and (min-width: 960px) {
   .btn-form {
