@@ -1,0 +1,64 @@
+.u-margin-b {
+    &-ss {
+        margin-bottom: 1.2rem;
+    }
+    &-s {
+        margin-bottom: 1.8rem;
+    }
+    &-m {
+        margin-bottom: 2.4rem;
+    }
+    &-b {
+        margin-bottom: 3.6rem;
+    }
+}
+
+
+.t {
+
+    &-cn {
+        text-align: center;
+    }
+
+    &-l {
+        text-align: left;
+    }
+    
+    &-r {
+        text-align: right;
+    }
+}
+
+
+@each $key,$value in $breakpoints {
+    @include respond($key) {
+        .#{$key}\:t {
+            &-cn {text-align: center;}
+            &-l {text-align: left;}
+            &-r {text-align: right;}
+        }
+    }
+}
+
+
+// display
+@each $key , $value in $breakpoints {
+    @include respond($key) {
+        .#{$key}\:d {
+            &-b { display: block; }
+
+            &-in { display: inline; }
+
+            &-inb { display: inline-block; }
+
+            &-flex { display: flex; }
+
+            &-grid { display: grid }
+        }
+    }
+}
+.u-text-white {
+    color: $color-white;
+}
+
+

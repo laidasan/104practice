@@ -1,0 +1,93 @@
+// extend
+// %bounce {
+//     animation-name: bounce;
+//     animation-duration: 2.1s;
+//     animation-iteration-count: infinite;
+//     animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+// }
+
+// animation
+// bounce
+// $bounce: (
+//     transform: (
+//         height: -60px,
+//         bounce: -7px
+//     )
+// );
+
+// @keyframes bounce {
+//     0% {
+//         transform: scale(1,1) translateY(0);
+//     }
+//     10% {
+//         transform: scale(1.1,.9) translateY(0);
+//     }
+//     30% {
+//         transform: scale(.9,1.1) translateY(map-get(map-get($bounce , transform) , height));
+//     }
+//     50% {
+//         transform: scale(1.05,.95) translateY(0px);
+//     }
+//     57% {
+//         transform: scale(1,1) translateY(map-get(map-get($bounce , transform) , bounce)); // 彈到地面反彈
+//     }
+//     64% {
+//         transform: scale(1,1) translateY(0px);
+//     }
+//     100% {
+//         transform: scale(1,1) translateY(0px);
+//     }
+// }
+
+// @keyframes bounce-shadow {
+//     0% {
+//         transform: scale(1,1) rotateX(45deg);
+//         opacity: .9;
+//     }
+//     10% {
+//         transform: scale(1.1,.9)  rotateX(45deg);
+//         opacity: 1;
+//     }
+//     30% {
+//         transform: scale(.7,1.2)  rotateX(45deg);
+//         opacity: .6;
+//     }
+//     50% {
+//         transform: scale(.95,1.05)  rotateX(45deg);
+//         opacity: .8;
+//     }
+//     57% {
+//         transform: scale(.9,1)  rotateX(45deg); // 彈到地面反彈
+//         opacity: .75;
+//     }
+//     64% {
+//         transform: scale(1,1)  rotateX(45deg);
+//         opacity: .9;
+//     }
+//     100% {
+//         transform: scale(1,1)  rotateX(45deg);
+//         opacity: .9;
+//     }
+// }
+
+.bounce {
+    // .container
+    //   .boucne
+    //     .bounce-shadow
+
+    @include bounce;
+
+    &-shadow {
+        position: absolute; bottom: -.9rem; left: 0; right: 0;
+        z-index: -1;
+        background: radial-gradient(circle at center , rgba(51, 51, 51,.9) , rgba(51, 51, 51,.8) ,rgba(51, 51, 51,.75),rgba(51, 51, 51,.6) ,rgba(51, 51, 51,.45),rgba(51,51,51,.24),rgba(51,51,51,.1));
+        height: 1.2rem;
+        border-radius: 50%;
+
+        animation-name: bounce-shadow;
+        animation-duration: 2.1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+    }
+    
+}
