@@ -1283,6 +1283,22 @@ img {
     transition: all .6s;
     font-weight: 700;
     letter-spacing: .6px; }
+  .btn--top::after, .btn--top::before {
+    content: '';
+    position: absolute;
+    top: 18px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 9px;
+    height: 3px;
+    background: #fff; }
+  .btn--top::before {
+    transform-origin: left bottom;
+    transform: rotateZ(-45deg); }
+  .btn--top::after {
+    transform-origin: right bottom;
+    transform: rotateZ(45deg); }
 
 @media only screen and (min-width: 600px) {
   .btn--primary:link, .btn--primary:visited {

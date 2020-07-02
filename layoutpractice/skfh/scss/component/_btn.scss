@@ -44,6 +44,25 @@
             letter-spacing: .6px;
         }
 
+        &::after , &::before {
+            content: '';
+            position: absolute; top: 18px; left: 0; right: 0;
+            margin: 0 auto;
+            width: 9px;
+            height: 3px;
+            background: $color-white;
+        }
+
+        &::before {
+            transform-origin: left bottom;
+            transform: rotateZ(-45deg);
+        }
+
+        &::after {
+            transform-origin: right bottom;
+            transform: rotateZ(45deg);
+        }
+
         transform: translateY(150%);
     }
 
