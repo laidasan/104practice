@@ -4,7 +4,7 @@
     width: 6rem;
     padding: 1.2rem 0 1.8rem;
     border-radius: 50%;
-    background: $color-primary;
+    background: repeating-linear-gradient(-30deg , $color-primary , $color-primary 2% , rgba($color-primary-dark,.9) 2% , rgba($color-primary-dark,.9) 3%);
     color: $color-text-sub;
     text-align: center;
     text-decoration: none;  
