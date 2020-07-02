@@ -531,14 +531,38 @@ img {
     .advantage-content__title, .advantage-content__descrip {
       overflow: hidden; }
     .advantage-content__title {
+      display: flex;
+      align-items: center;
       font-size: 1.8rem;
       font-weight: 400;
       line-height: 2.4rem;
       color: #d6251f;
       margin-bottom: 0.6rem;
-      padding: 1.5rem 0;
-      min-height: 48px;
+      min-height: 74px;
       letter-spacing: .6px; }
+      .advantage-content__title > span {
+        position: relative;
+        padding-left: 2.1rem; }
+      .advantage-content__title .arrow {
+        position: absolute;
+        left: 0;
+        top: 5px;
+        height: 15px;
+        width: 15px; }
+        .advantage-content__title .arrow::after, .advantage-content__title .arrow::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 7.5px;
+          border-right-width: 0;
+          border-color: #aaa;
+          border-top-color: transparent;
+          border-bottom-color: transparent; }
+        .advantage-content__title .arrow::before {
+          left: 7.5px; }
     .advantage-content__descrip {
       font-size: 1.5rem;
       font-weight: 400;
@@ -549,8 +573,10 @@ img {
     .advantage::after {
       background-size: contain; }
     .advantage-content__title {
-      padding: 0;
-      min-height: 0; } }
+      display: block;
+      min-height: 0; }
+      .advantage-content__title > .arrow {
+        top: 0; } }
   @media only screen and (min-width: 768px) {
     .advantage::after {
       background: url("../../img/bk/advantage-bg.png") no-repeat left top/cover; }

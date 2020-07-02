@@ -48,12 +48,41 @@
         }
 
         &__title {
+            // position: relative;
+            display: flex;
+            align-items: center;
             @include font(3,.6rem);
             color: $color-primary;
             margin-bottom: nth($m,1);
-            padding: nth($p,4) 0;
-            min-height: 48px;
+            min-height: 74px;
             letter-spacing: .6px;
+
+            > span {
+                position: relative;
+                padding-left: nth($p,6);
+            }
+
+            .arrow {
+                position: absolute; left: 0; top: 5px;
+                height: 15px;
+                width: 15px;
+
+                &::after , &::before {
+                    content: '';
+                    position: absolute; left: 0;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 7.5px;
+                    border-right-width: 0;
+                    border-color: #aaa;
+                    border-top-color: transparent;;
+                    border-bottom-color: transparent;;
+                }
+                &::before {
+                    left: 7.5px;
+                }
+            }
         }
 
         &__descrip {
@@ -62,7 +91,7 @@
             // 06/22 可考慮效果 , 點擊 read more 才全部展開
             // white-space: nowrap;
             // text-overflow: ellipsis;
-            
+
             > br {
                 display: none;
             }
@@ -76,8 +105,12 @@
 
         &-content {
             &__title {
-                padding: 0;
+                display: block;
                 min-height: 0;
+
+                > .arrow {
+                    top: 0;
+                }
             }
         }
     }
