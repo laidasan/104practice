@@ -135,15 +135,19 @@
     }
 
     &__location {
-        
-        &-box {
-            max-width: 27rem;
-            margin: 0 auto;
-            margin-bottom: nth($m,3);
-
+        > .img-box {
+            margin-left: auto;
+            margin-right: auto;
+    
             > img {
                 width: 100%;
             }
+    
+        }
+    
+        &-icon {
+            display: none;
+            max-width: 180px;
         }
     }
     
@@ -191,9 +195,23 @@
             }
         }
 
-        &__location-box {
-            max-width: 39rem;
-        }
+        &__location {
+            @include clear;
+
+            &-icon {
+                display: block;
+                width: 30%;
+            }
+
+            &-descrip {
+                width: 70%;
+            }
+
+            > .img-box {
+                float: left;
+            }
+           
+        }   
 
         &__stroke {
 
@@ -281,13 +299,13 @@
         &-content-group {
             @include clear;
             padding: 0 6%;
+            text-align: right;
         }
 
-        &__location-box {
-            margin-bottom: 0;
+        &__location {
             float: left;
+            width: 72%;
         }
-
 
         &__stroke {
 

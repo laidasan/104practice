@@ -22,7 +22,6 @@
             console.log('go')
         } else {
             $topBtn.style.removeProperty('transform')
-            console.log('return')
         }
     }
 
