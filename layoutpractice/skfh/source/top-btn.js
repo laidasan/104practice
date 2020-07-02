@@ -19,14 +19,16 @@
         let windowBottom = window.scrollY + window.innerHeight
         if(windowBottom >= document.body.clientHeight) {
             $topBtn.style.setProperty('transform','translateY(0)')
-            console.log('go')
         } else {
             $topBtn.style.removeProperty('transform')
         }
     }
 
     $topBtn.addEventListener('click',(e) => {
-        window.scroll(0,0)
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        })
     })
 
 

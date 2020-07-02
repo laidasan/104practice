@@ -101,18 +101,6 @@
     @extend %bounce;
 }
 
-// ring
-@mixin ring-parent-hover {
-
-    &:hover > &__ball-1 {
-        // animation-duration: 10s;
-    }
-
-    &:hover > &__ball-2 {
-        // animation-duration: 10s;
-    }
-
-}
 @mixin ring-ball-an($mode) {
     @extend %ring-ball-an-#{$mode};
 }
