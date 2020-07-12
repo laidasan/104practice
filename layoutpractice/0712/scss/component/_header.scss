@@ -1,0 +1,112 @@
+.header {
+    background-color: #31438E;
+    padding: nth($p,9) 0;
+
+
+    &-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding-left: nth($p,3);
+        padding-right: nth($p,6);
+    }
+
+    &__logo-box {
+        max-width: 210px;
+    }
+
+    &__menu {
+        @include menu-hum(.21rem);
+        width: 18px;
+        color: $color-white;
+        background-color: $color-white;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: -1.2rem; bottom: -1.2rem;
+            left: -1.2rem; right: -1.2rem;
+            box-shadow: 0 0 0 1px rgba(#fff,.1);
+            border-radius: nth($border-radius,1);
+        }
+
+        &__list {
+            position: fixed;    
+            left: 0; right: 0; top: 330px; bottom: 0;
+            background: rgb(92, 136, 231);
+            transform: translateX(100%);
+            
+            > li {
+                text-align: right;
+                margin: nth($m,3) 0;
+                margin-right: nth($m,9);
+            }
+
+            > li:not(:last-child) > a {
+                @include link {
+                    @include font(3);
+                    text-decoration: none;
+                    color: $color-white;
+                }
+            }
+        }
+    }
+
+    @include respond(md) {
+
+        &-container {
+            max-width: 960px;
+        }
+
+        &__menu {
+            width: auto;
+            height: auto;
+            border: none;
+            padding: 0;
+            background-color: transparent;
+            background-clip: padding-box;
+
+            &::after {
+                content: none;
+            }
+
+            &__list {
+                position: static;
+                background-color: transparent;
+                transform: none;
+                font-size: 0;
+    
+                > li {
+                    display: inline-block;
+                    margin: 0;
+                    margin-right: nth($m,6);
+
+    
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+    
+                > li > a {
+                    @include link {
+                        @include font(2);
+                    }
+                }
+            }
+        }
+    }
+
+    @include respond(lg) {
+        &__menu__list {
+            > li {
+                margin-right: nth($m,9);
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
