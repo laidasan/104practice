@@ -1,0 +1,5 @@
+{
+    "blueprint.templatesPath": [
+        "./.vscode/blueprint-templates"
+    ]
+}

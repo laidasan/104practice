@@ -1,0 +1,34 @@
+%clear {
+    &::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+
+%img {
+    width: 100%;
+    vertical-align: middle;
+    object-fit: cover;
+}
+
+// bounce
+%bounce {
+    animation-name: bounce;
+    animation-duration: 2.1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+}
+
+%ab-fill {
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+}
+
+
+%ring-ball-an-1 {
+    animation-name: ring-ball-an-1;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
