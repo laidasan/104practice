@@ -1,0 +1,32 @@
+.table {
+    @include table(960px,true);
+    color: $color-white;
+    
+    &-container {
+        &::after {
+            content: '';
+            display: block;
+            max-width: 960px;
+            height: 0;
+            margin: nth($m,6) 0;
+            @include hori-middle;
+            padding: .3px 0;
+            background-color: rgba($color-white,.3);
+        }
+    }
+    th {
+        text-align: left;
+        @include font(4,0,2);
+        padding: nth($p,4) 0;
+    }
+
+    td {
+        @include font(2);
+        color: rgba($color-white,.6);
+        padding: nth($p,1) 0;
+    }
+}
+
+.section-table {
+   background-color: #293852;
+}
