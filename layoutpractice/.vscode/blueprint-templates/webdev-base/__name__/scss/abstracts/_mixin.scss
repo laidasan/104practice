@@ -66,6 +66,15 @@
     }
 };
 
+@mixin btn-base-button($shadow-border:true,$b-radius-level:0,$f-size-level:2,$p-tb:1.2rem,$p-rl:1.8rem) {
+    border: none;
+    background: #fff;
+    font-size: nth($font-size,$f-size-level);
+    padding: $p-tb $p-rl;
+    @if $shadow-border {box-shadow: 0 0 0 1px #000;}
+    @if $b-radius-level > 0 {border-radius: nth($border-radius , $b-radius-level);}
+}
+
 @mixin btn-arrow($size:30px) {
     position: relative;
     width: $size;

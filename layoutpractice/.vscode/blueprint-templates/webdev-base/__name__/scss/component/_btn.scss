@@ -1,35 +1,10 @@
 .btn {
-    @include btn-base(false);
-
-    &--sign {
-        @include link {
-            display: inline-block;
-            color: $color-white;
-            padding: nth($p,3) nth($p,6);
-            background: #0033aa;
-            border-radius: nth($border-radius,3);
-
-           
-
-        }
-        &:hover {
-            background: #003366;
-        }
+    &-a {
+        @include btn-base(false);
     }
-
-    &--banner {
-        @include link {
-            display: inline-block;
-            color: $color-white;
-            padding: nth($p,3) nth($p,2);
-            background-color: #2991cc;
-            @include font(2,0,2);
-            border-radius: nth($border-radius,3);
-
-
-            // method 2 ,method 3
-            // 寬度分離 , margin padding 直接家在每個子項上
-            //  margin-left: nth($m,9);
-        }
+    
+    &-button {
+        @include btn-base-button(false);
     }
+    
 }
