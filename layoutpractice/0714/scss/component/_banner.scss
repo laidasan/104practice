@@ -1,0 +1,91 @@
+.banner {
+    background-image: url('../../img/charmicheal-reservoir.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 42rem;
+
+
+    &-container {
+        max-width: 96%;
+        padding-top: nth($p,6);
+        padding-bottom: 12rem;
+
+        & > .title {
+            display: inline-block;
+            @include font(1,0,4);
+            color: $color-white;
+            background-color: $color-black;
+            padding: nth($p,2) nth($p,1);
+        }
+    }
+
+
+    
+
+    &__list {
+        font-size: 0;
+        padding-right: 42%;
+
+        > li {
+            display: inline-block;
+            background-color: rgba($color-white,.81);
+            margin-right: 1px;
+            margin-bottom: 1px;
+        }
+
+        > li:hover > a {
+            background-color: #ffcc00;
+        }
+
+        > li > a {
+            @include link {
+                @include font(3,0,2);
+                display: inline-block;
+                text-decoration: none;
+                color: #333;
+                padding: nth($p,3) nth($p,3);
+                transition: background-color .75s;
+            }
+        }
+    }
+
+
+    @include respond('sm-x') {
+        &__list {
+            padding-right: 50%;
+        }
+    }
+
+    @include respond('md') {
+        &-container {
+            max-width: 93%;
+        }
+
+        &__list {
+            padding-right: 60%;
+
+            > li > a {
+                @include link {
+                    @include font(4,0,2);
+                }
+            }
+        }
+    }
+    @include respond('lg') {
+
+        &-container {
+            max-width: 90%;
+        }
+
+        &__list {
+            > li > a {
+                @include link {
+                    padding-top: nth($p,5);
+                    padding-bottom: nth($p,5);
+                    padding-right: nth($p,4);
+                    padding-left: nth($p,4);
+                }
+            }
+        }
+    }
+}

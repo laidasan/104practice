@@ -1,0 +1,43 @@
+.table {
+
+    &-container {
+        
+
+    }
+
+
+    @include table(600px,true);
+    color: $color-white;
+    background-color: #db2134;
+    padding: nth($p,6);
+
+
+    th {
+        @include font(3,0,4);
+        padding: nth($p,3);
+        vertical-align: middle;
+    }
+
+    td {
+        @include font(2,0,2);
+        text-align: center;
+        vertical-align: middle;
+        box-shadow: 0 0 0 .5px rgba($color-white,.6);
+        padding-top: nth($p,6);
+        padding-bottom: nth($p,6);
+    }
+
+    th,td {
+        line-height: 1.5;   
+    }
+
+
+    tfoot {
+        td {
+            font-size: 1.6rem;
+            box-shadow: none;
+            padding-right: nth($p,3);
+            padding-left: nth($p,3);
+        }
+    }
+}

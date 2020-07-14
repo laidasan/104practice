@@ -1,0 +1,10 @@
+.btn {
+    &-a {
+        @include btn-base(false);
+    }
+    
+    &-button {
+        @include btn-base-button(false);
+    }
+    
+}

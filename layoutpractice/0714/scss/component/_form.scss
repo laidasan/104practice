@@ -1,0 +1,38 @@
+.form {
+    &--header-search {
+        min-width: 81%;
+
+        // method 2
+        // width: 100%;
+        // max-width: 81%;
+
+        > input[type="search"] , > select {
+            padding-top: nth($p,1);
+            padding-bottom: nth($p,1);
+        }
+
+        > input[type="search"] {
+            width: 100%;
+            padding-left: nth($p,5);
+           
+        }
+        > select {
+            display: block;
+            width: 100%;
+            padding-left: nth($p,1);
+        }
+    }
+
+
+    @include respond('sm') {
+        &--header-search {
+            min-width: 0;
+            flex-basis: 180px;  
+        }
+    }
+    @include respond('lg') {
+        &--header-search {
+            flex-basis: 258px;  
+        }
+    }
+}

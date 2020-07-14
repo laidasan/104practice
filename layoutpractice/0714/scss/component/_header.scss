@@ -1,0 +1,98 @@
+.header {
+    background-color: #f2f2f2;
+    padding-top: nth($p,6);
+    padding-bottom: nth($p,6);
+
+    &-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 120px;
+        max-width: 90%;
+    }   
+
+    &__logo-box {
+        flex-shrink: 0;
+
+        max-width: 300px;
+        margin-bottom: nth($m,6);
+    }
+
+    &__list {
+        display: none;
+        flex-basis: 40%;
+        font-size: 0;
+        
+        &__item {
+            display: inline-block;
+            width: 50%;
+            
+            &::before {
+                content: '';
+                display: inline-block;
+                vertical-align: middle;
+                width: 1px;
+                height: 0;
+                padding: 12px 0;
+                margin-right: nth($m,1);
+                background-color: rgba($color-black,.3);
+            }
+
+            > a {
+                @include link {
+                    @include font(2,0);
+                    text-decoration: none;
+                    color: #333;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+
+
+    @include respond('sm') {
+        padding: 0;
+        &-container {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        &__logo-box {
+            max-width: 223px;
+        }
+    }   
+
+    @include respond('md') {
+        &__list {
+            display: block;
+        }
+    }
+
+
+    @include respond('lg') {
+
+        &__list {     
+            &__item {
+                width: 36%;
+    
+                &:nth-child(3n + 1) {
+                    width: 27%;
+                }
+                
+                &::before {
+                    content: '';
+                    padding: 12px 0;
+                    margin-right: nth($m,1);
+                }
+            }
+        }
+    }
+
+    @include respond('xl') {
+        &-container {
+            max-width: 1200px;
+        }
+    }
+    
+}

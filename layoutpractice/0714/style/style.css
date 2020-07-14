@@ -1,0 +1,266 @@
+@keyframes bounce {
+  0% {
+    transform: scale(1, 1) translateY(0); }
+  10% {
+    transform: scale(1.1, 0.9) translateY(0); }
+  30% {
+    transform: scale(0.9, 1.1) translateY(-60px); }
+  50% {
+    transform: scale(1.05, 0.95) translateY(0px); }
+  57% {
+    transform: scale(1, 1) translateY(-7px); }
+  64% {
+    transform: scale(1, 1) translateY(0px); }
+  100% {
+    transform: scale(1, 1) translateY(0px); } }
+
+@keyframes bounce-shadow {
+  0% {
+    transform: scale(1, 1) rotateX(45deg);
+    opacity: .9; }
+  10% {
+    transform: scale(1.1, 0.9) rotateX(45deg);
+    opacity: 1; }
+  30% {
+    transform: scale(0.7, 1.2) rotateX(45deg);
+    opacity: .6; }
+  50% {
+    transform: scale(0.95, 1.05) rotateX(45deg);
+    opacity: .8; }
+  57% {
+    transform: scale(0.9, 1) rotateX(45deg);
+    opacity: .75; }
+  64% {
+    transform: scale(1, 1) rotateX(45deg);
+    opacity: .9; }
+  100% {
+    transform: scale(1, 1) rotateX(45deg);
+    opacity: .9; } }
+
+@keyframes ring-ball-an-1 {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+
+html {
+  font-size: 62.5%; }
+
+.section {
+  padding-top: 3.3rem;
+  padding-bottom: 3.3rem; }
+  .section-form__title-box {
+    max-width: 24rem;
+    margin: 0 auto;
+    margin-bottom: 30px; }
+    .section-form__title-box > img {
+      width: 100%; }
+
+.img-box > img {
+  width: 100%;
+  vertical-align: middle;
+  object-fit: cover; }
+
+@media screen and (min-width: 480px) {
+  .section-form__title-box {
+    max-width: 27rem; } }
+
+@media screen and (min-width: 960px) {
+  .section {
+    padding-top: 6.9rem;
+    padding-bottom: 6.9rem; }
+    .section-form__title-box {
+      max-width: 36rem; } }
+
+@media screen and (min-width: 1440px) {
+  .section-form__title-box {
+    max-width: none;
+    text-align: center; }
+    .section-form__title-box > img {
+      width: auto; } }
+
+.btn-a:link, .btn-a:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+  font-size: 1.5rem;
+  padding: 1.2rem 1.8rem; }
+
+.btn-button {
+  border: none;
+  background: #fff;
+  font-size: 1.5rem;
+  padding: 1.2rem 1.8rem; }
+
+.form--header-search {
+  min-width: 81%; }
+  .form--header-search > input[type="search"], .form--header-search > select {
+    padding-top: 6px;
+    padding-bottom: 6px; }
+  .form--header-search > input[type="search"] {
+    width: 100%;
+    padding-left: 18px; }
+  .form--header-search > select {
+    display: block;
+    width: 100%;
+    padding-left: 6px; }
+
+@media screen and (min-width: 480px) {
+  .form--header-search {
+    min-width: 0;
+    flex-basis: 180px; } }
+
+@media screen and (min-width: 960px) {
+  .form--header-search {
+    flex-basis: 258px; } }
+
+.header {
+  background-color: #f2f2f2;
+  padding-top: 21px;
+  padding-bottom: 21px; }
+  .header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+    max-width: 90%; }
+  .header__logo-box {
+    flex-shrink: 0;
+    max-width: 300px;
+    margin-bottom: 21px; }
+  .header__list {
+    display: none;
+    flex-basis: 40%;
+    font-size: 0; }
+    .header__list__item {
+      display: inline-block;
+      width: 50%; }
+      .header__list__item::before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        width: 1px;
+        height: 0;
+        padding: 12px 0;
+        margin-right: 6px;
+        background-color: rgba(0, 0, 0, 0.3); }
+      .header__list__item > a:link, .header__list__item > a:visited {
+        font-size: 1.5rem;
+        font-weight: 400;
+        line-height: 1.5rem;
+        text-decoration: none;
+        color: #333;
+        vertical-align: middle; }
+  @media screen and (min-width: 480px) {
+    .header {
+      padding: 0; }
+      .header-container {
+        flex-direction: row;
+        justify-content: space-between; }
+      .header__logo-box {
+        max-width: 223px; } }
+  @media screen and (min-width: 768px) {
+    .header__list {
+      display: block; } }
+  @media screen and (min-width: 960px) {
+    .header__list__item {
+      width: 36%; }
+      .header__list__item:nth-child(3n + 1) {
+        width: 27%; }
+      .header__list__item::before {
+        content: '';
+        padding: 12px 0;
+        margin-right: 6px; } }
+  @media screen and (min-width: 1440px) {
+    .header-container {
+      max-width: 1200px; } }
+
+.banner {
+  background-image: url("../../img/charmicheal-reservoir.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 42rem; }
+  .banner-container {
+    max-width: 96%;
+    padding-top: 21px;
+    padding-bottom: 12rem; }
+    .banner-container > .title {
+      display: inline-block;
+      font-size: 1.2rem;
+      font-weight: 900;
+      line-height: 1.2rem;
+      color: #fff;
+      background-color: #000;
+      padding: 9px 6px; }
+  .banner__list {
+    font-size: 0;
+    padding-right: 42%; }
+    .banner__list > li {
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.81);
+      margin-right: 1px;
+      margin-bottom: 1px; }
+    .banner__list > li:hover > a {
+      background-color: #ffcc00; }
+    .banner__list > li > a:link, .banner__list > li > a:visited {
+      font-size: 1.8rem;
+      font-weight: 500;
+      line-height: 1.8rem;
+      display: inline-block;
+      text-decoration: none;
+      color: #333;
+      padding: 12px 12px;
+      transition: background-color .75s; }
+  @media screen and (min-width: 600px) {
+    .banner__list {
+      padding-right: 50%; } }
+  @media screen and (min-width: 768px) {
+    .banner-container {
+      max-width: 93%; }
+    .banner__list {
+      padding-right: 60%; }
+      .banner__list > li > a:link, .banner__list > li > a:visited {
+        font-size: 2.1rem;
+        font-weight: 500;
+        line-height: 2.1rem; } }
+  @media screen and (min-width: 960px) {
+    .banner-container {
+      max-width: 90%; }
+    .banner__list > li > a:link, .banner__list > li > a:visited {
+      padding-top: 18px;
+      padding-bottom: 18px;
+      padding-right: 15px;
+      padding-left: 15px; } }
+
+.table {
+  width: 100%;
+  max-width: 600px;
+  table-layout: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;
+  background-color: #db2134;
+  padding: 21px; }
+  .table th {
+    font-size: 1.8rem;
+    font-weight: 900;
+    line-height: 1.8rem;
+    padding: 12px;
+    vertical-align: middle; }
+  .table td {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    text-align: center;
+    vertical-align: middle;
+    box-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.6);
+    padding-top: 21px;
+    padding-bottom: 21px; }
+  .table th, .table td {
+    line-height: 1.5; }
+  .table tfoot td {
+    font-size: 1.6rem;
+    box-shadow: none;
+    padding-right: 12px;
+    padding-left: 12px; }
