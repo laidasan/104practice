@@ -503,3 +503,7 @@
   content: '';
   display: block;
   clear: both; }
+
+.hori-middle {
+  margin-left: auto;
+  margin-right: auto; }
