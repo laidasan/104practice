@@ -1,0 +1,62 @@
+.btn {
+    &-a {
+        @include btn-base(false);
+    }
+
+    &--language {
+        @include link {
+            color: #388dff;
+            font-size: 14px;
+            padding: 0;
+            vertical-align: middle;
+        }
+    }
+
+    &--login {
+        @include link {
+            color: #388dff;
+            padding: nth($p,1);
+        }
+    }
+
+    &--signup {
+        @include link {
+            font-size: 14px;
+            vertical-align: middle;
+            padding-top: nth($p,2);
+            padding-bottom: nth($p,2);
+            padding-left: nth($p,4);
+            padding-right: nth($p,4);
+            border-radius: 30px;
+            color: $color-white;
+            background-color: #388dff;
+            letter-spacing: .75px;
+        }
+    }
+
+    &--inlanguage {
+        @include link {
+            display: none;
+        }
+    }
+    
+    &-button {
+        @include btn-base-button(false);
+    }
+    
+
+    @include respond(md) {
+        &--inlanguage {
+            @include link {
+                display: inline-block;
+            }
+        }
+    }
+    @include respond(lg) {
+        &--inlanguage {
+            @include link {
+                display: none;
+            }
+        }
+    }
+}

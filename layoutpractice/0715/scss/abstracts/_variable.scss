@@ -1,0 +1,146 @@
+// base
+$breakpoints: (
+    'xs' : 320px,
+    'sm' : 480px,
+    'sm-x': 600px,
+    'md' : 768px,
+    'lg' : 960px,
+    'xl' : 1440px,
+);
+
+// grid-sys
+$separate: false;
+$wrapper-width: (
+    xs: 90%,
+    sm : 480,
+    md : 600 768,
+    lg : 768 960,
+    xl : 960 1440
+);
+$columns: 24;
+$gutter: 24px;
+$container-gutter: 0px;
+
+$font-size: 1.2rem 1.5rem 1.8rem 2.1rem 2.4rem 2.7rem 3rem 3.6rem 3.9rem;
+$font-weight: 400 500 700 900;
+
+// $m: .6rem .9rem 1.2rem 1.5rem 1.8rem 2.1rem 2.4rem 2.7rem 3rem 3.6rem 3.9rem 4.2rem 4.5rem 4.8rem;
+// $p: .6rem .9rem 1.2rem 1.5rem 1.8rem 2.1rem 2.4rem 2.7rem 3rem 3.6rem 3.9rem 4.2rem 4.5rem 4.8rem;
+$m: 6px 9px 12px 15px 18px 21px 24px 27px 30px 33px 36px 39px 42px 45px 48px;
+$p: 6px 9px 12px 15px 18px 21px 24px 27px 30px 33px 36px 39px 42px 45px 48px;
+
+
+// width
+$u-width: 300 320 360 420 480 600 768 960 1024 1200 1440;
+
+$border-radius: 3px 6px 9px 12px;
+$border-radius-circle: 50%;
+
+$color-black: #000;
+$color-white: #fff;
+
+
+// menu modle
+$menu-mode: hum;
+
+// page colors
+
+// background - zebra
+$zebra-mode: line triangle square;
+$zebra-config: (
+    line: (
+        size: 50%,
+        repeat-gradient: false,
+        bk-color-primary: #56bb9b,
+        bk-color-sub: $color-white,
+        columns: 2,
+        rotate: 90,
+        bk-repeat: repeat
+    ),
+    triangle: (
+        size: 50%,
+        bk-size: 15px 15px,
+        bk-color-primary: #362a2a,
+        bk-color-sub: #56bb9b
+    ),
+    square: (
+        size: 15px,
+        rows: 4,
+        bk-color-primary: #362a2a,
+        bk-color-sub: #56bb9b
+    )
+);
+
+
+// animation
+
+// btn-ani
+$btn-ani: flyin;
+
+$btn-ani-config: (
+    flyin: (
+        bk-color: $color-black,
+        color: $color-white
+    )
+);
+
+// ring
+$ring-config: (
+    size: (
+        xs : 6rem,
+        sm : 7.5rem,
+        md : 9rem,
+        xl : 12rem
+    ),
+    
+    bk : (
+        bk-normal : #d6251f,
+        bk-dark : #97120e,
+        bk-light: #fa0e06
+    ),
+
+    ring : (
+        size : .2rem, // 環的粗度
+        color : #97120e,
+        count : 3,    // 環的數量
+        start: .15rem // 緊密程度
+    ),
+    
+    ball : (
+        ball-1 :(
+            color: #fa0e06,
+            small-size: 1rem,
+            big-size: 1.2rem,
+            small-position: left top,
+            big-position: right bottom,
+            small-rotate: 12deg,
+            big-rotate: -15deg
+        ),
+
+        ball-2 : (
+            color: #97120e,
+            small-size: 1.4rem,
+            big-size: 2rem,
+            small-position: left top,
+            big-position: right bottom
+        )
+    ),
+);
+
+$xl-ring-ball-config: (
+    ball-1 :(
+        color: #fa0e06,
+        small-size: 1.2rem,
+        big-size: 1.5rem,
+        small-position: left top,
+        big-position: right bottom
+    ),
+        
+    ball-2 : (
+        color: #97120e,
+        small-size: 1.8rem,
+        big-size: 2.4rem,
+        small-position: left top,
+        big-position: right bottom
+    )
+);

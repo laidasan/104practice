@@ -1,0 +1,23 @@
+.banner {
+    min-height: 320px;
+    background-image: url('../../img/live-banner-70e4b120e3b4312b2c14f3a5971f524097d35203c7e1228676254cda442c3ed3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    line-height: 320px;
+
+    &-txt {
+        display: inline-block;
+        width: 100%;
+        color: $color-white;
+        line-height: 1;
+
+        h1 {
+            font-size: 32px;
+            font-weight: 800;
+        }
+
+        p {
+            @include font(2,0,2);
+        }
+    }
+}

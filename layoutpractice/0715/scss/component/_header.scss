@@ -1,0 +1,157 @@
+.header {
+    &-container {
+        min-height: 81px;
+        max-width: 93%;
+        
+        display: flex;
+        align-items: center;
+    }
+
+    &__logo {
+        display: inline-block;
+        vertical-align: middle;
+        fill: #388dff;
+
+        &-box {
+            position: absolute; left: 0; right: 0;
+            text-align: center;
+            transform: scale(.75);
+        }
+
+        &--icon {
+            width: 42px;
+        }   
+
+        &--word {
+            display: none;
+            position: relative; top: 3px;
+            width: 90px;
+        }
+
+        &--map , &--arrow {
+            fill: $color-white;
+            stroke: #388dff;
+        }
+        &--map {
+            width: 30px;
+            stroke-width: 2px;
+        }
+
+        &--arrow {
+            width: 4.5px;
+            stroke-width: 4.5px;
+            margin-left: nth($m,2);
+            transform: rotateZ(90deg);
+        }
+        
+        &--usericon {
+            width: 15px;
+        }
+
+    }
+
+    &__menu {
+
+        @include menu-hum(.1rem);
+        width: 24px;
+        border-top: 0;
+        padding-bottom: 7.5px;
+        
+        &-wrap {
+            position: fixed;
+            left: 0; right: 0; top: 700px;
+            transform: translate(-100%);
+        }
+
+
+        &-list {
+        // font-size: 0;
+
+            > li {
+                @include font(2,0);
+                display: inline-block;
+                margin-right: nth($m,6);
+            }
+        }
+    }
+
+    &-language {
+        margin-right: 0;
+        margin-left: auto;
+    }
+
+
+    @include respond(md) {
+        &-container {
+            max-width: 768px;
+        }
+        &__logo {
+    
+            &-box {
+                
+            }
+            
+            &--icon {
+                margin-right: nth($m,2);
+            }   
+
+            &--word {
+                display: inline-block;
+            }
+        }
+    }
+
+
+    @include respond(lg) {
+        &-container {
+            max-width: 960px;
+        }
+        &__logo {
+    
+            &-box {
+                position: static;
+                text-align: left;
+                margin-right: nth($m,1);
+            }
+
+            &--icon {
+                // width: 42px;
+                margin-right: nth($m,3);
+            }   
+    
+            &--word {
+                // width: 90px;
+            }
+    
+        }
+
+        &__menu {
+            flex-grow: 1;
+            width: auto;
+            border: none;
+            background-clip: padding-box;
+            padding: 0;
+            height: auto;
+            background: none;
+
+            &-wrap {
+                position: static;
+                transform: none;
+
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            &-list {
+            font-size: 0;
+    
+                > li {
+                    @include font(2,0);
+                    display: inline-block;
+                    margin-right: nth($m,6);
+                }
+            }
+        }
+    }
+}
