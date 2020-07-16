@@ -1,0 +1,60 @@
+.table {
+    @include table(960px,false);
+    min-width: 960px;
+
+
+    th {
+        vertical-align: middle;
+        background-color: #388dff;
+        @include font(3,0,3);
+        color: $color-white;
+        border: 1px solid $color-white;
+    }
+
+    thead > tr:first-child {
+        > th:first-child {
+            padding: 90px 42px;
+            padding-left: 0;
+            padding-right: 0;
+            // width: 43%
+        }
+    }
+    
+    thead > tr:nth-child(2) {
+        > th:first-child {
+            // width: 18%;
+        }
+    }
+
+
+    td {
+        text-align: center;
+        box-shadow: 0 0 0 .27px #ccc;
+        vertical-align: middle;
+        padding: nth($p,6) 3px;
+        @include font(2);
+
+    }
+
+
+    td {
+        > .through {
+            text-decoration: line-through;
+            color: #aaa;
+        }
+
+        &.spend > span:first-child {
+            display: block;
+            margin-bottom: 3px;
+        }
+    }
+
+    tbody > tr:first-child {
+        > td:first-child {
+            writing-mode: vertical-lr;
+            width: 15px;
+            padding: 0 27px;
+            line-height: 1.5;
+        }
+    }
+}

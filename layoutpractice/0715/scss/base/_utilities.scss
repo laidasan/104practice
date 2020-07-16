@@ -55,6 +55,23 @@
 
 
 // display
+
+.d-non {
+    display: none;
+}
+.d-b {
+    display: block;
+}
+.d-inb {
+    display: inline-block;
+}
+.d-flex {
+    display: flex;
+}
+.d-grid {
+    display: grid;
+}
+
 @each $key , $value in $breakpoints {
     @include respond($key) {
         .#{$key}\:d {

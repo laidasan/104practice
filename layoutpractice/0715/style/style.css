@@ -249,3 +249,41 @@ html {
       font-size: 1.5rem;
       font-weight: 500;
       line-height: 1.5rem; }
+
+.table {
+  width: 100%;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 960px; }
+  .table th {
+    vertical-align: middle;
+    background-color: #388dff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.8rem;
+    color: #fff;
+    border: 1px solid #fff; }
+  .table thead > tr:first-child > th:first-child {
+    padding: 90px 42px;
+    padding-left: 0;
+    padding-right: 0; }
+  .table td {
+    text-align: center;
+    box-shadow: 0 0 0 .27px #ccc;
+    vertical-align: middle;
+    padding: 21px 3px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.5rem; }
+  .table td > .through {
+    text-decoration: line-through;
+    color: #aaa; }
+  .table td.spend > span:first-child {
+    display: block;
+    margin-bottom: 3px; }
+  .table tbody > tr:first-child > td:first-child {
+    writing-mode: vertical-lr;
+    width: 15px;
+    padding: 0 27px;
+    line-height: 1.5; }
