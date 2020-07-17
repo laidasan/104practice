@@ -337,6 +337,21 @@
   .xl\:t-r {
     text-align: right; } }
 
+.d-non {
+  display: none; }
+
+.d-b {
+  display: block; }
+
+.d-inb {
+  display: inline-block; }
+
+.d-flex {
+  display: flex; }
+
+.d-grid {
+  display: grid; }
+
 @media screen and (min-width: 320px) {
   .xs\:d-non {
     display: none; }
