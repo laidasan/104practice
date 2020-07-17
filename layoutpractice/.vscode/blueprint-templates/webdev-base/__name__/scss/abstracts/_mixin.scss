@@ -76,7 +76,6 @@
 }
 
 @mixin btn-arrow($size:30px) {
-    position: relative;
     width: $size;
     height: $size;
 
@@ -276,29 +275,54 @@
 
 
 // under line 
-@mixin under-line($move:0,$h:.12rem,$position:relative,$color:#000) {
-    position: $position;
+@mixin under-line($move:0px,$h:.12rem,$color:#000,$pseudo:before,$position:true) {
+    @if $position { position: relative; }
 
-    &::before {
-        content: '';
-        position: absolute; bottom: -$move; left: 0; right: 0;
-        height: 0;
-        padding: $h / 2 0;
-        background: $color;
+    @if $pseudo == 'before' {
+        &::before {
+            content: '';
+            position: absolute; bottom: -$move; left: 0; right: 0;
+            height: 0;
+            padding-top: $h / 2;
+            padding-bottom: $h / 2;
+            background: $color;
+        }
     }
+
+    @if $pseudo == 'after' {
+        &::after {
+            content: '';
+            position: absolute; bottom: -$move; left: 0; right: 0;
+            height: 0;
+            padding-top: $h / 2;
+            padding-bottom: $h / 2;
+            background: $color;
+        }
+    }
+    
 }
 
 
 // menu
-@mixin menu-hum($h:.3rem) {
+@mixin menu-hum($h:.3rem , $reset:false) {
     height: $h;
     border-top: $h;
     border-bottom: $h;
+    border-right: 0;
+    border-left: 0;
     border-style: solid;
     padding-top: .3rem;
     padding-bottom: .3rem;
     background: #000;
     background-clip: content-box;
+}
+
+@mixin menu-hum-reset {
+    height: auto;
+    border: 3px 3px 3px 3px;
+    border-style: none;
+    padding: 0;
+    background-clip: padding-box;
 }
 
 @mixin menu($mode) {
