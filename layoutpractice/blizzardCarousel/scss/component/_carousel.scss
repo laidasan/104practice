@@ -1,0 +1,123 @@
+.carousel {
+
+    &-container {
+        position: relative;
+        padding-top: 35.1%;
+        overflow: hidden;
+    }
+
+    &__item {
+        @extend %ab-fill;
+        z-index: 0;
+        
+        &__bk {
+            @extend %ab-fill;
+            z-index: -1;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-color: #aaa;
+        }
+
+        &__content {
+
+        }
+    }
+
+    &__control {
+        @extend %ab-fill;
+        
+
+        // points
+        &__points {
+            position: absolute;
+            left: 0; right: 0;
+            bottom: 30px;
+            font-size: 0;
+            text-align: center;
+
+            > li {
+                display: inline-block;
+                width: 12px;
+                height: 12px;
+                background-color: #fff;
+                border-radius: 50%;
+                margin-left: 6px;
+                margin-right: 6px;
+                cursor: pointer;
+                
+                &.active {
+                    background-color: #E8BE02;
+                }
+            }
+        }
+
+        // arrow 
+        &__arrow {
+            position: absolute;
+            top: 0;bottom: 0;
+            z-index: 1;
+            margin-top: auto;
+            margin-bottom: auto;
+            width: 21px;
+            height: 21px;
+            cursor: pointer;
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0; right: 0; top: 0; bottom: 0;
+                border-width: 0;
+                border-style: solid;
+                border-top-width: 3px;
+            }
+
+            &.next {
+                right: 15px;
+                transform: rotateZ(45deg);
+
+                &::after {
+                    border-right-width: 3px;
+                }
+            }
+
+            &.prev {
+                left: 15px;
+                transform: rotateZ(-45deg);
+
+                &::after {
+                    border-left-width: 3px;
+                }
+            }
+        }
+    }
+}
+
+/* animation */
+.move-left-enter {
+    transform: translateX(100%);
+}
+.move-left-enter-to , .move-left-leave{
+    transform: translateX(0);
+}
+.move-left-leave-to {
+    transform: translateX(-100%);
+}
+.move-left-enter-active,.move-left-leave-active {
+    transition: transform 1.2s ease-out;
+}
+.move-left-enter-active {
+    transition-delay: .1s;
+}
+
+.move-right-enter {
+    transform: translateX(-100%);
+}
+.move-right-enter-to , .move-right-leave{
+    transform: translateX(0);
+}
+.move-right-leave-to {
+    transform: translateX(100%);
+}
+.move-right-enter-active,.move-right-leave-active {
+    transition: transform .6s;
+}
