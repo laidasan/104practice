@@ -304,17 +304,41 @@
 
 
 // menu
-@mixin menu-hum($h:.3rem , $reset:false) {
-    height: $h;
-    border-top: $h;
-    border-bottom: $h;
-    border-right: 0;
-    border-left: 0;
-    border-style: solid;
-    padding-top: .3rem;
-    padding-bottom: .3rem;
-    background: #000;
-    background-clip: content-box;
+@mixin menu-hum($h:.3rem,$width:24px,$pseudo:false) {
+    width: $width;
+
+    @if $pseudo {
+
+        &::after , &::before {
+            content: '';
+            position: absolute;
+            left: 0; right: 0;
+            height: $h;
+            background-color: #000;
+            transform-origin: center center;
+            transition: transform .3s;
+        }
+
+        &::before {
+            top: 3px;
+        }
+
+        &::after {
+            bottom: 3px;
+        }
+
+    } @else {
+        height: $h;
+        border-top: $h;
+        border-bottom: $h;
+        border-right: 0;
+        border-left: 0;
+        border-style: solid;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        background-color: #000;
+        background-clip: content-box;
+    }
 }
 
 @mixin menu-hum-reset {
@@ -323,6 +347,19 @@
     border-style: none;
     padding: 0;
     background-clip: padding-box;
+}
+
+@mixin menu-hum-open {
+    &::before {
+        top: 0;
+        transform: rotateZ(45deg);
+    }
+
+    &::after {
+        bottom: 0;
+        transform: rotateZ(-45deg);
+
+    }
 }
 
 @mixin menu($mode) {
