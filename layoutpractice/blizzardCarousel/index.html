@@ -16,10 +16,22 @@
             min-height: 690px;
             /* transform: translateX(30px); */
         }
+        .header {
+            position: absolute;
+            left: 0; right: 0;
+            z-index: 3;
+            height: 48px;
+            background-color: #000;
+        }
     </style>
 </head>
+
 <body>
     <div id="app">
+
+        
+        <header class="header"></header>
+        <!-- <div class="img-box"><img src="./img/hero1.jpg" alt=""></div> -->
         <div class="banner">
             <!-- <div class="carousel">
                 <div class="carousel-container">
@@ -30,8 +42,7 @@
                     <div class="carousel__control"></div>
                 </div>
             </div> -->
-            <carousel :list="bannerList"></carousel>
-
+            <carousel :map="bannerMap" :base-bk-colors="baseBkColors"></carousel>
         </div>
     </div>
 

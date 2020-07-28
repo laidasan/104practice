@@ -10,12 +10,13 @@ const carouselControlArrow = {
     <div class="carousel__control__arrow" 
     @click="$emit(getDirect)"
     @mouseenter="$emit('mouseenter')"
-    @mouseleave="$emit('mouseleave')"
-    ></div>
+    ><span></span></div>
     `,
     computed: {
         getDirect() { return this.direct }
     }
 }
+
+// @mouseleave="$emit('mouseleave')"
 
 export default carouselControlArrow

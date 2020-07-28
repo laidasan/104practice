@@ -1,8 +1,15 @@
 import carouselControlPoints from './carousel-control-points'
 import carouselControlArrow from './carousel-control-arrow'
-
+import carouselControlTimer from './carousel-control-timer'
 
  
+{/* <carousel-control-points 
+:total="total" 
+:active="active" 
+@click="click" 
+@mouseenter="$emit('mouseHover')" 
+@mouseleave="$emit('mouseLeave')"
+></carousel-control-points> */}
 
 const carouselControl = {
     props: {
@@ -14,29 +21,32 @@ const carouselControl = {
             type: Number,
         },
     },
+    mounted() {
+        console.log(this.$refs)
+    },
     components: {
-        carouselControlPoints,
-        carouselControlArrow
+        carouselControlArrow,
+        carouselControlTimer
     },
     template: 
     `
     <div class="carousel__control">
-        <carousel-control-points 
-        :total="total" 
-        :active="active" 
-        @click="click" 
-        @mouseenter="$emit('mouseHover')" 
-        @mouseleave="$emit('mouseLeave')"
-        ></carousel-control-points>
-    
+
         <carousel-control-arrow class="next" 
         direct="next" 
-        @next="$emit('next')" @mouseenter="$emit('mouseHover')" @mouseleave="$emit('mouseLeave')"
+        @next="$emit('next')" @mouseenter="$emit('mousehover')""
         ></carousel-control-arrow>
+
         <carousel-control-arrow class="prev" 
         direct="prev" 
-        @prev="$emit('prev')" @mouseenter="$emit('mouseHover')" @mouseleave="$emit('mouseLeave')"
+        @prev="$emit('prev')" @mouseenter="$emit('mousehover')""
         ></carousel-control-arrow>
+
+        <carousel-control-timer
+        :total="total"
+        :active="active"
+        ></carousel-control-timer>
+
     </div>
     `,
     methods: {
