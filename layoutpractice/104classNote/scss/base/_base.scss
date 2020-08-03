@@ -1,0 +1,42 @@
+html {
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    color: #333;
+    background-color: #efefef;
+    padding-top: 60px;
+}
+
+
+.section {
+    padding-top: 3.3rem;
+    padding-bottom: 3.3rem;
+}
+
+.img-box {
+    > img {
+        width: 100%;
+        vertical-align: middle;
+        object-fit: cover;
+    }
+}
+
+.title {
+    margin-top: nth($m,2);
+    margin-bottom: nth($m,5);
+}
+
+
+
+@include respond(md) {
+    body {
+        padding-top: 100px;
+    }
+}
+@include respond('lg') {
+    .section {
+        padding-top: 6.9rem;
+        padding-bottom: 6.9rem;
+    }
+}

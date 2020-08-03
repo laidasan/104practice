@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./scss/vender/reset.css">
+    <link rel="stylesheet" href="./scss/utility.scss">
+    <link rel="stylesheet" href="./scss/grid-sys.scss">
+    <link rel="stylesheet" href="./scss/main.scss">
+    <title>104classNote</title>
+</head>
+<body>
+    <div id="app">
+
+        <header class="header" :class="{isMenuActive: isMenuActive}" ref="header">
+            <div class="header-container">
+                <div class="header__content logo">
+                    <h1 class="header__logo">Samura.chiu</h1>
+                </div>
+                <div class="header__content menu">
+                    <div class="header__menu" @click="toggleMenu"><span></span></div>
+                    <ul class="header__menu-list f1" @click="goTarget">
+                        <li class="header__menu-list__item f1">
+                            <a href="javascript:;">環境安裝</a>
+                            <ul class="header__menu-list f2 disc">
+                                <li class="header__menu-list__item f2"><a href="javascript:;">Ｍac 安裝</a></li>
+                            </ul>
+                        </li>
+                        <li class="header__menu-list__item f1"><a href="javascript:;">開發套件 / 工具</a></li>
+                        <li class="header__menu-list__item f1"><a href="javascript:;">Scss</a></li>
+                        <li class="header__menu-list__item f1"><a href="javascript:;">Javascript</a></li>
+                        <li class="header__menu-list__item f1">
+                            <a href="javascript:;">Vue</a>
+                            <ul class="header__menu-list f2 disc right">
+                                <li class="header__menu-list__item f2"><a href="javascript:;">Vue Base</a></li>
+                                <li class="header__menu-list__item f2"><a href="javascript:;">Vue component</a></li>
+                                <li class="header__menu-list__item f2"><a href="javascript:;">Vue transition</a></li>
+                                <li class="header__menu-list__item f2"><a href="javascript:;">Vue Router</a></li>
+                                <li class="header__menu-list__item f2"><a href="javascript:;">Vue X</a></li>
+                            </ul>
+                        </li>
+                        <a href="javascript:;" class="cancel" @click="toggleMenu"><span></span></a>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="main-container grid-container">
+                <div class="section section--path col-24" ref="A">
+                    <div class="path article">
+                        <h1 class="title">Path (環境安裝）</h1>
+                        <div class="article__content">
+                            <div class="mac" ref="B">
+                                <h2 class="mb15 indent-1">Mac安裝</h2>
+                                <p class="mb15 indent-2">環境安裝為重要的一環 , 把工具與環境安置好很重要</p>
+                                <ul class="article__list disc indent-2">
+                                    <li>install homebrew  -> 使用終端機安裝東西時會用到</li>
+                                    <li>donload and install item2</li>
+                                    <li>install zsh -> 美化終端機 , 安裝與設定完成後重啟終端機 , 使用指令 "chsh -s /bin/zsh" 即可套用(會發現字體會變成亂碼）</li>
+                                    <li>vi ~/zshsrc -> 進入 zsh 的設定檔案 , 如果有安裝 node.js etc.. 工具 , 都要從這裡印入到 zsh</li>
+                                    <li>解決亂碼（字體問題）： brew tap caskroom/fonts -> brew cake install font-saucecodepro-nerd-font(超多字體可以選擇） -> command line :brew search nerd</li>
+                                    <li>解決亂碼（字體問題）: item2 -> preformance -> text -> 選擇與切換字體</li>
+                                    <li>樣式 : <a href="https://github.com/mbadolato/iTerm2-Color-Schemes#installation-instructions">進入連結下載樣式(color paste)</a></li>
+                                    <li>切換樣式 : Open itemr2 > command + i > color > import > schemes floder > choose and import</li>
+                                </ul>
+                                <h3 class="mb15 mt15 indent-2">如果 Mac toolbars 不見</h3>
+                                <p class="mb15 indent-2">進入活動監視器 => 磁碟 => 找到TouchBarServer => 選擇後左上角 Ｘ 強制結束</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section section--ide col-24" ref="C">
+                    <div class="ide article">
+                        <h1 class="title">開發套件 / 工具</h1>
+                        <div class="article__content">
+                            <div class="tools">
+                                <h2 class="mb15 indent-1">IDE</h2>
+                                <ul class="article__list disc indent-2">
+                                    <li>vscode</li>
+                                </ul>
+                                <h2 class="mb15 mt30 indent-1">VSCODE 好用套件</h2>
+                                <ul class="article__list disc indent-2">
+                                    <li>gitLence</li>
+                                    <li>project manager</li>
+                                    <li>blueprint - New Files and Folders of Files from Templates</li>
+                                    <li>cdnjs</li>
+                                    <li>codeMetrics (判斷 function 的複雜 , 可以限制自己的 code 每一行的字數 , 每個 fucntion 的行數 等等 , 增加思考量與程式閱讀性)</li>
+                                </ul>
+                                <h2 class="mb15 mt30 indent-1">Tools</h2>
+                                <ul class="article__list disc indent-2">
+                                    <li><a href="https://parceljs.org/">parcel</a></li>
+                                </ul>
+                                <h2 class="mb15 mt30 indent-1">Snippet (點一下複製）</h2>
+                                <ul class="article__list article__list--json disc indent-2">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section section--scss col-24" ref="D">
+                    <div class="scss article">
+                        <h1 class="title">Scss</h1>
+                        <h2 class="mb15 indent-1">Scss 使用方式</h2>
+                        <ul class="article__list disc indent-2">
+                            <li>mixin / include</li>
+                            <li>extent / %</li>
+                            <li>map / map-get</li>
+                            <li>list / nth</li>
+                            <li>gird-sys</li>
+                        </ul>
+                        <h3 class="mt15 mb15 indent-1"><a href="https://github.com/laidasan/sass__base">工具包</a></h3>
+                    </div>
+                </div>
+                <div class="section section--js col-24" ref="E">
+                    <div class="js article">
+                        <h1 class="title">Javascript</h1>
+                        <div class="article__content">
+                            <h2 class="mb15 indent-1">SOLID 開發原則</h2>
+                            <ul class="article__list disc indent-2">
+                                <li>S</li>
+                                <li>O</li>
+                                <li>L</li>
+                                <li>I</li>
+                                <li>D</li>
+                            </ul>
+                            <h3 class="mt15 mb15 indent-1"><a href="https://paper.dropbox.com/doc/--A481t7ySFj0kMS8KmfoA0RXsAg-Q7VhiUrCQEDjVuX9ElbOf" target="_blank">筆記連結</a></h3>
+                            <h3 class="mt15 mb15 indent-1"><a href="https://github.com/laidasan/js-tools-clear" target="_blank">工具包</a></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="section section--vue col-24" ref="F">
+                    <div class="vue article">
+                        <h1 class="title">Vue</h1>
+                        <div class="article__content">
+                            <h2 class="mb15 mt15 indent-1" ref="G">Vue Base</h2>
+                            <h2 class="mb15 mt15 indent-1" ref="H">Vue Component</h2>
+                            <h2 class="mb15 mt15 indent-1" ref="I">Vue Transition</h2>
+                            <h2 class="mb15 mt15 indent-1" ref="J">Vue Router</h2>
+                            <h2 class="mb15 mt15 indent-1" ref="K">Vue X</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js'></script>
+    <script src="./source/app.js"></script>
+    
+</body>
+</html>

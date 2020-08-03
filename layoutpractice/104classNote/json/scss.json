@@ -1,0 +1,223 @@
+{
+	"set margin from list": {
+		"prefix": "nm",
+		"body": [
+		  "nth(\\$m,)"
+		],
+		"description": "get margin list"
+	},
+
+	"set margin left from list": {
+		"prefix": "nml",
+		"body": [
+		  "margin-left: nth(\\$m,$0);"
+		],
+		"description": "set margin left from list"
+	},
+	"set margin right from list": {
+		"prefix": "nmr",
+		"body": [
+		  "margin-right: nth(\\$m,$0);"
+		],
+		"description": "set margin right from list"
+	},
+	"set margin top from list": {
+		"prefix": "nmt",
+		"body": [
+		  "margin-top: nth(\\$m,$0);"
+		],
+		"description": "set margin top from list"
+	},
+
+	"set margin bottom from list": {
+		"prefix": "nmb",
+		"body": [
+		  "margin-bottom: nth(\\$m,$0);"
+		],
+		"description": "set margin bottom from list"
+	},
+
+	"set margin tb from list": {
+		"prefix": "nmtb",
+		"body": [
+		  "margin: nth(\\$m,$0) 0;"
+		],
+		"description": "set margin bottom from list"
+	},
+
+	"set margin lr from list": {
+		"prefix": "nmlr",
+		"body": [
+		  "margin: 0 nth(\\$m,$0);"
+		],
+		"description": "set margin lr from list"
+	},
+	
+
+	// padding
+
+	"set padding from list": {
+		"prefix": "np",
+		"body": [
+		  "nth(\\$p,$0)"
+		],
+		"description": "set padding from list"
+	},
+
+	"set padding tb0 lr from list": {
+		"prefix": "nplr",
+		"body": [
+		  "padding: 0 nth(\\$p,$0);"
+		],
+		"description": "set padding tb0 lr from list"
+	},
+
+	"set padding tb from list": {
+		"prefix": "nptb",
+		"body": [
+		  "padding: nth(\\$p,$0) 0;"
+		],
+		"description": "set padding tb from list"
+	},
+
+	"set padding-left from list": {
+		"prefix": "npl",
+		"body": [
+		  "padding-left: nth(\\$p,$0);"
+		],
+		"description": "set padding-left from list"
+	},
+	"set padding-right from list": {
+		"prefix": "npr",
+		"body": [
+		  "padding-right: nth(\\$p,$0);"
+		],
+		"description": "set padding-left from list"
+	},
+	"set padding-top from list": {
+		"prefix": "npt",
+		"body": [
+		  "padding-top: nth(\\$p,$0);"
+		],
+		"description": "set padding-left from list"
+	},
+	"set padding-bottom from list": {
+		"prefix": "npb",
+		"body": [
+		  "padding-bottom: nth(\\$p,$0);"
+		],
+		"description": "set padding-left from list"
+	},
+
+	"set padding-left": {
+		"prefix": "pl",
+		"body": [
+		  "padding-left: $0;"
+		],
+		"description": "set padding-left"
+	},
+	"set padding-right": {
+		"prefix": "pr",
+		"body": [
+		  "padding-right: $0;"
+		],
+		"description": "set padding-left"
+	},
+	"set padding-top": {
+		"prefix": "pt",
+		"body": [
+		  "padding-top: $0;"
+		],
+		"description": "set padding-left"
+	},
+	"set padding-bottom": {
+		"prefix": "pb",
+		"body": [
+		  "padding-bottom: $0;"
+		],
+		"description": "set padding-left"
+	},
+
+	// font-size
+
+	"include mixin font": {
+		"prefix": "inf",
+		"body": [
+		  "@include font($0);"
+		],
+		"description": "include mixin font"
+	},
+	
+	"set font-size from list": {
+		"prefix": "nf",
+		"body": [
+		  "font-size: nth(\\$font-size,$0);"
+		],
+		"description": "set font-size from list"
+	},
+
+	// box-shadow
+	"set box-shadow": {
+		"prefix": "bxsh",
+		"body": [
+		  "box-shadow: 0 0 0 1px \\$color-black;"
+		],
+		"description": "set box-shadow"
+	},
+
+
+	// border-radius
+	"set border-radius from list": {
+		"prefix": "nbra",
+		"body": [
+		  "border-radius: nth(\\$border-radius,$0);"
+		],
+		"description": "set border-radius from list"
+	},
+
+	"set border-radius circle": {
+		"prefix": "bracir",
+		"body": [
+		  "border-radius: 50%"
+		],
+		"description": "set border-radius circle"
+	},
+	
+	"Google Font Roboto": {
+		"prefix": "roboto",
+		"body": [
+		  "font-family: 'Roboto', sans-serif;"
+		],
+		"description": "Google Font Roboto"
+	},	
+
+	"base header": {
+		"prefix": "base-header",
+		"body": [
+			".header {",
+			"    ",
+			"    &-container {",
+			"",
+			"        &__content {",
+			"",
+			"        }",
+			"    }",
+			"    &__logo-box {",
+			"",
+			"    }",
+			"",
+			"    &__menu {",
+			"",
+			"        &-list {",
+			"            &__item {",
+			"                &-f1 {",
+			"",
+			"                }",
+			"            }",
+			"        }",
+			"    }",
+			"}"
+		],
+		"description": "base header"
+	}
+}

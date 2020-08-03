@@ -1,0 +1,288 @@
+.grid-container {
+  max-width: 90%;
+  margin-right: auto;
+  margin-left: auto; }
+  .grid-container::after {
+    content: '';
+    display: block;
+    clear: both; }
+
+@media screen and (min-width: 480px) {
+  .sm\:gc480 {
+    max-width: calc(480px + 24px - 0px); } }
+
+@media screen and (min-width: 768px) {
+  .md\:gc600 {
+    max-width: calc(600px + 24px - 0px); }
+  .md\:gc768 {
+    max-width: calc(768px + 24px - 0px); } }
+
+@media screen and (min-width: 960px) {
+  .lg\:gc768 {
+    max-width: calc(768px + 24px - 0px); }
+  .lg\:gc960 {
+    max-width: calc(960px + 24px - 0px); } }
+
+@media screen and (min-width: 1440px) {
+  .xl\:gc960 {
+    max-width: calc(960px + 24px - 0px); }
+  .xl\:gc1440 {
+    max-width: calc(1440px + 24px - 0px); } }
+
+.col-24 {
+  float: left;
+  margin-left: 12px;
+  margin-right: 12px;
+  width: calc((100% - 1 * 24px) / 1); }
+
+.col-12 {
+  float: left;
+  margin-left: 12px;
+  margin-right: 12px;
+  width: calc((100% - 2 * 24px) / 2); }
+
+.col-8 {
+  float: left;
+  margin-left: 12px;
+  margin-right: 12px;
+  width: calc((100% - 3 * 24px) / 3); }
+
+.col-6 {
+  float: left;
+  margin-left: 12px;
+  margin-right: 12px;
+  width: calc((100% - 4 * 24px) / 4); }
+
+.col-4 {
+  float: left;
+  margin-left: 12px;
+  margin-right: 12px;
+  width: calc((100% - 6 * 24px) / 6); }
+
+.col-3 {
+  float: left;
+  margin-left: 12px;
+  margin-right: 12px;
+  width: calc((100% - 8 * 24px) / 8); }
+
+.col-2 {
+  float: left;
+  margin-left: 12px;
+  margin-right: 12px;
+  width: calc((100% - 12 * 24px) / 12); }
+
+.col-1 {
+  float: left;
+  margin-left: 12px;
+  margin-right: 12px;
+  width: calc((100% - 24 * 24px) / 24); }
+
+@media screen and (min-width: 480px) {
+  .sm\:col-24 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 1 * 24px) / 1); }
+  .sm\:col-12 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 2 * 24px) / 2); }
+  .sm\:col-8 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 3 * 24px) / 3); }
+  .sm\:col-6 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 4 * 24px) / 4); }
+  .sm\:col-4 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 6 * 24px) / 6); }
+  .sm\:col-3 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 8 * 24px) / 8); }
+  .sm\:col-2 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 12 * 24px) / 12); }
+  .sm\:col-1 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 24 * 24px) / 24); } }
+
+@media screen and (min-width: 600px) {
+  .sm-x\:col-24 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 1 * 24px) / 1); }
+  .sm-x\:col-12 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 2 * 24px) / 2); }
+  .sm-x\:col-8 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 3 * 24px) / 3); }
+  .sm-x\:col-6 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 4 * 24px) / 4); }
+  .sm-x\:col-4 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 6 * 24px) / 6); }
+  .sm-x\:col-3 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 8 * 24px) / 8); }
+  .sm-x\:col-2 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 12 * 24px) / 12); }
+  .sm-x\:col-1 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 24 * 24px) / 24); } }
+
+@media screen and (min-width: 768px) {
+  .md\:col-24 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 1 * 24px) / 1); }
+  .md\:col-12 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 2 * 24px) / 2); }
+  .md\:col-8 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 3 * 24px) / 3); }
+  .md\:col-6 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 4 * 24px) / 4); }
+  .md\:col-4 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 6 * 24px) / 6); }
+  .md\:col-3 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 8 * 24px) / 8); }
+  .md\:col-2 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 12 * 24px) / 12); }
+  .md\:col-1 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 24 * 24px) / 24); } }
+
+@media screen and (min-width: 960px) {
+  .lg\:col-24 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 1 * 24px) / 1); }
+  .lg\:col-12 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 2 * 24px) / 2); }
+  .lg\:col-8 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 3 * 24px) / 3); }
+  .lg\:col-6 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 4 * 24px) / 4); }
+  .lg\:col-4 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 6 * 24px) / 6); }
+  .lg\:col-3 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 8 * 24px) / 8); }
+  .lg\:col-2 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 12 * 24px) / 12); }
+  .lg\:col-1 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 24 * 24px) / 24); } }
+
+@media screen and (min-width: 1440px) {
+  .xl\:col-24 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 1 * 24px) / 1); }
+  .xl\:col-12 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 2 * 24px) / 2); }
+  .xl\:col-8 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 3 * 24px) / 3); }
+  .xl\:col-6 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 4 * 24px) / 4); }
+  .xl\:col-4 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 6 * 24px) / 6); }
+  .xl\:col-3 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 8 * 24px) / 8); }
+  .xl\:col-2 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 12 * 24px) / 12); }
+  .xl\:col-1 {
+    float: left;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: calc((100% - 24 * 24px) / 24); } }

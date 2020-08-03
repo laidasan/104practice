@@ -1,0 +1,250 @@
+.header {
+    background-color: #333;
+    color: $color-white;
+    
+    position: fixed;
+    left: 0; right: 0; top: 0;
+    z-index: 3;
+
+
+    &.isMenuActive &__menu {
+        &-list {
+            transform: translateX(0);
+        }
+
+    }
+    
+    &-container {
+        min-height: 60px;
+        max-width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__content {
+        &.logo {
+
+        }
+
+        &.menu {
+            order: -1;
+        }
+    }
+
+
+    &__logo {
+        @include font(3,0,3);
+    }
+
+
+    &__menu {
+        cursor: pointer;
+
+        > span {
+            display: inline-block;
+            position: relative;
+            @include menu-hum(3px,24px,true);
+            background-color: $color-white;
+
+            &::before , &::after {
+                background-color: $color-white;
+            }
+
+        }
+
+        &-list {
+            
+            &.f1 {
+                position: fixed;
+                left: 0; top: 0; bottom: 0;
+                min-width: 240px;
+                background-color: #666;
+                transform: translate(-100%);
+                transition: transform .6s;
+                padding-top: nth($p,14);
+
+                > .cancel {
+                    position: absolute;
+                    right: 21px; top: 21px;
+                    padding-top: nth($p,1);
+                    padding-bottom: nth($p,3);
+                    padding-left: nth($p,1);
+                    padding-right: nth($p,1);
+
+                    > span {
+                        display: inline-block;
+                        position: relative;
+                        @include menu-hum(3px,24px,true);
+                        @include menu-hum-open;
+                        background-color: transparent;
+
+                        &::before , &::after {
+                            background-color: $color-white;
+                        }
+                    }
+                }
+            }
+
+            &.disc > &__item {
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0; bottom: 0;
+                    margin-top: auto;
+                    margin-bottom: auto;
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 50%;
+                    background-color: #fff;
+                }
+                
+
+                &.f2 {
+                    &::after {
+                        left: 30px;
+                    }
+
+                    > a {
+                        @include link {
+                            padding-left: nth($p,14);
+                        }
+                    }
+                }
+
+                &:hover {
+                    &::after {
+                        background-color: #00aaaa;
+                    }
+                }
+            }
+
+            &__item {
+                > a {
+                    @include link {
+                        @include font(2,0,1);
+                        position: relative;
+                        text-decoration: none;
+                        letter-spacing: .6px;
+                        display: block;
+                        padding-top: nth($p,2);
+                        padding-bottom: nth($p,2);
+                        padding-left: nth($p,5);
+                        padding-right: nth($p,3);
+                        color: $color-white;
+                    }
+
+                    &:hover {
+                        color: #666;
+                        background-color: $color-white;
+                    }
+                }
+            }
+        }
+    }
+
+    @include respond(md) {
+        &-container {
+            min-height: 100px;
+        }
+
+        &__content {
+            &.menu {
+                order: 0;
+                flex-grow: 1;
+            }
+        }
+
+
+        &__menu {
+            display: none;
+
+
+            &-list {
+                &.f1 {
+                    position: static;
+                    min-width: 0;
+                    padding-top: 0;
+                    transform: none;
+                    transition: none;
+                    background-color: transparent;
+                    text-align: right;
+                    font-size: 0;
+
+                    > .cancel {
+                        display: none;
+                    }
+
+                }
+
+                &.f2 {
+                    position: absolute;
+                    display: none;
+                    top: 100%; left: 0;
+                    min-width: 210px;
+                    background-color: #333;
+                    text-align: left;
+                    padding-top: 13px;
+
+                    &.right {
+                        left: auto;
+                        right: 0;
+                    }
+                }
+
+                &.disc > &__item {
+
+                    &::after {
+                        content: none;
+                    }
+
+
+                    &.f2 {
+                        a {
+                            @include link {
+                                padding-left: nth($p,3);
+                            }
+                        }
+                    }
+                }
+
+
+                &__item {
+                    position: relative;
+
+                    > a {
+                        @include link {
+                            padding-left: nth($p,3);
+                            padding-right: nth($p,3);
+                        }
+                    }
+
+                    &:hover {
+                        box-shadow: 0 0 0 1.5px #006666;
+                    }
+
+                    &.f1 {
+                        display: inline-block;
+
+                        &:hover {
+                            box-shadow: none;
+                        }
+                    }
+
+                    &:hover {
+                        & > ul {
+                            display: block;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}

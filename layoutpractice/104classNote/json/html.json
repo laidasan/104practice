@@ -1,0 +1,97 @@
+{
+	"font awesome cdn": {
+		"prefix": "font awesome",
+		"body": [
+			"<script src=\"https://kit.fontawesome.com/ab4c3d994d.js\" crossorigin=\"anonymous\"></script>",
+			""
+		],
+		"description": "cdn for font awesome"
+	},
+	"test btn demo": {
+		"prefix": "btn-a",
+		"body": [
+			"<a href=\"javascript:;\" class=\"btn-a\">btn-test</a>"
+		],
+		"description": "test btn demo"
+	},
+	"emmet: a link": {
+		"prefix": "link a",
+		"body": [
+			"a[href=\"javascript:;\"]"
+		],
+		"description": "a link emmet"
+	},
+	"emmet a btn ": {
+		"prefix": "btn a",
+		"body": [
+			"a[href=\"javascript:;\"].btn-a"
+		]
+	},
+	"emmet button btn ": {
+		"prefix": "btn button",
+		"body": [
+			"button"
+		]
+	},
+	"Google Font Roboto": {
+		"prefix": "roboto",
+		"body": [
+			"<link href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap\" rel=\"stylesheet\">"
+		],
+		"description": "Google Font Roboto"
+	},
+	"grid-system-separate": {
+		"prefix": "grid-sys-separate",
+		"body": [
+			"<div class=\"grid-wrapper\">",
+			"     <div class=\"grid-container\">",
+			"     </div>",
+			"</div>"
+		],
+		"description": "grid-system-separate"
+	},
+	"fake photo": {
+		"prefix": "fake photo",
+		"body": [
+			"https://fakeimg.pl/300/"
+		],
+		"description": "fake photo"
+	},
+	"base-table": {
+		"prefix": "base-table",
+		"body": [
+			"<table class=\"table\">",
+			"  <thead>",
+			"    <tr>",
+			"      <th></th>",
+			"    </tr>",
+			"  </thead>",
+			"  <tbody>",
+			"    <tr></tr>",
+			"  </tbody>",
+			"</table>"
+		],
+		"description": "base-table"
+	},
+	"base header": {
+		"prefix": "base header",
+		"body": [
+		  "<header class=\"header\">",
+		  "    <div class=\"header-container\">",
+		  "        <div class=\"header__content\">",
+		  "            <div class=\"header__logo-box\">",
+		  "                <div class=\"header__logo\"></div>",
+		  "            </div>",
+		  "        </div>",
+		  "        <div class=\"header__content\">",
+		  "            <div class=\"header__menu\"></div>",
+		  "            <ul class=\"header__menu-list\">",
+		  "                <li class=\"header__menu-list__item-f1\"></li>",
+		  "            </ul>",
+		  "        </div>",
+		  "    </div>",
+		  "</header>"
+		],
+		"description": "base header"
+	  }
+}

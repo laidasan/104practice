@@ -1,0 +1,14 @@
+.article {
+    &__list {
+        &.disc {
+            list-style: disc;
+        }
+
+        > li {
+            @include font(2,0,1);
+            margin-top: nth($m,1);
+            margin-bottom: nth($m,1);
+            line-height: 1.5;
+        }
+    }
+}

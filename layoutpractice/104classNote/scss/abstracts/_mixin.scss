@@ -1,0 +1,630 @@
+// RwD
+@mixin respond-down($width) {
+    @media screen and (max-width: $width) { @content }
+};
+@mixin respond-above($width) {
+    @media screen and (min-width: $width) {@content}
+};
+
+
+@mixin respond($breakpoint) {
+    @media  screen and (min-width: map-get($breakpoints, $breakpoint)){@content}
+};
+
+
+// clear both
+@mixin clear {
+    &::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+};
+
+
+// :link , :visited
+@mixin link {
+    &:link,
+    &:visited {
+        @content
+    }
+};
+
+// about position
+@mixin ab-fill-ct {
+    position: absolute; 
+    top: 0; bottom: 0; right: 0; left: 0;
+    margin: auto;
+};
+
+@mixin ab-fill($grow: 0) {
+    position: absolute;
+    left: 0 + $grow;
+    right: 0 + $grow;
+    top: 0 + $grow;
+    bottom: 0 + $grow;
+}
+
+@mixin position-all($grow) {
+    left: $grow;
+    right: $grow;
+    top: $grow;
+    bottom: $grow;
+}
+
+// btn
+@mixin btn-base($shadow-border:true,$b-radius-level:0,$f-size-level:2,$p-tb:1.2rem,$p-rl:1.8rem) {
+    &:link,
+    &:visited {
+        display: inline-block;
+        text-decoration: none;
+        color: #000;
+        font-size: nth($font-size,$f-size-level);
+        padding: $p-tb $p-rl;
+        @if $shadow-border {box-shadow: 0 0 0 1px #000;}
+        @if $b-radius-level > 0 {border-radius: nth($border-radius , $b-radius-level);}
+    }
+};
+
+@mixin btn-base-button($shadow-border:true,$b-radius-level:0,$f-size-level:2,$p-tb:1.2rem,$p-rl:1.8rem) {
+    border: none;
+    background: #fff;
+    font-size: nth($font-size,$f-size-level);
+    padding: $p-tb $p-rl;
+    @if $shadow-border {box-shadow: 0 0 0 1px #000;}
+    @if $b-radius-level > 0 {border-radius: nth($border-radius , $b-radius-level);}
+}
+
+@mixin btn-arrow($size:30px) {
+    width: $size;
+    height: $size;
+
+    &::before,&::after {
+        content: '';
+        @extend %ab-fill;
+        background-color: $color-black;
+    }
+
+
+    &::before {
+        margin-top: auto;
+        margin-bottom: auto;
+        height: 0;
+        padding: 1.5px 0;
+    }
+
+    &::after {
+        background: transparent;
+        width: $size / 2; height: $size / 2;  
+        left: 10px;
+        margin: auto;
+        border-width: 0;
+        border-top: 3px;
+        border-right-width: 3px;
+        border-style: solid;
+        transform: rotateZ(45deg);
+    }
+}
+
+@mixin btn-direct($bk:false,$hover:false,$size:15px,$weight:3px,) {
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 36px;
+    height: 60px;
+    margin-top: auto;
+    margin-bottom: auto;
+    cursor: pointer;
+
+    @if($bk) { background-color: rgba($color-black,.3); }
+
+    > span {
+        position: absolute;
+        top: 0; bottom: 0;
+        margin-top: auto;
+        margin-bottom: auto;
+        width: $size;
+        height: $size;
+        cursor: pointer;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0; right: 0; top: 0; bottom: 0;
+            margin: auto;
+            border-width: 0;
+            border-style: solid;
+            border-top-width: $weight;
+            color: $controlerArrowColor;
+        }
+    }
+
+    &.next {
+        right: 15px;
+        
+        > span {
+            left: 6.9px;
+            transform: rotateZ(45deg);
+            &::after {
+                border-right-width: $weight;
+            }
+        }
+    }
+
+    &.prev {
+        left: 15px;
+
+        > span {
+            right: 6.9px;
+            transform: rotateZ(-45deg);
+            &::after {
+            border-left-width: $weight;
+            }
+        }
+    }
+
+    @if($hover) {
+
+        // transition
+        opacity: 0;
+        transition: opacity .3s;
+
+        &:hover {
+            > span {
+                &::after {
+                    color: $controlerArrowColorHover;
+                }
+            }
+        }
+    }
+    
+}
+
+@mixin btn($type,$size:30px) {
+    @if $type == 'arrow' { @include btn-arrow($size) }
+}
+
+// font-size and line-height
+@mixin  font($f-size-level:2,$lh:0,$f-weight-level:1) {
+    font-size: nth($font-size , $f-size-level);
+    font-weight: nth($font-weight,$f-weight-level);
+    line-height: nth($font-size , $f-size-level) + $lh;
+}
+
+// 置中方式
+@mixin align-inb-v {
+    font-size: 0;
+    &::before {
+        content: '';
+        display: inline-block;
+        width: 0px;
+        height: 100%;
+        vertical-align: middle;
+    }
+}
+
+@mixin hori-middle {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// table
+@mixin table($width,$layout-fixed:false,$border-collpase:true,$hori-middle:true) {
+    width: 100%;
+    max-width: $width;
+    @if $layout-fixed { table-layout: fixed; }
+    @if $hori-middle { 
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @if $border-collpase == false { border-collapse: separate; }
+}
+
+// $gutter 帶任何單位都可以 px , rem , em , % etc....
+// 一個 container 裡面一次只能使用一種 mode （不能混用）
+// 但因為 { between（兩端貼邊） , even（間距相同） } 這兩種模式都需要準確的選頭或是尾來增減間距
+// 所以限制較大 , 這兩種 mode 除了一個 container 裡面只能塞同一種 mode 外 , 也只能夠使用一種欄位數量（比如說-col-1,就只能用col-1)
+// around 則可以使用不同種欄位數量 , 缺點是無法靠邊對齊（grid-system 產生的css , 如 col-1 , 用的是 around , 需要去計算 wrapper的寬度
+// 結構為：
+// wrapper - 設置 max-width 控制寬度 , 不使用 margin padding , around mode 額外再加 $gutter , 才能夠內容（colmuns)正確寬度
+//  container - 控制邊緣間距 , 這裡不設置寬度 , 只設置 padding , border , margin 
+//   columns
+
+@mixin grid-sys-single($col-nm,$type:float,$col-gutter:20px,$mode:between) {
+    @if $type == flex {
+        flex-basis: calc((100% - #{$col-nm} * #{$col-gutter}) / #{$col-nm});
+    } @else {
+        @if $type == float {
+            float: left;
+        }
+        
+        @if $type == inline-block {
+            display: inline-block;
+        }  
+
+        @if $mode == between {
+            margin-right: $col-gutter;
+            width: calc((100% - #{($col-nm - 1)} * #{$col-gutter}) / #{$col-nm});
+            &:nth-child(#{$col-nm}n) { margin-right: 0;}
+        };
+        @if $mode == around {
+            margin-left: $col-gutter / 2;
+            margin-right: $col-gutter / 2;
+            width: calc((100% - #{$col-nm} * #{$col-gutter}) / #{$col-nm});
+        }
+        @if $mode == even {
+            margin-right: $col-gutter;
+            width: calc((100% - #{($col-nm + 1)} * #{$col-gutter}) / #{$col-nm});
+            &:nth-child(#{$col-nm}n + 1) { margin-left: $col-gutter;}
+        };
+    }
+}
+
+@mixin grid-sys-all($col-nm,$type:float,$col-gutter:20px) {
+    @if $type == flex {
+        flex-basis: calc((100% - ( #{$columns} / #{$col-nm} * #{$col-gutter}) ) / #{$columns} * #{$col-nm});
+    } @else {
+        @if $type == float {
+            float: left;
+        }
+        
+        @if $type == inline-block {
+            display: inline-block;
+        } 
+
+        margin-left: $col-gutter / 2;
+        margin-right: $col-gutter / 2;
+        width: calc((100% - ( #{$columns} / #{$col-nm} * #{$col-gutter}) ) / #{$columns} * #{$col-nm});
+    }
+}
+
+
+@mixin grid-wrapper($max-width,$col-gutter:$gutter) {
+    max-width: calc(#{$max-width} + #{$col-gutter});
+}
+
+
+@mixin grid-container($max-width,$con-gutter:$container-gutter,$col-gutter:$gutter) {
+    max-width: calc(#{$max-width} + #{$col-gutter} - #{$con-gutter});
+}
+
+
+// bk
+// zebra , @include zebra( mode(number) )
+@mixin zebra-line($config) {
+    @if map-get($config,repeat-gradient) {
+        background: repeating-linear-gradient(#{map-get($config,rotate)}deg,map-get($config,bk-color-primary),map-get($config,bk-color-primary) map-get($config,size),map-get($config,bk-color-sub) map-get($config,size) , map-get($config,bk-color-sub) map-get($config,size) * 2);
+        background-repeat: map-get($config,bk-repeat);
+        background-size: 100% / map-get($config,columns);
+    } @else {
+        background: linear-gradient(#{map-get($config,rotate)}deg,map-get($config,bk-color-primary),map-get($config,bk-color-primary) map-get($config,size),map-get($config,bk-color-sub) map-get($config,size));
+        background-repeat: map-get($config,bk-repeat);
+        background-size: 100% / map-get($config,columns);
+    }
+}
+
+@mixin zebra-triangle($config) {
+    background: linear-gradient(45deg,map-get($config,bk-color-primary) , map-get($config,bk-color-primary) map-get($config,size) ,map-get($config,bk-color-sub) map-get($config,size));
+    background-size: map-get($config,bk-size);
+}
+
+@mixin zebra-square($config) {
+    $bk-list: null;
+
+    @for $var from 1 through map-get($config,rows) {
+        @if $var % 2 == 0 {
+            $bk-list: append($bk-list,linear-gradient(90deg , map-get($config,bk-color-sub) , map-get($config,bk-color-sub) 50% , map-get($config,bk-color-primary) 50%) repeat-x left map-get($config,size) * ($var - 1),comma);
+        } @else {
+            $bk-list: append($bk-list,linear-gradient(90deg , map-get($config,bk-color-primary) , map-get($config,bk-color-primary) 50% , map-get($config,bk-color-sub) 50%) repeat-x left map-get($config,size) * ($var - 1),comma);
+        }
+    }
+
+    background: $bk-list;
+    background-size: map-get($config,size) * 2  map-get($config,size);
+}
+
+// zebra main
+// ex: @include zebra(0);
+@mixin zebra($mode:0,$config:$zebra-config) {
+    @if get-mode($zebra-mode,$mode) == line {
+        @include zebra-line(map-get($config,line));
+    }
+    @if get-mode($zebra-mode,$mode) == triangle {
+        @include zebra-triangle(map-get($config,triangle));
+    }
+    @if get-mode($zebra-mode,$mode) == square {
+        @include zebra-square(map-get($config,square));
+    }
+}
+
+
+// under line 
+@mixin under-line($move:0px,$h:.12rem,$color:#000,$pseudo:before,$position:true) {
+    @if $position { position: relative; }
+
+    @if $pseudo == 'before' {
+        &::before {
+            content: '';
+            position: absolute; bottom: -$move; left: 0; right: 0;
+            height: 0;
+            padding-top: $h / 2;
+            padding-bottom: $h / 2;
+            background: $color;
+        }
+    }
+
+    @if $pseudo == 'after' {
+        &::after {
+            content: '';
+            position: absolute; bottom: -$move; left: 0; right: 0;
+            height: 0;
+            padding-top: $h / 2;
+            padding-bottom: $h / 2;
+            background: $color;
+        }
+    }
+    
+}
+
+
+// menu
+@mixin menu-hum($h:.3rem,$width:24px,$pseudo:false) {
+    width: $width;
+
+    @if $pseudo {
+        height: $h;
+        background-color: #000;
+
+        &::after , &::before {
+            content: '';
+            position: absolute;
+            left: 0; right: 0;
+            height: $h;
+            background-color: #000;
+            transform-origin: center center;
+            transition: transform .3s;
+        }
+
+        &::before {
+            top: 6px;
+        }
+
+        &::after {
+            bottom: 6px;
+        }
+
+    } @else {
+        height: $h;
+        border-top: $h;
+        border-bottom: $h;
+        border-right: 0;
+        border-left: 0;
+        border-style: solid;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        background-color: #000;
+        background-clip: content-box;
+    }
+}
+
+@mixin menu-hum-reset {
+    height: auto;
+    border: 3px 3px 3px 3px;
+    border-style: none;
+    padding: 0;
+    background-clip: padding-box;
+}
+
+@mixin menu-hum-open {
+    &::before {
+        top: 0;
+        transform: rotateZ(45deg);
+    }
+
+    &::after {
+        bottom: 0;
+        transform: rotateZ(-45deg);
+
+    }
+}
+
+@mixin menu($mode) {
+    @if get-mode($menu-mode,$mode) == hum {
+        @include menu-hum();
+    }
+}
+
+
+
+// animation
+
+// bounce
+@mixin bounce {
+    @extend %bounce;
+}
+
+// ring
+// use it
+// ring
+//   ring__ball-1
+//   ring__ball-2
+@mixin ring($custom:false,$config:$ring-config) {
+    background: map-get(map-get($config,bk),bk-normal);
+    &::before {
+        content: '';
+        @extend %ab-fill;
+        box-shadow: ring-render($config);
+        border-radius: 50%;
+    }
+
+    &__ball-1 {
+        @include ab-fill(.1rem);
+
+        &::before,&::after {
+            content: '';
+            @extend %ab-fill;
+        }
+
+        &::before {
+            background: ring-ball-render(  map-get(map-get($config,ball),ball-1), small  );
+            transform: rotate(map-get(map-get(map-get($config,ball),ball-1),small-rotate));
+            // transform: rotate(12deg);
+        }
+
+        &::after {
+            background: ring-ball-render( map-get(map-get($config,ball),ball-1), big );
+            transform: rotate(map-get(map-get(map-get($config,ball),ball-1),big-rotate));
+        }
+
+    }
+
+    &__ball-2 {
+        @include ab-fill(-.3rem);
+        z-index: -1;
+
+        &::before,&::after {
+            content: '';
+            @extend %ab-fill;
+        }
+
+        &::before {
+            background: ring-ball-render( map-get(map-get($config,ball),ball-2), small );
+        }
+
+        &::after {
+            @include ab-fill(-.21rem);
+            background: ring-ball-render( map-get(map-get($config,ball),ball-2), big );
+        }
+
+    }
+
+    @if $custom == false {
+        position: relative;
+        width: map-get(map-get($config,size),sm);
+        height: map-get(map-get($config,size),sm);
+        border-radius: 50%;
+
+        @include respond('sm') {
+            width: map-get(map-get($config,size),sm);
+            height: map-get(map-get($config,size),sm);
+        }
+        @include respond('md') {
+            width: map-get(map-get($config,size),md);
+            height: map-get(map-get($config,size),md);
+        }
+
+        @include respond('lg') {
+            &__ball-1 {
+                @include position-all(.3rem);
+            }
+
+            &__ball-2 {
+                @include position-all(0);
+            }
+        }
+
+        @include respond('xl') {
+            width: map-get(map-get($config,size),xl);
+            height: map-get(map-get($config,size),xl);
+
+            &__ball-1 {
+                @include position-all(.6rem);
+                
+                &::before {
+                    background: ring-ball-render(map-get($xl-ring-ball-config,ball-1),small);
+                }
+
+                &::after {
+                    background: ring-ball-render(map-get($xl-ring-ball-config,ball-1),big);
+                }
+                
+            }
+    
+            &__ball-2 {
+                @include position-all(.3rem);
+                
+                &::before {
+                    background: ring-ball-render(map-get($xl-ring-ball-config,ball-2),small);
+                }
+                &::after{
+                    background: ring-ball-render(map-get($xl-ring-ball-config,ball-2),big);
+                }
+        
+            }
+        }
+    }
+}
+
+// ring-animation
+@mixin ring-ball-an($mode) {
+    @extend %ring-ball-an-#{$mode};
+}
+
+// btn-ani
+@mixin btn-flyin($type) {
+    @if $type == 0 {
+        overflow: hidden;
+
+        &::after {
+            content: '';
+            @include ab-fill();
+            left: -3rem; right: -3rem;
+            z-index: -1;
+            background: map-get(map-get($btn-ani-config,flyin),bk-color);
+            transform: translateX(-100%) skewX(-15deg);
+            transition: transform .3s ease-in-out;
+        }   
+        
+        &:hover {
+            color: map-get(map-get($btn-ani-config,flyin),color);
+        }
+       
+        &:hover::after {
+            transform: translateX(0) skewX(-15deg);
+        }
+    }
+}
+
+@mixin btn-ani($mode,$ani-type:0) {
+    @if get-mode($btn-ani,$mode) == flyin {
+        @include btn-flyin($ani-type);
+    }
+}
+
+// 06/29 待整理
+// word spectial effects
+
+// 傾斜字體 , and 特殊字型 , 由 after 與 本體台重疊字體達成特殊字型（相同的 skewX , 因為會編籬會有些差距 造成重疊部分不同 , 變成特殊字體
+// 再用 transform-3d 與 perspective 與調整 perspective-origin 來造成子體 3d 斜的效果
+// @mixin word-eff($mode) {
+//     @if $mode == 0 {
+//         position: relative;
+//         transform-style: preserve-3d;
+
+//         & , &::after {
+//             @include font(9,0,4);
+//             letter-spacing: 6px;
+//             transform: skewX(-12deg) skewY(-12deg) rotateY(-30deg) translateX(-24px);
+//             color: transparent;
+//             background: linear-gradient(to top,$color-text-thread-dark , $color-text-thread-dark 50% , $color-text-thread 0);
+//             background-clip: text;
+//             -webkit-background-clip: text;
+//         }
+//         &-1 {
+//             left: 1.2rem;
+//         }
+
+//         &-1::after,&-2::after {
+//             @extend %ab-fill;
+//             z-index: -1;
+//             transform: skewX(-12deg) skewY(0deg);
+//         }
+
+//         &-1::after {
+//             content: 'AMAZE';
+//         }
+
+//         &-2::after {
+//             content: 'YOURSELF';
+//         }
+//     }
+// }
