@@ -1,0 +1,81 @@
+// grid-sys
+
+// grid-wrapper or container
+
+// 寬度分離模式 => separete = true (deafult : false) 
+// 預設為 “不開啟” 寬度分離模式
+@if $separate {
+    // @debug $separate;
+
+    @each $key,$value in $breakpoints {
+
+        @if $key == 'xs' {
+            .grid-wrapper {
+                max-width: map-get($wrapper-width,$key);
+                margin-right: auto;
+                margin-left:  auto;
+            }
+        }
+
+        @if $key != 'xs' and $key != 'sm-x'{
+            @include respond($key) {
+                @for $i from 0 through length(map-get($wrapper-width,$key)) - 1 {
+                    .#{$key}\:gw#{nth(map-get($wrapper-width,$key),$i + 1)} {
+                        $w: nth(map-get($wrapper-width,$key),$i + 1);
+                        @include grid-wrapper(#{$w}px);
+                    }
+                }
+            }
+        }
+    }
+    
+    // grid-container
+    .grid-container {
+        margin-left: $container-gutter / 2;
+        margin-right: $container-gutter / 2;
+        @include clear;
+    }
+
+} @else {
+    @each $key,$value in $breakpoints {
+
+        @if $key == 'xs' {
+            .grid-container {
+                max-width: map-get($wrapper-width,$key);
+                margin-right: auto;
+                margin-left:  auto;
+                @include clear;
+            }
+        }
+
+        @if $key != 'xs' and $key != 'sm-x'{
+            @include respond($key) {
+                @for $i from 0 through length(map-get($wrapper-width,$key)) - 1 {
+                    .#{$key}\:gc#{nth(map-get($wrapper-width,$key),$i + 1)} {
+                        $w: nth(map-get($wrapper-width,$key),$i + 1);
+                        @include grid-container(#{$w}px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// grid-col
+@for $col-nm from 1 through $columns {
+    .col-#{$col-nm} {
+        @include grid-sys-all($col-nm,float,$gutter);
+    }
+}
+
+@each $key,$value in $breakpoints {
+    @if $key != xs {
+        @include respond($key) {
+            @for $col-nm from 1 through $columns {
+                .#{$key}\:col-#{$col-nm} {
+                    @include grid-sys-all($col-nm,float,$gutter);
+                }
+            }
+        }
+    }
+}

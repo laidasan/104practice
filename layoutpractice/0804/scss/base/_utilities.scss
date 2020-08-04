@@ -1,0 +1,131 @@
+// margin
+// margin bottom
+@for $var from 0 through length($m) - 1 {
+    .mb#{6 + 3 * $var} {
+        margin-bottom: nth($m,$var + 1);
+    }
+}
+
+@each $key,$value in $breakpoints {
+    @include respond($key) {
+        @for $var from 0 through length($m) - 1 {
+            .#{$key}\:mb#{6 + 3 * $var} {
+                margin-bottom: nth($m,$var + 1);
+            }
+        }
+        
+    }
+}
+
+// margin top
+@for $var from 0 through length($m) - 1 {
+    .mt#{6 + 3 * $var} {
+        margin-top: nth($m,$var + 1);
+    }
+}
+
+
+
+// text-align
+.t {
+
+    &-cn {
+        text-align: center;
+    }
+
+    &-l {
+        text-align: left;
+    }
+    
+    &-r {
+        text-align: right;
+    }
+}
+
+
+@each $key,$value in $breakpoints {
+    @include respond($key) {
+        .#{$key}\:t {
+            &-cn {text-align: center;}
+            &-l {text-align: left;}
+            &-r {text-align: right;}
+        }
+    }
+}
+
+
+// display
+
+.d-non {
+    display: none;
+}
+.d-b {
+    display: block;
+}
+.d-inb {
+    display: inline-block;
+}
+.d-flex {
+    display: flex;
+}
+.d-grid {
+    display: grid;
+}
+
+@each $key , $value in $breakpoints {
+    @include respond($key) {
+        .#{$key}\:d {
+            &-non { display: none; }
+
+            &-b { display: block; }
+
+            &-in { display: inline; }
+
+            &-inb { display: inline-block; }
+
+            &-flex { display: flex; }
+
+            &-grid { display: grid }
+        }
+    }
+}
+
+// float
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+
+@each $key , $value in $breakpoints {
+    @include respond($key) {
+        .#{$key}\:f {
+            &-l { float: left; }
+            &-r { float: right; }
+        }
+    }
+}
+
+
+// base-width
+.maxw90\% {
+    max-width: 90%;
+}
+
+@for $i from 0 through length($u-width) - 1 {
+    .maxw#{nth($u-width,$i + 1)} {
+        max-width: #{nth($u-width,$i + 1)}px;
+    }
+}
+
+// clear
+.clear {
+    @include clear;
+}
+
+// hori-middle
+.hori-middle {
+    margin-left: auto;
+    margin-right: auto;
+}

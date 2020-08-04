@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./scss/vender/reset.css">
+    <link rel="stylesheet" href="./scss/grid-sys.scss">
+    <link rel="stylesheet" href="./scss/utility.scss">
+    <link rel="stylesheet" href="./scss/main.scss">
+    <title>0804</title>
+</head>
+<body>
+    <div id="app">
+        <div class="group">
+            <header class="header" :class="{isActiveMenu: isActiveMenu,isActiveTheme: isActiveTheme}">
+                <div class="header-container">
+                    <div class="header__content logo">
+                        <div class="header__logo-box img-box" ref="headerLogoBox">
+                            <img src="./img/logo-inverse-121x110.png" alt="Logo" class="header__logo">
+                        </div>
+                    </div>
+                    <div class="header__content menu">
+                        <div class="header__menu" @click="toggleMenu"><span></span></div>
+                        <ul class="header__menu-list">
+                            <li class="header__menu-list__item"><a href="javascript:;">about</a></li>
+                            <li class="header__menu-list__item"><a href="javascript:;">gallery</a></li>
+                            <li class="header__menu-list__item"><a href="javascript:;">concat</a></li>
+                            <button class="btn-button btn--cancel" @click="toggleMenu"><span></span></button>
+                        </ul>
+                    </div>
+                    <div class="header__content search">
+                        <ul class="header__search-list">
+                            <li><div class="icon icon--search"></div></li>
+                            <li>
+                                <div class="icon icon--theme" @click="toggleTheme"><span class="helf"></span></div>
+                                <transition name="opacity">
+                                    <div class="theme-choose" v-show="isActiveTheme">
+                                        <div class="txt">
+                                            <p>This customization tool allows you to make color changes in your theme.</p>
+                                        </div>
+                                        <div class="btn-group">
+                                            <button class="btn-button btn--theme white"></button>
+                                            <button class="btn-button btn--theme black"></button>
+                                        </div>
+                                    </div>
+                                </transition>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="header__content social">
+                        <ul class="header__social-list">
+                            <li><span class="icon">a</span></li>
+                            <li><span class="icon">b</span></li>
+                            <li><span class="icon">c</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            <div class="banner"></div>
+        </div>
+    </div>
+</body>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js'></script>
+<script>
+
+    let data = {
+        isActiveMenu: false,
+        isActiveTheme: false,
+        isFixedHeader: false
+    }
+
+    new Vue({
+        el: '#app',
+        data,
+        methods: {
+            toggleMenu() { this.isActiveMenu = !this.isActiveMenu },
+            toggleTheme() { this.isActiveTheme = !this.isActiveTheme }
+        }
+    })
+
+
+    const $header = document.querySelector('.header')
+    const $headerLogoBox = document.querySelector('.header__logo-box')
+    let logoBoxTop  = $headerLogoBox.offsetTop
+
+    function scrollHandler() {
+        let windowTop = window.scrollY
+
+        if(scrollY >= logoBoxTop) {
+            $header.classList.add('fixed')
+        }
+        if(scrollY < logoBoxTop) {
+            $header.classList.remove('fixed')
+        }
+    }
+
+    window.addEventListener('scroll',scrollHandler)
+
+</script>
+</html>

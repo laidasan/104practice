@@ -1,0 +1,329 @@
+.header {
+    position: fixed;
+    left: 0; right: 0;
+    z-index: 3;
+    background-color: #1f2025;
+
+    &.isActiveMenu &__menu {
+        &-list {
+            transform: translateX(0);
+        }
+    }
+    
+    &-container {
+        min-height: 60px;
+        max-width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+
+    &__content {
+
+        &.social {
+            display: none;
+        }
+    }
+
+
+    &__logo-box {
+        max-width: 45px;
+    }
+
+    &__menu {
+        padding-top: nth($p,1);
+        padding-bottom: nth($p,3);
+        padding-left: nth($p,1);
+        padding-right: nth($p,1);
+        cursor: pointer;
+
+        &:hover {
+            > span {
+                &::after , &::before {
+                    animation-name: header-menu;
+                }
+            }
+        }
+
+        > span {
+            display: inline-block;
+            @include menu-hum(.3rem,36px,true);
+            background-color: transparent;
+
+
+            &::after {
+                animation-delay: .6s;
+                right: -15px;
+            }
+
+            &::before , &::after {
+                background-color: $color-white;
+            }
+
+            &::before , &::after {
+                animation-duration: 1.5s;
+                animation-timing-function: ease-out;
+                animation-fill-mode: forwards;
+                animation-iteration-count: infinite;
+            }
+
+        }
+
+        &-list {
+            position: fixed;
+            z-index: 3;
+            left: 0; top: 60px; bottom: 0;
+            min-width: 75%;
+            background: #2f3036;
+            transform:  translateX(-100%);
+            transition: transform .6s;
+            
+
+            &__item {
+
+                > a {
+
+                    @include link {
+                        @include font(2,0,1);
+                        text-decoration: none;
+                        color: #ccc;
+                        display: block;
+                        margin-left: nth($m,5);
+                        margin-right: nth($m,5);
+                        margin-top: nth($m,2);
+                        margin-bottom: nth($m,2);
+                        padding-top: nth($p,3);
+                        padding-bottom: nth($p,3);
+                        padding-left: nth($p,3);
+
+                    }
+
+                    transition: opacity .6s background-color .6s;
+
+                    &:hover {
+                        color: $color-white;
+                        background-color: rgba($color-white,.45);
+                    }
+
+                }
+            }
+        }
+    }
+
+
+    &__search {
+        &-list {
+            font-size: 0;
+
+            > li {
+                position: relative;
+                display: inline-block;
+                vertical-align: middle;
+                
+                &:first-child {
+                    margin-right: nth($m,4);
+                }
+
+                > .icon {
+                    position: relative;
+                    width: 15px;
+                    height: 15px;
+                    background-color: $color-white;
+                    border-radius: 50%;
+                    cursor: pointer;
+
+                    &--theme {
+                        background-color: transparent;
+                        box-shadow: 0 0 0 1px $color-white;
+                        transform: rotateZ(45deg);
+                        
+                        
+                        > .helf {
+                            position: absolute;
+                            right: 0; left: 50%;
+                            top: 0; bottom: 0;
+                            border-radius: 0 15px 15px 0;
+                            background-color: $color-white;
+                        }
+                    }
+                }
+
+
+                > .theme-choose {
+                    position: absolute;
+                    background-color: $color-white;
+                    bottom: -150px; right: 0;
+                    min-width: 95vw;
+                    @include font(2,0,1);
+                    padding-top: nth($p,3);
+                    padding-bottom: nth($p,3);
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        right: 15px; top: -15px;
+                        border-width: 15px 15px 15px 0;
+                        border-style: solid;
+                        color: $color-white;
+                        border-top-color: transparent;
+                    }
+
+
+
+                    > .txt {
+                        margin-left: nth($m,3);
+                        margin-right: nth($m,3);
+                        line-height: 1.5;
+
+                        &::after {
+                            content: '';
+                            display: block;
+                            height: 1px;
+                            background-color: #aaa;
+                            margin-top: nth($m,3);
+                            margin-bottom: nth($m,3);
+                        }
+                    }
+
+                    > .btn-group {
+                        margin-left: nth($m,3);
+                        margin-right: nth($m,3);
+                    }
+                }
+            }
+        }
+    }
+
+    @include respond-above(1200px) {
+        position: absolute;
+        right: auto;
+        top: 0; 
+        bottom: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &.fixed {
+            position: fixed;
+            right: 0; bottom: auto;
+            display: block;
+        }
+
+        &.fixed  &__menu {
+            &::after {
+                content: none;
+            }
+        }
+        &.fixed &__logo-box {
+            &::after {
+                content: none;
+            }
+        }
+        &.fixed &-container {
+            min-width: 0;
+            height: auto;
+            flex-direction: row;
+            min-height: 100px;
+        }
+        &.fixed  &__content {
+            &.social {
+                display: none;
+            }
+            &.search {
+                position: static;
+            }
+        }
+        
+
+        &-container {
+            min-width: 120px;
+            height: 90%;
+            margin-top: auto;
+            margin-bottom: auto;
+            flex-direction: column;
+        }
+
+        &__content {
+            &.search {
+                position: fixed;
+                z-index: 3;
+                top: 43px; right: 32px;
+            }
+
+            &.social {
+                display: block;
+            }
+        }
+        &__logo-box {
+            position: relative;
+            max-width: 60px;
+
+            &::after {
+                content: 'Interior Design';
+                position: absolute;
+                top: 75px; left: 21px;
+                @include font(6,0,1);
+                letter-spacing: 1.5px;
+                color: $color-white;
+                white-space: nowrap;
+                transform-origin: left top;
+                transform: rotateZ(90deg);
+                
+            }
+        }
+
+        &__menu {
+
+
+            &::after {
+                content: 'Menu';
+                display: block;
+                @include font(5,0,1);
+                letter-spacing: 1px;
+                color: $color-white;
+                // padding-top: nth($p,2);
+                margin-top: nth($m,4);
+            }
+            &-list {
+                top: 0;
+                background-color: rgba($color-black,.75);
+            }
+        }
+
+        &__social-list {
+            > li {
+                margin-bottom: nth($m,3);
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                > span {
+                    display: inline-block;
+                    width: 21px;
+                    height: 21px;
+                    background-color: $color-white;
+                    border-radius: 50%;
+                    text-align: center;
+                    line-height: 21px;
+
+                }
+            }
+        }
+    }
+}
+
+.opacity-enter,.opacity-leave-to {
+    opacity: 0;
+}
+.opacity-enter-to,.opacity-leave {
+    opacity: 1;
+}
+.opacity-enter-active,.opacity-leave-active {
+    transition: opacity .6s;
+}

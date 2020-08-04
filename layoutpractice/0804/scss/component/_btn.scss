@@ -1,0 +1,62 @@
+.btn {
+    &-a {
+        @include btn-base(false);
+    }
+    
+
+    &-button {
+        @include btn-base-button(false);
+    }
+
+    &--theme {
+        box-shadow: 0 0 9px  rgba(#222,.3);
+        border-radius: nth($border-radius,2);
+        padding-bottom: nth($p,5);
+        padding-top: nth($p,5);
+        padding-left: nth($p,6);
+        padding-right: nth($p,6);
+        cursor: pointer;
+
+        &:focus {
+            outline: none;
+        }
+
+        &.black {
+            background-color: #222;
+        }
+
+        &.cancel {
+            display: none;
+        }
+    }
+
+    @include respond-above(1200px) {
+
+        // button
+        &--cancel {
+            display: block;
+            position: absolute;
+            top: 30px; right: 30px;
+            padding-bottom: nth($p,6);
+            background-color: transparent;
+            cursor: pointer;
+
+            &:focus {
+                outline: none;
+            }
+
+            > span {
+                position: relative;
+                display: inline-block;
+                @include menu-hum(3px,24px,true);
+                @include menu-hum-open;
+                background-color: transparent;
+
+                &::before , &::after {
+                    background-color: $color-white;
+                }
+
+            }
+        }
+    }
+}

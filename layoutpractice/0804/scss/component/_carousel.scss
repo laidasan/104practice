@@ -1,0 +1,360 @@
+@mixin carouselControlTimer($break:sm,$mobileWidth:25%,$deskWidth:60px) {
+    position: absolute;
+    left: 0; right: 0;
+    bottom: 0;
+    background-color: $timerContainerBk;
+    
+    &-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        > li {
+            position: relative;
+            flex-basis: $mobileWidth;
+            height: $timerMobileHeight;
+            margin-left: nth($m,1);
+            margin-right: nth($m,1);
+    
+            // transition
+            transition: transform .6s;
+    
+            // when timer running
+            &.active {
+                transform: scaleY(1.75);
+    
+                &::before {
+                    background-color: $timerActiveBk;
+                }
+    
+                > .bar {
+                    width: 100%;
+                    visibility: visible;
+                }
+            }
+    
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0; right: 0;
+                top: $timerBarHeight; bottom: $timerBarHeight;
+                background-color: $timerBaseBk;
+            }
+    
+            > .bar {
+                position: absolute;
+                left: 0;
+    
+                // setting width to run timer bar
+                width: 0;
+                visibility: hidden;
+    
+                top: $timerBarHeight; bottom: $timerBarHeight;
+                background-color: $timerActive;
+                overflow: hidden;
+    
+                // transition 
+                transition: width $timerRunTime linear;
+            }
+        }
+    }
+
+    @include respond($break) {
+        &-list {
+            > li {
+                flex-basis: $deskWidth;
+                height: $timerDeskHeight;
+
+                &::before , & > .bar {
+                    top: $timerDeskBarHeight; bottom: $timerDeskBarHeight;
+                }
+            }
+        }
+    }
+}
+
+@mixin carouselControlPoints {
+    position: absolute;
+    left: 0; right: 0;
+    bottom: 30px;
+    font-size: 0;
+    text-align: center;
+
+    > li {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        background-color: #fff;
+        border-radius: 50%;
+        margin-left: 6px;
+        margin-right: 6px;
+        cursor: pointer;
+                
+        &.active {
+            background-color: #E8BE02;
+        }
+    }
+}
+
+@mixin carouselControlArrow {
+    @include btn-direct(true,true);
+    z-index: 1;
+}
+
+
+
+
+
+
+
+.carousel {
+    position: relative;
+
+    &::after {
+        content: '';
+        @extend %ab-fill;
+        background-color: transparent;
+    }
+
+    // transition
+    &:hover &__control {
+        &__arrow {
+            opacity: 1;
+        }
+    }
+    
+    &-container {
+        position: relative;
+        height: 450px;
+        overflow: hidden;
+        background-color: #0b0d12;
+    }
+
+
+    // carousel items
+    &-pane {
+        // item-container
+        @extend %ab-fill;
+        z-index: 0;
+    }
+
+    // item
+    &__item {
+        @extend %ab-fill;
+        z-index: 0;
+
+
+        // item bk container
+        &__bk-container {
+            @extend %ab-fill;
+            left: -10vw; right: -10vw;
+            z-index: 0;
+
+            &.next-in,&.prev-in {
+                animation-duration: 5s;
+                animation-timing-function: ease-out;
+                animation-fill-mode: forwards;
+            }
+            &.next-in {
+                animation-name: slide-left;
+            }
+
+            &.prev-in {
+                animation-name: slide-right;
+            }
+        }
+        
+
+        // item bk
+        &__bk {
+            @extend %ab-fill;
+
+            background-repeat: no-repeat;
+
+
+            &.mobile {
+                background-size: contain;
+                background-position: center top;
+            }
+
+            &.desk {
+                background-position: center top;
+                display: none;
+            }
+        }
+
+        // item content
+        &__content {
+            position: absolute;
+            left: 0px; right: 0;
+            
+            &-group { }
+        }
+
+    }
+
+
+    // controlers
+    &__control {
+        @extend %ab-fill;
+        z-index: 1;
+        
+
+        // points
+        &__points {
+            @include carouselControlPoints
+
+            // > li {
+            //     &.active {
+            //     }
+            // }
+        }
+
+        // arrow 
+        &__arrow {
+            @include carouselControlArrow;
+        }
+
+        
+        // timer bar
+        &__timer {
+            @include carouselControlTimer();
+    //         &-list {
+
+    //             > li {
+        
+    //                 // when timer running
+    //                 &.active {
+
+    //                     &::before { }
+
+    //                     > .bar { }
+
+    //                 }
+
+    //                 &::before { }
+
+    //                 > .bar { }
+    //             }
+    //         }
+        }
+    }
+
+
+    @include respond(sm) {
+        &__item {
+            
+            &__bk {
+    
+                &.mobile { background-size: 768px auto; }
+
+                &.desk { }
+                
+            }
+    
+            &__content {
+
+            }
+        }
+
+        &__control {
+            &__timer {
+                &-list {
+                    > li {
+                        flex-basis: 60px;
+                        height: $timerDeskHeight;
+
+                        &::before , & > .bar {
+                            top: $timerDeskBarHeight; bottom: $timerDeskBarHeight;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+    @include respond(md) {
+        &__item {
+            
+            &__bk {
+    
+                &.mobile { display: none; }
+
+                &.desk { display: block; }
+                
+            }
+    
+            &__content {
+
+            }
+        }
+
+    }
+}
+
+/* animation */
+
+.slide-left-enter-active {
+    animation-name: slide-left;
+    animation-duration: 5.5s;
+    animation-timing-function: ease-out;
+
+    > .carousel__item__content {
+        &__logo {
+            animation-delay: .5s;
+        }
+    }
+}
+
+
+.opacity-enter {
+    opacity: 0;
+}
+.opacity-leave,.opacity-enter-to{
+    opacity: 1;
+}
+.opacity-leave-to {
+    opacity: .3;
+}
+.opacity-leave-acitve {
+    transition: opacity .42s;
+}
+
+
+
+@keyframes slide-left {
+    0% {
+        transform: translateX(120px);
+        opacity: 0;
+    }
+
+    9% {
+        transform: translateX(20px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-right {
+    0% {
+        transform: translateX(-120px);
+        opacity: 0;
+    }
+
+    9% {
+        transform: translateX(-20px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
