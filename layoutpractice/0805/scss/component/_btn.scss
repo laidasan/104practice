@@ -1,0 +1,30 @@
+.btn {
+    &-a {
+        @include btn-base(false);
+    }
+    
+    &-button {
+        @include btn-base-button(false);
+    }
+
+    &--search {
+        @include font(2,0,1);
+        padding: 0;
+        padding-top: nth($p,4);
+        padding-bottom: nth($p,4);
+        // height: 100%;
+        border-radius: nth($border-radius,2);
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        background-color: #aa3345;
+        color: $color-white;
+        letter-spacing: .6px;
+        transition: background-color .6s;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $color-black;
+        }
+    }
+    
+}

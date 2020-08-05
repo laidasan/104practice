@@ -1,0 +1,29 @@
+.form {
+    &--search {
+        font-size: 0;
+        box-shadow: 0 0 0 1px #aaa;
+        border-radius: nth($border-radius,2);
+        > input {
+            @include font(2,0,1);
+            width: 80%;
+            padding-top: nth($p,3);
+            padding-bottom: nth($p,3);
+            padding-left: nth($p,5);
+            border-radius: nth($border-radius,2);
+            border: none;
+
+
+            &:focus {
+                outline: none;
+
+                & + button {
+                    background-color: $color-black;
+                }
+            }
+        }
+
+        > button.btn--search {
+            width: 20%;
+        }
+    }
+}

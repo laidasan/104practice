@@ -1,0 +1,124 @@
+.tools {
+    display: none;
+    position: absolute;
+    right: 100%; bottom: -262px;
+    
+    box-shadow: 0 0 0 1px #000;
+    min-width: 210px;
+    background-color: $color-white;
+
+
+    &-container {
+        margin-top: nth($m,3);
+        margin-bottom: nth($m,3);
+        margin-right: nth($m,3);
+        margin-left: nth($m,3);
+    }
+    &__sign-up {
+
+        @include font(2,0,1);
+        margin-top: nth($m,2);
+        margin-bottom: nth($m,2);
+
+        &:hover {
+            color: #aa3a4f;
+        }
+        
+        &::before {
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: nth($m,3);
+
+            width: 21px; height: 21px;
+            background-color: #000;
+            border-radius: 50%;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0; right: 0; top: 0; bottom: 0;
+            background-color: transparent;
+            cursor: pointer;
+        }
+    }
+
+    .tool {
+        > h2 {
+            @include font(2,0,1);
+            margin-bottom: nth($m,6);
+        }
+
+        > ul {
+            font-size: 0;
+            margin-top: nth($m,2);
+            margin-bottom: nth($m,2);
+
+            > li {
+                display: inline-block;
+                vertical-align: middle;
+                cursor: pointer;
+
+                margin-right: nth($m,3);
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    .tool::before {
+        content: '';
+        display: block;
+        height: 1px;
+        background-color: #aaa;
+        margin-bottom: nth($m,3);
+    }
+
+    &__language {
+        // > h2 {
+        //     @include font(2,0,1);
+        //     margin-bottom: nth($m,6);
+        // }
+
+        &-list {
+            // font-size: 0;
+            // margin-top: nth($m,2);
+            // margin-bottom: nth($m,2);
+    
+            > li {
+                // display: inline-block;
+                // vertical-align: middle;
+                width: 15px; height: 15px;
+                background-color: #ae3804;
+    
+                // margin-right: nth($m,3);
+                // &:last-child {
+                //     margin-right: 0;
+                // }
+            }
+        }
+    }
+
+    &__currency {
+        &-list {
+            // font-size: 0;
+            // margin-top: nth($m,2);
+            // margin-bottom: nth($m,2);
+    
+            > li {
+                // display: inline-block;
+                // vertical-align: middle;
+                width: 30px; height: 30px;
+                background-color: #aa3a4f;
+    
+                // margin-right: nth($m,3);
+                // &:last-child {
+                //     margin-right: 0;
+                // }
+            }
+        }
+    }
+
+}

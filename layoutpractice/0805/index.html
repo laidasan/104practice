@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./scss/vender/reset.css">
+    <link rel="stylesheet" href="./scss/grid-sys.scss">
+    <link rel="stylesheet" href="./scss/utility.scss">
+    <link rel="stylesheet" href="./scss/main.scss">
+    <title>0805</title>
+</head>
+<body>
+    <div id="app">
+        <div class="global-header">
+            <div class="global-header-container">
+                <div class="global-header__content concat">
+                    <div class="global-header__concat phone"><a href="javascript:;">Call Us(+0)122 3454 890</a></div>
+                    <div class="global-header__concat mail"><a href="javascript:;">sale@Yourcompany.com</a></div>
+                </div>
+                <div class="global-header__content menu">
+                    <div class="global-header__menu"></div>
+                    <ul class="global-header__menu-list">
+                        <li class="global-header__menu-list__item"><a href="javascript:;">concat</a></li>
+                        <li class="global-header__menu-list__item"><a href="javascript:;">sitemap</a></li>
+                        <li class="global-header__menu-list__item"><a href="javascript:;">support</a></li>
+                        <li class="global-header__menu-list__item"><a href="javascript:;">tracker order</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <header class="header">
+            <div class="header-container">
+                <div class="header__content logo">
+                    <div class="header__logo-box img-box">
+                        <img src="./img/demo-store-logo-1558602348.jpg" alt="Logo" class="header__logo">
+                    </div>
+                </div>
+                <div class="header__content form">
+                    <form action="Get" class="form form--search">
+                        <input type="text" placeholder="Search For Product">
+                        <button type="submit" class="btn-button btn--search">Search</button>
+                    </form>
+                </div>
+                <div class="header__content feature">
+                    <div class="header__feature support">
+                        <div class="header__feature__icon"></div>
+                        <div class="header__feature__txt">
+                            <h3 class="title">Customer Support</h3>
+                            <p>2-100-56-55</p>
+                        </div>
+                    </div>
+                    <div class="header__feature account" @click="toggleTool">
+                        <div class="header__feature__icon"></div>
+                        <div class="header__feature__txt">
+                            <h3 class="title">Sign In</h3>
+                            <p>My account</p>
+                        </div>
+                        <div class="tools" :style="setToolOpen" @click.stop>
+                            <div class="tools-container">
+                                <div class="tools__sign-up">sign up</div>
+                                <div class="tool tools__language">
+                                    <h2>Language</h2>
+                                    <ul class="tools__language-list">
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                </div>
+                                <div class="tool tools__currency">
+                                    <h2>Currency</h2>
+                                    <ul class="tools__currency-list">
+                                        <li class="eu"></li>
+                                        <li class="usd"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+
+<!-- 
+    <div class="header__content menu">
+        <div class="header__menu"><span></span></div>
+        <div class="header__menu-list f1">
+            <div class="btn"><span></span></div>
+            <a href="javascript:;">Shop By Catgories</a>
+            <ul class="header__menu-list f2"><li></li></ul>
+        </div>
+        <div class="header__content-nav">
+            <div class="header__nav">
+                <div class="header__nav-btn"></div>
+                <ul class="header__nav-list f1">
+                    <li class="header__nav__item f1"><a href="javascript:;">Today's Deal</a></li>
+                    <li class="header__nav__item f1"><a href="javascript:;">Subscribe</a></li>
+                    <li class="header__nav__item f1"><a href="javascript:;">Buyer Proection</a></li>
+                    <li class="header__nav__item f1"><a href="javascript:;">Latest News</a></li>
+                    <li class="header__nav__item f1"><a href="javascript:;">More</a></li>
+                </ul>
+            </div>
+        </div>
+    </div> -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js'></script>
+    <script>
+        let data = {
+            isActiveTool: false
+        }
+        new Vue({
+            el: '#app',
+            data,
+            computed: {
+                setToolOpen() { return `display: ${this.isActiveTool ? 'block' : 'none'}` }
+            },
+            methods: { 
+                toggleTool() { this.isActiveTool = !this.isActiveTool }
+            }
+        })
+    </script>
+</body>
+</html>
