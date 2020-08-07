@@ -1,0 +1,73 @@
+// bounce
+$bounce: (
+    transform: (
+        height: -60px,
+        bounce: -7px
+    )
+);
+
+@keyframes bounce {
+    0% {
+        transform: scale(1,1) translateY(0);
+    }
+    10% {
+        transform: scale(1.1,.9) translateY(0);
+    }
+    30% {
+        transform: scale(.9,1.1) translateY(map-get(map-get($bounce , transform) , height));
+    }
+    50% {
+        transform: scale(1.05,.95) translateY(0px);
+    }
+    57% {
+        transform: scale(1,1) translateY(map-get(map-get($bounce , transform) , bounce)); // 彈到地面反彈
+    }
+    64% {
+        transform: scale(1,1) translateY(0px);
+    }
+    100% {
+        transform: scale(1,1) translateY(0px);
+    }
+}
+
+@keyframes bounce-shadow {
+    0% {
+        transform: scale(1,1) rotateX(45deg);
+        opacity: .9;
+    }
+    10% {
+        transform: scale(1.1,.9)  rotateX(45deg);
+        opacity: 1;
+    }
+    30% {
+        transform: scale(.7,1.2)  rotateX(45deg);
+        opacity: .6;
+    }
+    50% {
+        transform: scale(.95,1.05)  rotateX(45deg);
+        opacity: .8;
+    }
+    57% {
+        transform: scale(.9,1)  rotateX(45deg); // 彈到地面反彈
+        opacity: .75;
+    }
+    64% {
+        transform: scale(1,1)  rotateX(45deg);
+        opacity: .9;
+    }
+    100% {
+        transform: scale(1,1)  rotateX(45deg);
+        opacity: .9;
+    }
+}
+
+
+// ring
+@keyframes ring-ball-an-1 {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

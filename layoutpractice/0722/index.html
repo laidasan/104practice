@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./scss/vender/reset.css">
+    <link rel="stylesheet" href="./style/utility.min.css">
+    <link rel="stylesheet" href="./style/grid-sys.min.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="https://kit.fontawesome.com/ab4c3d994d.js" crossorigin="anonymous"></script>
+    <title>0722</title>
+</head>
+<body>
+    <div class="img-box"><img src="./img/header.png" alt=""></div>
+    <div class="img-box maxw960 hori-middle"><img src="./img/header-lg.png" alt=""></div>
+    <div class="img-box maxw480 hori-middle mb30"><img src="./img/header-xs.png" alt=""></div>
+    <div id="app">
+        <header class="header" :class="{activeSearch: activeSearch}">
+            <div class="header-container">
+                <div class="header__logo-box">
+                    <div class="header__logo"></div>
+                </div>
+                <ul class="header__menu-list">
+                    <li class="header__menu-list__item"><a href="javascript:;">Standards</a></li>
+                    <li class="header__menu-list__item"><a href="javascript:;">About us</a></li>
+                    <li class="header__menu-list__item"><a href="javascript:;">News</a></li>
+                    <li class="header__menu-list__item"><a href="javascript:;">Taking part</a></li>
+                    <li class="header__menu-list__item"><a href="javascript:;">Store</a></li>
+                </ul>
+                <form action="" class="header__form form form--header-search">
+                    <label for="HeaderSearch" class="form__label">Search</label>
+                    <input type="text" id="HeaderSearch" class="form__input">
+                    <button type="submit" class="btn-button form__submit" @click.prevent="activeSearch = !activeSearch">Q</button>
+                </form>
+                <a href="javascript:;" class="btn-a btn--shopping header__shopping"><i class="fas fa-shopping-cart"></i></a>
+                <div class="header__language">
+                    <a href="javascript:;" class="btn-a">EN<span class="arrow"></span></a>
+                    <ul class="header__language-list">
+                        <li class="header__language-list__item"><a href="javascript:;">Chinese</a></li>
+                        <li class="header__language-list__item"><a href="javascript:;">English</a></li>
+                    </ul>
+                </div>
+                <div class="header__menu">
+                    <div class="header__menu-hum"></div>
+                    <span>Menu</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="section">
+            <div class="img-box maxw1440 hori-middle mb15"><img src="./img/header-2.png" alt=""></div>
+            <div class="img-box maxw1440 hori-middle mb15"><img src="./img/header2-xs.png" alt=""></div>
+            <header class="header-sub">
+                <div class="header-sub-container">
+                    <header-logo></header-logo>
+                    <div class="header-sub__menu"></div>
+                    <div class="header-sub__menu-list-container">
+                        <header-list :header-list="headerList.slice(0,2)"></header-list>
+                        <header-list :header-list="headerList.slice(2,4)"></header-list>
+                    </div>
+                </div>
+            </header>
+        </div>
+       
+    </div>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js'></script>
+    <script>
+
+        const  headerLogo = {
+            props: {
+                imgSrc: {
+                    type: String,
+                    default: ''
+                }
+            },
+            computed: {
+                backgroundImage() {return this.imgSrc ? `background-image: url(${this.imgSrc})` : ''}
+            },
+            template: 
+            `
+            <div class="header-sub__logo-box">
+                <div class="header-sub__logo" :style="backgroundImage"><a href="javascript:;"></a></div>
+            </div>
+            `
+        }
+
+        const headerListItem = {
+            props: {
+                text: {
+                    type: String,
+                    default: ''
+                },
+                src: {
+                    type: String,
+                    default: ''
+                },
+                imgSrc: {
+                    type: String,
+                    default: ''
+                }
+            },
+            components: {
+                headerLogo
+            },
+            template:
+            `
+            <li class="header-sub__menu-list__item-f1" :class="{logo:imgSrc}">
+                <a href="javascript:;" v-if="text">{{ text }}</a>
+            </li>
+            `
+        }
+
+        const headerList = {
+            props: {
+                headerList: {
+                    type: Array,
+                    default: null
+                }
+            },
+            components: {
+                headerListItem
+            },
+            methods: {
+                imgSrc(index) { return headerList[index].imgSrc }
+            },
+            template: 
+            `
+            <ul class="header-sub__menu-list" v-if="headerList">
+                <header-list-item
+                v-for="item in headerList"
+                :key="item.id"
+                :text="item.text"
+                :img-src="item.imgSrc"
+                ></header-list-item>
+            </ul>
+            `
+        }
+        
+
+
+        let data = {
+            activeSearch: false,
+            headerList: [
+                {id:0,text:'about'},
+                {id:1,text:'product'},
+                {id:3,text:'topics'},
+                {id:4,text:'company'},
+            ]
+        }
+
+        new Vue({
+            el: '#app',
+            data,
+            components: {
+                headerList,
+                headerLogo
+            },
+        })
+    </script>
+</body>
+</html>

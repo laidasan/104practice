@@ -1,0 +1,19 @@
+.btn {
+    &-a {
+        @include btn-base(false);
+    }
+
+    &--shopping {
+        @include link {
+            vertical-align: middle;
+            color: #aaa;
+            padding-left: nth($p,2);
+            padding-right: nth($p,2);
+        }
+    }
+    
+    &-button {
+        @include btn-base-button(false);
+    }
+    
+}

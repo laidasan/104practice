@@ -1,0 +1,9 @@
+.test {
+    max-width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+    min-height: 60px;
+    margin-top: nth($m,3);
+    margin-bottom: nth($m,3);
+    background-color: #00f;
+}

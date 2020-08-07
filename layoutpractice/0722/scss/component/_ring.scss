@@ -1,0 +1,223 @@
+// %ab-fill {
+//     position: absolute;
+//     left: 0; right: 0; top: 0; bottom: 0;
+// }
+
+// @mixin position-all($grow) {
+//     left: $grow;
+//     right: $grow;
+//     top: $grow;
+//     bottom: $grow;
+// }
+
+// @keyframes ring-ball-an-1 {
+//     0% {
+//         transform: rotate(0);
+//     }
+//     100% {
+//         transform: rotate(360deg);
+//     }
+// }
+
+// config
+// $ring-config: (
+//     size: (
+//         xs : 6rem,
+//         sm : 7.5rem,
+//         md : 9rem,
+//         xl : 12rem
+//     ),
+    
+//     bk : (
+//         bk-normal : #d6251f,
+//         bk-dark : #97120e,
+//         bk-light: #fa0e06
+//     ),
+
+//     ring : (
+//         size : .2rem,
+//         color : #97120e,
+//         count : 3,
+//         start: .15rem
+//     ),
+    
+//     ball : (
+//         ball-1 :(
+//             color: #fa0e06,
+//             small-size: 1rem,
+//             big-size: 1.2rem,
+//             small-position: left top,
+//             big-position: right bottom
+//         ),
+
+//         ball-2 : (
+//             color: #97120e,
+//             small-size: 1.4rem,
+//             big-size: 2rem,
+//             small-position: left top,
+//             big-position: right bottom
+//         )
+//     )
+// );
+
+// $xl-ring-ball-config: (
+//     ball-1 :(
+//         color: #fa0e06,
+//         small-size: 1.2rem,
+//         big-size: 1.5rem,
+//         small-position: left top,
+//         big-position: right bottom
+//     ),
+        
+//     ball-2 : (
+//         color: #97120e,
+//         small-size: 1.8rem,
+//         big-size: 2.4rem,
+//         small-position: left top,
+//         big-position: right bottom
+//     )
+// );
+        
+// function
+        
+// @function ring-render($config) {
+//     $ring-list: inset .3rem -.1rem 0 .2rem map-get(map-get($config,bk),bk-light),
+//                 inset -.2rem -.01rem 0 .3rem map-get(map-get($config,bk),bk-dark);
+    
+//     @for $i from 0 through map-get(map-get($config,ring),count) - 1 {
+//         $ring-list: append($ring-list , 0 0 0 map-get(map-get($config,ring),start) + $i * .3rem $color-white , comma);
+//         $ring-list: append($ring-list , 0 0 0 map-get(map-get($config,ring),start) + ($i * .3rem) + map-get(map-get($config,ring),size) map-get(map-get($config,ring),color),comma);
+//     };
+
+//     @return $ring-list
+// };
+
+// @function ring-ball-render($ball-config,$size) {
+//     @return radial-gradient(circle at center , 
+//             map-get($ball-config,color) , map-get($ball-config,color) map-get($ball-config,small-size) / 2, transparent map-get($ball-config,small-size) / 2 )
+//             no-repeat map-get($ball-config,#{$size}-position) / map-get($ball-config,#{$size}-size) map-get($ball-config,#{$size}-size);
+// }
+
+// mixin
+// @mixin ring($custom:false,$config:$ring-config) {
+//     background: map-get(map-get($config,bk),bk-normal);
+//     &::before {
+//         content: '';
+//         @extend %ab-fill;
+//         box-shadow: ring-render($config);
+//         border-radius: 50%;
+//     }
+
+//     &__ball-1 {
+//         @include ab-fill(.1rem);
+
+//         &::before,&::after {
+//             content: '';
+//             @extend %ab-fill;
+//         }
+
+//         &::before {
+//             background: ring-ball-render(  map-get(map-get($config,ball),ball-1), small  );
+//             transform: rotate(12deg);
+//         }
+
+//         &::after {
+//             background: ring-ball-render( map-get(map-get($config,ball),ball-1), big );
+//             transform: rotate(-15deg);
+//         }
+
+//     }
+
+//     &__ball-2 {
+//         @include ab-fill(-.3rem);
+//         z-index: -1;
+
+//         &::before,&::after {
+//             content: '';
+//             @extend %ab-fill;
+//         }
+
+//         &::before {
+//             background: ring-ball-render( map-get(map-get($config,ball),ball-2), small );
+//         }
+
+//         &::after {
+//             @include ab-fill(-.21rem);
+//             background: ring-ball-render( map-get(map-get($config,ball),ball-2), big );
+//         }
+
+//     }
+
+//     @if $custom == false {
+//         position: relative;
+//         width: map-get(map-get($config,size),sm);
+//         height: map-get(map-get($config,size),sm);
+//         border-radius: 50%;
+
+//         @include respond('sm') {
+//             width: map-get(map-get($config,size),sm);
+//             height: map-get(map-get($config,size),sm);
+//         }
+//         @include respond('md') {
+//             width: map-get(map-get($config,size),md);
+//             height: map-get(map-get($config,size),md);
+//         }
+
+//         @include respond('lg') {
+//             &__ball-1 {
+//                 @include position-all(.3rem);
+//             }
+
+//             &__ball-2 {
+//                 @include position-all(0);
+//             }
+//         }
+
+//         @include respond('xl') {
+//             width: map-get(map-get($config,size),xl);
+//             height: map-get(map-get($config,size),xl);
+
+//             &__ball-1 {
+//                 @include position-all(.6rem);
+                
+//                 &::before {
+//                     background: ring-ball-render(map-get($xl-ring-ball-config,ball-1),small);
+//                 }
+
+//                 &::after {
+//                     background: ring-ball-render(map-get($xl-ring-ball-config,ball-1),big);
+//                 }
+                
+//             }
+    
+//             &__ball-2 {
+//                 @include position-all(.3rem);
+                
+//                 &::before {
+//                     background: ring-ball-render(map-get($xl-ring-ball-config,ball-2),small);
+//                 }
+//                 &::after{
+//                     background: ring-ball-render(map-get($xl-ring-ball-config,ball-2),big);
+//                 }
+        
+//             }
+//         }
+//     }
+// }
+
+
+// use it
+// ring
+//   ring__ball-1
+//   ring__ball-2
+.ring {
+    @include ring();
+
+    &__ball-1 {
+        @include ring-ball-an(1);
+    }
+
+    &__ball-2 {
+        @include ring-ball-an(1);
+    }
+}

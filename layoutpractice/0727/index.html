@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./scss/vender/reset.css">
+    <link rel="stylesheet" href="./scss/utility.scss">
+    <link rel="stylesheet" href="./scss/main.scss">
+    <title>0727</title>
+    <style>
+        body {
+            min-height: 1200px;
+            background-color: #f7f7f4;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <header class="header" :class="{menuOpen:ismenuOpen}">
+            <div class="header-container">
+                <div class="header-container-content">
+                    <h1 class="header__logo-box img-box">
+                        <img src="./img/logo.png" alt="">
+                        <a href="javascript:;"></a>
+                    </h1>
+                </div>
+                <div class="header-container-content">
+                    <div class="header__menu" @click="menuToggle"></div>
+                    <ul class="header__menu-list">
+                        <li class="header__menu-list__item-f1 active"><span>01</span> <a href="javascript:;">linckup</a></li>
+                        <li class="header__menu-list__item-f1"><span>02</span> <a href="javascript:;">about</a></li>
+                        <li class="header__menu-list__item-f1"><span>03</span> <a href="javascript:;">category</a></li>
+                        <li class="header__menu-list__item-f1 facebook"><a href="javascript:;">facebook</a></li>
+                        <li class="header__menu-list__item-f1 twitter">twitter</li>
+                    </ul>
+                    <h2 class="header__title--sub">クオリティが高い縦に長いサイトを厳選して集めています。</h2>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js'></script>
+    <script>
+        let data = {
+            ismenuOpen: false
+        }
+        new Vue({
+            el: '#app',
+            data,
+            methods: {
+                menuToggle() { this.ismenuOpen = !this.ismenuOpen }
+            }
+        })
+    </script>
+</body>
+</html>
